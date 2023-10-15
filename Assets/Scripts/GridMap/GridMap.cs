@@ -7,8 +7,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class GridMap : MonoBehaviour
 {
-    public GameObject cube;
-    public GameObject emptyCube;
+    public GameObject groundCube;
     public GameObject brickWall;
 
     Grid grid;
@@ -44,7 +43,7 @@ public class GridMap : MonoBehaviour
     {
         // Create ground as one piece
         Vector3 centerPosition = Vector3.Lerp(grid.GetCellCenterWorld(new Vector3Int(0, 0, 0)), grid.GetCellCenterWorld(new Vector3Int(width * 2 -1, 0, height * 2 -1)), 0.5f);
-        GameObject cell = Instantiate(cube, centerPosition, Quaternion.identity, gameObject.transform);
+        GameObject cell = Instantiate(groundCube, centerPosition, Quaternion.identity, gameObject.transform);
         cell.transform.localScale = new Vector3(width, 1, height);
         cell.name = "Ground";
 
