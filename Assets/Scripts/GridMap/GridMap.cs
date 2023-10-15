@@ -43,9 +43,10 @@ public class GridMap : MonoBehaviour
     public void ConstructGround(int width, int height)
     {
         // Create ground as one piece
-        Vector3 centerPosition = Vector3.Lerp(grid.GetCellCenterWorld(new Vector3Int(0, 0, 0)), grid.GetCellCenterWorld(new Vector3Int(width * 2, 0, height * 2)), 0.5f);
+        Vector3 centerPosition = Vector3.Lerp(grid.GetCellCenterWorld(new Vector3Int(0, 0, 0)), grid.GetCellCenterWorld(new Vector3Int(width * 2 -1, 0, height * 2 -1)), 0.5f);
         GameObject cell = Instantiate(cube, centerPosition, Quaternion.identity, gameObject.transform);
         cell.transform.localScale = new Vector3(width, 1, height);
+        cell.name = "Ground";
 
         //for (int i = 0; i < width; i++)
         //{
@@ -67,7 +68,6 @@ public class GridMap : MonoBehaviour
                 {
                     //GameObject cell = Instantiate(emptyCube, position, Quaternion.identity, gameObject.transform);
                     //cell.transform.localScale = new Vector3(cellScale.x, cellScale.y, cellScale.z);
-
                 }
                 else if (map.wallMap[j + i * map.width] == WallTypes.Bricks)
                 {
@@ -89,10 +89,11 @@ public class GridMap : MonoBehaviour
             {
                 for (int j = 0; j < 2; j++)
                 {
-                    Vector3 worldPosition = grid.GetCellCenterWorld(realPositionOnGrid + new Vector3Int(i, 0, j));
+                    Vector3Int gridCoords = realPositionOnGrid + new Vector3Int(i, 0, j);
+                    Vector3 worldPosition = grid.GetCellCenterWorld(gridCoords);
                     GameObject piece = Instantiate(cube, worldPosition, Quaternion.identity, gameObject.transform);
                     piece.transform.localScale = new Vector3(cellScale.x, cellScale.y, cellScale.z);
-                    piece.name = "Cell: " + position.x + "-" + position.z + " Piece: (" + i + "," + j + ")";
+                    piece.name = "Cell: " + position.x + "-" + position.z + " Grid: (" + gridCoords.x + "," + gridCoords.z + ")";
                 }
             }
 

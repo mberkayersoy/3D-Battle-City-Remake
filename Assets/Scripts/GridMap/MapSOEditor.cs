@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.UIElements;
 
 
 [CustomEditor(typeof(MapSO))]
@@ -14,7 +15,7 @@ public class MapSOEditor : Editor
     SerializedProperty heightProperty;
     SerializedProperty wallMapProperty;
 
-    public  void OnEnable()
+    public void OnEnable()
     {
         mapSO = new SerializedObject((MapSO)target);
         widthProperty = mapSO.FindProperty("width");
@@ -27,7 +28,7 @@ public class MapSOEditor : Editor
     {
         if (mapSO == null) return;
 
-        mapSO.Update();       
+        mapSO.Update();
 
         int width = widthProperty.intValue;
         int height = heightProperty.intValue;
@@ -77,18 +78,18 @@ public class MapSOEditor : Editor
         rowStyle.fixedWidth = 65;
 
         EditorGUILayout.BeginHorizontal(tableStyle);
-        for (int x = width; x > -1; x--)
+        for (int x = -1; x < width; x++)
         {
             EditorGUILayout.BeginVertical((x == width) ? headerColumnStyle : columnStyle);
             for (int y = height; y > -1; y--)
             {
-                if (x == width && y == height)
+                if (x == -1 && y == height)
                 {
                     EditorGUILayout.BeginVertical(rowHeaderStyle);
                     EditorGUILayout.LabelField("[X,Y]", cornerLabelStyle);
                     EditorGUILayout.EndHorizontal();
                 }
-                else if (x == width)
+                else if (x == -1)
                 {
                     EditorGUILayout.BeginVertical(columnHeaderStyle);
                     EditorGUILayout.LabelField(y.ToString(), rowLabelStyle);
@@ -101,10 +102,22 @@ public class MapSOEditor : Editor
                     EditorGUILayout.EndHorizontal();
                 }
 
-                if (x < width && y < height)
+                if (x > -1 && y < height)
                 {
                     SerializedProperty cellPropperty = wallMapProperty.GetArrayElementAtIndex(y + x * width);
                     WallTypes type = (WallTypes)cellPropperty.intValue;
+
+                    switch (type)
+                    {
+                        case WallTypes.Bricks:
+                            enumStyle.normal.background = MakeTex(2, 2, new Color(1f, 0f, 0f, 0.5f));
+                            break;
+                        default:
+                            enumStyle.normal.background = Texture2D.grayTexture;
+                            break;
+                    }
+
+
                     EditorGUILayout.BeginHorizontal(rowStyle);
                     cellPropperty.intValue = (int)(WallTypes)EditorGUILayout.EnumPopup(type, enumStyle);
                     EditorGUILayout.EndHorizontal();
@@ -115,6 +128,19 @@ public class MapSOEditor : Editor
         EditorGUILayout.EndHorizontal();
 
         mapSO.ApplyModifiedProperties();
+    }
+
+    private Texture2D MakeTex(int width, int height, Color col)
+    {
+        Color[] pix = new Color[width * height];
+        for (int i = 0; i < pix.Length; ++i)
+        {
+            pix[i] = col;
+        }
+        Texture2D result = new Texture2D(width, height);
+        result.SetPixels(pix);
+        result.Apply();
+        return result;
     }
 }
 
