@@ -42,13 +42,18 @@ public class GridMap : MonoBehaviour
 
     public void ConstructGround(int width, int height)
     {
-        for (int i = 0; i < width; i++)
-        {
-            for (int j = 0; j < height; j++)
-            {
-                PutObjectToCell(new Vector3Int(i, 0, j), cube);
-            }
-        }
+        // Create ground as one piece
+        Vector3 centerPosition = Vector3.Lerp(grid.GetCellCenterWorld(new Vector3Int(0, 0, 0)), grid.GetCellCenterWorld(new Vector3Int(width * 2, 0, height * 2)), 0.5f);
+        GameObject cell = Instantiate(cube, centerPosition, Quaternion.identity, gameObject.transform);
+        cell.transform.localScale = new Vector3(width, 1, height);
+
+        //for (int i = 0; i < width; i++)
+        //{
+        //    for (int j = 0; j < height; j++)
+        //    {
+        //        PutObjectToCell(new Vector3Int(i, 0, j), cube);
+        //    }
+        //}
     }
 
     public void ConstructMap()
@@ -77,7 +82,7 @@ public class GridMap : MonoBehaviour
     {
         Vector3 cellScale = grid.cellSize;
         Vector3Int realPositionOnGrid = position * new Vector3Int(2, 1, 2);
-        
+
         if (is4Piece)
         {
             for (int i = 0; i < 2; i++)
@@ -99,4 +104,6 @@ public class GridMap : MonoBehaviour
             cell.name = "Cell: " + position.x + "-" + position.z;
         }
     }
+
+
 }
