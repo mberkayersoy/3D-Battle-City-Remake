@@ -7,6 +7,8 @@ using UnityEngine;
 public enum WallTypes {
     Empty = 0,
     Bricks,
+    Static,
+    Grass
 }
 
 [CreateAssetMenu(fileName= "Map", menuName = "Create Battle City Map")]

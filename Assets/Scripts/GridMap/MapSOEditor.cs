@@ -27,7 +27,6 @@ public class MapSOEditor : Editor
     public override void OnInspectorGUI()
     {
         if (mapSO == null) return;
-
         mapSO.Update();
 
         int width = widthProperty.intValue;

@@ -15,10 +15,9 @@ public class PlayerController : MonoBehaviour, IDamagable
     [SerializeField] private int health;
     [SerializeField] private GameObject projectile;
     [SerializeField] private Transform firePointTransform;
+    [SerializeField] private ParticleSystem muzzleFlashVFX;
+    [SerializeField] private ParticleSystem explosionVFX;
     private bool isRotating = false;
-    private Quaternion targetRotation;
-    private Vector3Int currentPosition; // Player'ýn tam sayý pozisyonu
-    private Vector3Int gridSize = new Vector3Int(1, 1, 1); // Grid hücre boyutu
 
     private void Awake()
     {
@@ -28,7 +27,6 @@ public class PlayerController : MonoBehaviour, IDamagable
     {
         gameInput = GameInput.Instance;
         gameInput.OnPlayerShotAction += GameInput_OnPlayerShotAction;
-        currentPosition = new Vector3Int(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
     }
 
     private void Update()
@@ -55,6 +53,7 @@ public class PlayerController : MonoBehaviour, IDamagable
 
     private void Shot()
     {
+        muzzleFlashVFX.Play();
         Instantiate(projectile, firePointTransform.position, transform.rotation);
     }
 
@@ -62,6 +61,7 @@ public class PlayerController : MonoBehaviour, IDamagable
     {
         Vector2 movementVector = gameInput.GetMovementVectorNormalized();
         Vector3 direction;
+
         if (movementVector != Vector2.zero)
         {
             if (Mathf.Abs(movementVector.x) > Mathf.Abs(movementVector.y))
@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour, IDamagable
 
     public void TakeDamage(int damage)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Damage taken");
+        explosionVFX.Play();
     }
 }

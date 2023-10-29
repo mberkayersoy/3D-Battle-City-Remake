@@ -7,8 +7,6 @@ using UnityEngine;
 public class GridMapEditor : Editor
 {
 
-
-    // Event Handling
     private void OnSceneGUI()
     {
         //if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Space)

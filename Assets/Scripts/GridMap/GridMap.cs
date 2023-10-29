@@ -9,17 +9,21 @@ public class GridMap : MonoBehaviour
 {
     public GameObject groundCube;
     public GameObject brickWall;
+    public GameObject staticWall;
+    public GameObject grassWall;
 
     Grid grid;
     public MapSO map;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         grid = GetComponent<Grid>();
-        ClearMap();
-        ConstructGround(12, 12);
-        ConstructMap();
+    }
+    void Start()
+    {
+        //ClearMap();
+        //ConstructGround(12, 12);
+        //ConstructMap();
     }
 
     public void ClearMap()
@@ -71,6 +75,14 @@ public class GridMap : MonoBehaviour
                 else if (map.wallMap[j + i * map.width] == WallTypes.Bricks)
                 {
                     PutObjectToCell(new Vector3Int(i, 1, j), brickWall, true);
+                }
+                else if (map.wallMap[j + i * map.width] == WallTypes.Static)
+                {
+                    PutObjectToCell(new Vector3Int(i, 1, j), staticWall, true);
+                }
+                else if (map.wallMap[j + i * map.width] == WallTypes.Grass)
+                {
+                    PutObjectToCell(new Vector3Int(i, 1, j), grassWall, true);
                 }
 
             }
