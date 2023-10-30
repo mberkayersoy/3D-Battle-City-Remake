@@ -11,6 +11,8 @@ public class GridMap : MonoBehaviour
     public GameObject brickWall;
     public GameObject staticWall;
     public GameObject grassWall;
+    public GameObject spawnAreaPlayer;
+    public GameObject spawnAreaEnemy;
 
     Grid grid;
     public MapSO map;
@@ -78,13 +80,20 @@ public class GridMap : MonoBehaviour
                 }
                 else if (map.wallMap[j + i * map.width] == WallTypes.Static)
                 {
-                    PutObjectToCell(new Vector3Int(i, 1, j), staticWall, true);
+                    PutObjectToCell(new Vector3Int(i, 1, j), staticWall, false);
                 }
                 else if (map.wallMap[j + i * map.width] == WallTypes.Grass)
                 {
-                    PutObjectToCell(new Vector3Int(i, 1, j), grassWall, true);
+                    PutObjectToCell(new Vector3Int(i, 1, j), grassWall, false);
                 }
-
+                else if (map.wallMap[j + i * map.width] == WallTypes.PlayerSpawn)
+                {
+                    PutObjectToCell(new Vector3Int(i, 0, j), spawnAreaPlayer, false);
+                }
+                else if (map.wallMap[j + i * map.width] == WallTypes.EnemySpawn)
+                {
+                    PutObjectToCell(new Vector3Int(i, 0, j), spawnAreaEnemy, false);
+                }
             }
         }
     }

@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class GrassObstacle : MonoBehaviour
 {
-    private float grassMaterial;
-    void Start()
+    [SerializeField] private float transparentAlpha = 0.2f;
+    private Material originalMaterial;
+    private bool isTransparent = false;
+
+    private void Start()
     {
-        grassMaterial = GetComponent<MeshRenderer>().material.color.a;
+        Renderer grassRenderer = GetComponent<Renderer>();
+        originalMaterial = grassRenderer.material;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        grassMaterial = 0.1f;
+        Renderer grassRenderer = GetComponent<Renderer>();
+        Material transparentMaterial = new Material(originalMaterial);
+        transparentMaterial.color = new Color(1f, 1f, 1f, transparentAlpha);
+        grassRenderer.material = transparentMaterial;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        grassMaterial = 1f;
+        Renderer grassRenderer = GetComponent<Renderer>();
+        grassRenderer.material = originalMaterial;
     }
 }

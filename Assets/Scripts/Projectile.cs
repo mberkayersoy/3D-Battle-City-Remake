@@ -20,7 +20,6 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("collisionName: " + collision.gameObject.name);
         if (collision.gameObject.TryGetComponent(out IDamagable iDamagable))
         {
             iDamagable.TakeDamage(damage);

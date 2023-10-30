@@ -20,10 +20,26 @@ public class EnemyController : MonoBehaviour, IDamagable
     [SerializeField] private ParticleSystem explosionVFX;
     private float remainingShotTime;
 
+    [SerializeField] private GameObject shild;
+
     private void Awake()
     {
         Agent = GetComponent<NavMeshAgent>();
         Agent.obstacleAvoidanceType = ObstacleAvoidanceType.HighQualityObstacleAvoidance;
+    }
+    private void Start()
+    {
+        ActivateShild();
+    }
+    private void ActivateShild()
+    {
+        shild.SetActive(true);
+        StartCoroutine(DeactivateShild());
+    }
+    private IEnumerator DeactivateShild()
+    {
+        yield return new WaitForSeconds(2f);
+        shild.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -110,6 +126,10 @@ public class EnemyController : MonoBehaviour, IDamagable
 
     public void TakeDamage(int damage)
     {
+        if (shild.activeSelf) return;
         explosionVFX.Play();
+        EventBus.PublishEnemyDeath(this);
+        explosionVFX.transform.SetParent(null, true);
+        Destroy(gameObject);
     }
 }

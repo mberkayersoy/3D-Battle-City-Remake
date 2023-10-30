@@ -8,7 +8,9 @@ public enum WallTypes {
     Empty = 0,
     Bricks,
     Static,
-    Grass
+    Grass,
+    PlayerSpawn,
+    EnemySpawn,
 }
 
 [CreateAssetMenu(fileName= "Map", menuName = "Create Battle City Map")]

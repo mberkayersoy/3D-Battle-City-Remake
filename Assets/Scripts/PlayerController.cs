@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour, IDamagable
     [SerializeField] private ParticleSystem muzzleFlashVFX;
     [SerializeField] private ParticleSystem explosionVFX;
     private bool isRotating = false;
+    [SerializeField] private GameObject shild;
+    [SerializeField] private Transform[] tankWheels;
+
 
     private void Awake()
     {
@@ -27,6 +30,18 @@ public class PlayerController : MonoBehaviour, IDamagable
     {
         gameInput = GameInput.Instance;
         gameInput.OnPlayerShotAction += GameInput_OnPlayerShotAction;
+        ActivateShild();
+    }
+
+    private void ActivateShild()
+    {
+        shild.SetActive(true);
+        StartCoroutine(DeactivateShild());
+    }
+    private IEnumerator DeactivateShild()
+    {
+        yield return new WaitForSeconds(2f);
+        shild.SetActive(false);
     }
 
     private void Update()
@@ -83,10 +98,18 @@ public class PlayerController : MonoBehaviour, IDamagable
         }
     }
 
-
     public void TakeDamage(int damage)
     {
-        Debug.Log("Damage taken");
+        if (shild.activeSelf) return;
         explosionVFX.Play();
+        explosionVFX.transform.SetParent(null, true);
+        EventBus.PublishPlayerDeath(this);
+        
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        gameInput.OnPlayerShotAction -= GameInput_OnPlayerShotAction;
     }
 }

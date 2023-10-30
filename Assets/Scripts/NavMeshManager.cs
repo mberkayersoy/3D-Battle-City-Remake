@@ -31,6 +31,7 @@ public class NavMeshManager : MonoBehaviour
         }
 
         Surface = GetComponent<NavMeshSurface>();
+        Surface.useGeometry = NavMeshCollectGeometry.PhysicsColliders;
         Instance = this;
 
     }
