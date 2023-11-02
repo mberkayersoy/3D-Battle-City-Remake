@@ -51,8 +51,7 @@ public class GameData
         }
         else
         {
-            // Eðer dosya yoksa boþ bir PlayerData nesnesi döndürebilirsiniz.
-            return new GameData(1, 0);
+            return new GameData(0, 0);
         }
     }
 }
