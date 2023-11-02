@@ -30,6 +30,7 @@ public class EnemyController : MonoBehaviour, IDamagable
     private void Start()
     {
         ActivateShild();
+        mainTarget = GameManager.Instance.CurrentLevelManager.EnemyMainTarget;
     }
     private void ActivateShild()
     {

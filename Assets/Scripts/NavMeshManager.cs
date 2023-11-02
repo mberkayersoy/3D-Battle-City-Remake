@@ -5,34 +5,34 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshSurface))]
 public class NavMeshManager : MonoBehaviour
 {
-    private NavMeshSurface Surface;
+    private static NavMeshSurface Surface;
 
-    private static NavMeshManager _Instance;
-    public static NavMeshManager Instance
-    {
-        get
-        {
-            return _Instance;
-        }
+    //private static NavMeshManager _Instance;
+    //public static NavMeshManager Instance
+    //{
+    //    get
+    //    {
+    //        return _Instance;
+    //    }
 
-        private set
-        {
-            _Instance = value;
-        }
-    }
+    //    private set
+    //    {
+    //        _Instance = value;
+    //    }
+    //}
 
     private void Awake()
     {
-        if (Instance != null)
-        {
-            Debug.LogError($"Multiple NavMeshManagers in the scene! Destroying {name}!");
-            Destroy(gameObject);
-            return;
-        }
+        //if (Instance != null)
+        //{
+        //    Debug.LogError($"Multiple NavMeshManagers in the scene! Destroying {name}!");
+        //    Destroy(gameObject);
+        //    return;
+        //}
 
         Surface = GetComponent<NavMeshSurface>();
         Surface.useGeometry = NavMeshCollectGeometry.PhysicsColliders;
-        Instance = this;
+        //Instance = this;
 
     }
     private void Start()
@@ -40,7 +40,7 @@ public class NavMeshManager : MonoBehaviour
         BakeNavMesh();
     }
 
-    public void BakeNavMesh()
+    public static void BakeNavMesh()
     {
         Surface.BuildNavMesh();
     }

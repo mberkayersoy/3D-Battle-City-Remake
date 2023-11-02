@@ -9,8 +9,10 @@ public enum WallTypes {
     Bricks,
     Static,
     Grass,
+    Border,
     PlayerSpawn,
     EnemySpawn,
+    Eagle
 }
 
 [CreateAssetMenu(fileName= "Map", menuName = "Create Battle City Map")]
@@ -18,9 +20,9 @@ public enum WallTypes {
 public class MapSO : ScriptableObject
 {
     [SerializeField]
-    public int width = 12;
+    public int width = 15;
     [SerializeField]
-    public int height = 12;
+    public int height = 15;
     [SerializeField]
-    public WallTypes[] wallMap = new WallTypes[12 * 12];
+    public WallTypes[] wallMap = new WallTypes[15 * 15];
 }
