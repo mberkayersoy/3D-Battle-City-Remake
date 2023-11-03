@@ -1,8 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class EventBus
 {
     public static event Action<PlayerController> OnPlayerDeathAction;
@@ -10,10 +6,12 @@ public class EventBus
     public static event EventHandler<OnLevelSelectedEventArgs> OnLevelSelectedAction;
     public static event EventHandler<OnLevelSuccessfullyEndEventArgs> OnLevelSuccessfullyEndAction;
     public static event EventHandler<OnTransitionEventArgs> OnTransitionFinishAction;
+    public static event EventHandler<OnScoreUpdateEventArgs> OnScoreUpdateAction;
 
     public class OnLevelSelectedEventArgs : EventArgs { public int selectedLevel; }
     public class OnLevelSuccessfullyEndEventArgs : EventArgs { public bool isSuccess; }
     public class OnTransitionEventArgs : EventArgs { public string panel; }
+    public class OnScoreUpdateEventArgs : EventArgs { public int addScore; }
 
     public static void PublishPlayerDeath(PlayerController player) { OnPlayerDeathAction?.Invoke(player); }
     public static void PublishEnemyDeath(EnemyController enemy) { OnEnemyDeathAction?.Invoke(enemy); }
@@ -32,6 +30,13 @@ public class EventBus
             selectedLevel = selectedLevel
         });
     }
+    public static void PublishUpdateScore(IDamagable iDamagable , int addScore)
+    {
+        OnScoreUpdateAction?.Invoke(iDamagable, new OnScoreUpdateEventArgs
+        {
+            addScore = addScore
+        });
+    }
 
     public static void PublishTransitionFinish(TransitionUI transitionUI, string panel)
     {
@@ -40,6 +45,5 @@ public class EventBus
             panel = panel
         });
     }
-
 
 }

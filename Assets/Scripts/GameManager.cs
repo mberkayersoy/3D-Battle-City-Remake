@@ -41,9 +41,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         gameData = GameData.LoadGameData();
-
-        Debug.Log("currentlevle: " + gameData.GetCurrentLevel());
-        Debug.Log("maxlevel: " + gameData.GetMaxAvailableLevelCount());
+        Debug.Log(gameData.levelDataDic);
         
         uiManager = UIManager.Instance;
         uiManager.OnClickMenuAction += UiManager_OnClickMenuAction;
@@ -60,12 +58,12 @@ public class GameManager : MonoBehaviour
 
     private void UiManager_OnClickRestartLevelAction()
     {
+        gameData.SetCurrentLevel(gameData.GetCurrentLevel() - 1);
         PrepareTheLevel(gameData.GetCurrentLevel());
     }
 
     private void UiManager_OnClickNextLevelAction()
     {
-        gameData.SetCurrentLevel(gameData.GetCurrentLevel() + 1);
         PrepareTheLevel(gameData.GetCurrentLevel());
     }
 

@@ -129,6 +129,7 @@ public class EnemyController : MonoBehaviour, IDamagable
     {
         if (shild.activeSelf) return;
         explosionVFX.Play();
+        EventBus.PublishUpdateScore(this, 500);
         EventBus.PublishEnemyDeath(this);
         explosionVFX.transform.SetParent(null, true);
         Destroy(gameObject);

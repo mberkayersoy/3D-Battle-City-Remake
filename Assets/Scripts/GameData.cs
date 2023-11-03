@@ -2,18 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using Newtonsoft.Json;
 
 [System.Serializable]
 public class GameData
 {
     public int availableLevelCount;
     public int currentLevel;
-    // other variables...
+    public Dictionary<int,LevelData> levelDataDic;
 
-    public GameData(int maxAvailableLevelCount, int currentLevel)
+    public void AddLevelData(LevelData leveldata)
+    {
+        levelDataDic.Add(leveldata.levelID, leveldata);
+    }
+
+    public void UpdateLevelData(LevelData newLevelData)
+    {
+        levelDataDic[newLevelData.levelID] = newLevelData;
+    }
+    public GameData(int maxAvailableLevelCount, int currentLevel, Dictionary<int,LevelData> levelDataDic)
     {
         this.availableLevelCount = maxAvailableLevelCount;
         this.currentLevel = currentLevel;
+        this.levelDataDic = levelDataDic;
+
     }
     public int GetMaxAvailableLevelCount()
     {
@@ -26,6 +38,7 @@ public class GameData
         currentLevel = level;
         if (currentLevel > availableLevelCount)
         {
+            AddLevelData(new LevelData(currentLevel, 0));
             availableLevelCount = currentLevel;
         }
     }
@@ -37,21 +50,39 @@ public class GameData
 
     public static void SaveGameData(GameData gameData)
     {
-        string jsonData = JsonUtility.ToJson(gameData);
         string filePath = Application.persistentDataPath + "/GameData.json";
-        File.WriteAllText(filePath, jsonData);
+
+        string json = JsonConvert.SerializeObject(gameData);
+        File.WriteAllText(filePath, json);
     }
     public static GameData LoadGameData()
     {
         string filePath = Application.persistentDataPath + "/GameData.json";
+        Debug.Log("filePath: " + filePath);
         if (File.Exists(filePath))
         {
-            string jsonData = File.ReadAllText(filePath);
-            return JsonUtility.FromJson<GameData>(jsonData);
+            string json = File.ReadAllText(filePath);
+            return JsonConvert.DeserializeObject<GameData>(json);
         }
         else
         {
-            return new GameData(0, 0);
+            Debug.Log("file not Exist");
+            Dictionary<int, LevelData> firstLevelDataList = new Dictionary<int, LevelData>();
+            firstLevelDataList.Add(0, new LevelData(0, 0));
+            return new GameData(0, 0, firstLevelDataList);
         }
+    }
+}
+
+[System.Serializable]
+public class LevelData
+{
+    public int levelID;
+    public int levelScore;
+
+    public LevelData(int levelID, int levelScore)
+    {
+        this.levelID = levelID;
+        this.levelScore = levelScore;
     }
 }

@@ -5,24 +5,12 @@ using System;
 
 public class LevelManager : MonoBehaviour
 {
-    //private static LevelManager _Instance;
-    //public static LevelManager Instance
-    //{
-    //    get
-    //    {
-    //        return _Instance;
-    //    }
-
-    //    private set
-    //    {
-    //        _Instance = value;
-    //    }
-    //}
+    [SerializeField] private int levelScore;
 
     [SerializeField] private GameObject gridMapPrefab;
     [SerializeField] private GridMap currentGridMap;
-    [SerializeField] private List<LevelData> levelList;
-    [SerializeField] private LevelData currentLevel;
+    [SerializeField] private List<LevelSettings> levelList;
+    [SerializeField] private LevelSettings currentLevel;
 
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private GameObject playerPrefab;
@@ -31,26 +19,28 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform playerSpawnPoints;
     [SerializeField] private Transform enemyMainTarget;
 
+
+    private GameManager gameManager;
     public List<Transform> EnemySpawnPoints { get => enemySpawnPoints; set => enemySpawnPoints = value; }
     public Transform PlayerSpawnPoints { get => playerSpawnPoints; set => playerSpawnPoints = value; }
     public Transform EnemyMainTarget { get => enemyMainTarget; set => enemyMainTarget = value; }
-    public List<LevelData> LevelList { get => levelList; set => levelList = value; }
-    public LevelData CurrentLevel { get => currentLevel; set => currentLevel = value; }
+    public List<LevelSettings> LevelList { get => levelList; set => levelList = value; }
+    public LevelSettings CurrentLevel { get => currentLevel; set => currentLevel = value; }
     public GridMap CurrentGridMap { get => currentGridMap; set => currentGridMap = value; }
+    public int LevelScore { get => levelScore; private set => levelScore = value; }
 
-    //private void Awake()
-    //{
-    //    if (Instance != null)
-    //    {
-    //        Destroy(gameObject);
-    //        return;
-    //    }
-    //    Instance = this;
-    //}
     private void OnEnable()
     {
         EventBus.OnPlayerDeathAction += EventBus_PlayerDeath;
         EventBus.OnEnemyDeathAction += EventBus_EnemyDeath;
+        EventBus.OnScoreUpdateAction += EventBus_OnScoreUpdateAction;
+        gameManager = GameManager.Instance;
+    }
+
+    private void EventBus_OnScoreUpdateAction(object sender, EventBus.OnScoreUpdateEventArgs e)
+    {
+        levelScore += e.addScore;
+        Debug.Log("updatedlevelscore: " + levelScore);
     }
 
     private void Start()
@@ -77,10 +67,69 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            EventBus.PublishLevelEnd(this, true);
+            SetLevelEndDatas(true);
         }
     }
 
+    private void SetLevelEndDatas(bool isSucces)
+    {
+
+        // Every player life adds 1000 points.
+        levelScore += currentLevel.playerLifeCount * 1000;
+        LevelData newLevelData = new LevelData(currentLevel.levelID, levelScore);
+
+        Debug.Log("new level-> " + newLevelData.levelID + "  " + newLevelData.levelScore);
+        Debug.Log("new level-> " + newLevelData.levelID + "  " + levelScore);
+
+        // Level successfully finished.
+        if (isSucces)
+        {
+
+
+            // if this level played before or unlock.
+            if (gameManager.gameData.levelDataDic.ContainsKey(currentLevel.levelID))
+            {
+                // if stored levelscore < new score. Update stored data.
+                if (gameManager.gameData.levelDataDic[currentLevel.levelID].levelScore < newLevelData.levelScore)
+                {
+                    gameManager.gameData.UpdateLevelData(newLevelData);
+                }
+                else
+                {
+                    // if new score is not bigger than stored score. Dont do anything.
+                }
+                
+            }
+            else
+            {
+                // Add played level data
+                gameManager.gameData.AddLevelData(newLevelData);
+                // Unlock Next level
+               // gameManager.gameData.AddLevelData(new LevelData(newLevelData.levelID + 1, 0));
+            }
+        }
+        // Level failed.
+        else
+        {
+            if (gameManager.gameData.levelDataDic.ContainsKey(currentLevel.levelID))
+            {
+                if (gameManager.gameData.levelDataDic.TryGetValue(currentLevel.levelID, out LevelData storedLevelData))
+                {
+                    if (storedLevelData.levelScore > newLevelData.levelScore)
+                    {
+                        gameManager.gameData.UpdateLevelData(newLevelData);
+                    }
+                    else
+                    {
+                        // if new score is not bigger than old score. Dont do anything.
+                    }
+                }
+            }
+        }
+
+        gameManager.gameData.SetCurrentLevel(gameManager.gameData.GetCurrentLevel() + 1);
+        EventBus.PublishLevelEnd(this, isSucces);
+    }
     private void EventBus_PlayerDeath(PlayerController obj)
     {
         if (currentLevel.playerLifeCount > 0)
@@ -90,7 +139,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            EventBus.PublishLevelEnd(this, false);
+            SetLevelEndDatas(false);
         }
     }
     private void OnDisable()
@@ -102,9 +151,9 @@ public class LevelManager : MonoBehaviour
 }
 
 [Serializable]
-public class LevelData
+public class LevelSettings
 {
-    public int level;
+    public int levelID;
     public int enemyCount;
     public int numberOfEnemyAtOnce;
     public int playerLifeCount;

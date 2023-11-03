@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class LevelListUI : MonoBehaviour
 {
-    public GameManager gameManager;
-    void Start()
+    private GameManager gameManager;
+    private void OnEnable()
     {
         gameManager = GameManager.Instance;
         int counter = 0;
@@ -17,12 +17,14 @@ public class LevelListUI : MonoBehaviour
 
             if (item.level <= gameManager.gameData.availableLevelCount)
             {
+                item.SetData(true, gameManager.gameData.levelDataDic[item.level].levelScore);
                 item.button.interactable = true;
             }
             else
             {
                 item.button.interactable = false;
             }
+
         }
     }
 

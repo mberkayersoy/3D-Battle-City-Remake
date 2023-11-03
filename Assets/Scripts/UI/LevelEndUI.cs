@@ -6,22 +6,26 @@ using TMPro;
 
 public class LevelEndUI : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI levelSituationText;
+    [SerializeField] private TextMeshProUGUI levelSituationText;
+    [SerializeField] private TextMeshProUGUI levelScoreText;
 
     [SerializeField] private Transform nextLevelButton;
     [SerializeField] private Transform restartLevelButton;
 
     public void SetLevelEndUI(bool isSuccess)
     {
+        GameManager gameManager = GameManager.Instance;
         if (isSuccess)
         {
-            levelSituationText.text = "LEVEL " + GameManager.Instance.CurrentLevelManager.CurrentLevel.level + " SUCCESSFULL";
+            levelSituationText.text = "LEVEL " + gameManager.CurrentLevelManager.CurrentLevel.levelID + " SUCCESSFUL";
+            levelScoreText.text = "Score: " + gameManager.CurrentLevelManager.LevelScore;
             nextLevelButton.gameObject.SetActive(true);
             restartLevelButton.gameObject.SetActive(true);
         }
         else
         {
-            levelSituationText.text = "LEVEL " + GameManager.Instance.CurrentLevelManager.CurrentLevel.level + " FAILED";
+            levelSituationText.text = "LEVEL " + gameManager.CurrentLevelManager.CurrentLevel.levelID + " FAILED";
+            levelScoreText.text = "Score: " + gameManager.CurrentLevelManager.LevelScore;
             restartLevelButton.gameObject.SetActive(true);
         }
     }

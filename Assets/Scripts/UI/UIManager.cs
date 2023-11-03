@@ -79,31 +79,36 @@ public class UIManager : MonoBehaviour
     private void EventBus_OnLevelSelectedAction(object sender, EventBus.OnLevelSelectedEventArgs e)
     {
         SetActivePanel(TransitionPanel.name);
-        TransitionPanel.GetComponent<TransitionUI>().nextPanel = GamePanel.name;
+        string info = "Level " + e.selectedLevel.ToString() + " is loading...";
+        TransitionPanel.GetComponent<TransitionUI>().SetNextPanel(GamePanel.name);
+        TransitionPanel.GetComponent<TransitionUI>().SetInfo(info);
     }
 
     private void OnClickNextLevelButton()
     {
         OnClickNextLevelAction?.Invoke();
         SetActivePanel(TransitionPanel.name);
-        TransitionPanel.GetComponent<TransitionUI>().nextPanel = GamePanel.name;
-
+        string info =  "Next level is loading...";
+        TransitionPanel.GetComponent<TransitionUI>().SetNextPanel(GamePanel.name);
+        TransitionPanel.GetComponent<TransitionUI>().SetInfo(info);
     }
 
     private void OnClickRestartLevelButton()
     {
         OnClickRestartLevelAction?.Invoke();
         SetActivePanel(TransitionPanel.name);
-        TransitionPanel.GetComponent<TransitionUI>().nextPanel = GamePanel.name;
-
-
+        string info = "Level " + GameManager.Instance.gameData.currentLevel.ToString() + " is loading again...";
+        TransitionPanel.GetComponent<TransitionUI>().SetNextPanel(GamePanel.name);
+        TransitionPanel.GetComponent<TransitionUI>().SetInfo(info);
     }
 
     private void OnClickMenuButton()
     {
         OnClickMenuAction?.Invoke();
         SetActivePanel(TransitionPanel.name);
-        TransitionPanel.GetComponent<TransitionUI>().nextPanel = MenuPanel.name;
+        string info =  "Returning To Menu...";
+        TransitionPanel.GetComponent<TransitionUI>().SetNextPanel(MenuPanel.name);
+        TransitionPanel.GetComponent<TransitionUI>().SetInfo(info);
     }
 
     private void EventBus_OnLevelSuccessfullyEndAction(object sender, EventBus.OnLevelSuccessfullyEndEventArgs e)

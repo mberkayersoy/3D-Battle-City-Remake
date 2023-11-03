@@ -6,13 +6,23 @@ using UnityEngine.UI;
 
 public class TransitionUI : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI infoText;
     public Image loadingImage;
     public float animationDuration = 2.0f;
-    public string nextPanel;
+    private string nextPanel;
 
     private void OnEnable()
     {
         AnimateLoading();
+    }
+
+    public void SetNextPanel(string nextPanel)
+    {
+        this.nextPanel = nextPanel;
+    }
+    public void SetInfo(string info)
+    {
+        infoText.text = info;
     }
 
     private void AnimateLoading()

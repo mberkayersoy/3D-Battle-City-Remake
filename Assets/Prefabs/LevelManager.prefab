@@ -44,32 +44,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c43228e9cc8bb94c8de0bdeb39d297d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelScore: 0
   gridMapPrefab: {fileID: 4299769860363540937, guid: a19bc56c7fa7809439d011998a334523,
     type: 3}
   currentGridMap: {fileID: 0}
   levelList:
-  - level: 0
-    enemyCount: 0
+  - levelID: 0
+    levelScore: 0
+    enemyCount: 1
     numberOfEnemyAtOnce: 0
     playerLifeCount: 1
     mapSO: {fileID: 11400000, guid: 151dd5cccb8104a4dad29ad073bb1a84, type: 2}
-  - level: 1
+  - levelID: 1
+    levelScore: 2
     enemyCount: 0
     numberOfEnemyAtOnce: 0
     playerLifeCount: 5
     mapSO: {fileID: 11400000, guid: f601def1fa314ea43b108ca63cff7d11, type: 2}
-  - level: 1
+  - levelID: 2
+    levelScore: 0
     enemyCount: 0
     numberOfEnemyAtOnce: 0
     playerLifeCount: 5
     mapSO: {fileID: 11400000, guid: 9c211195cb6a9e349a9823471e97fc46, type: 2}
-  - level: 3
+  - levelID: 3
+    levelScore: 0
     enemyCount: 0
     numberOfEnemyAtOnce: 0
     playerLifeCount: 5
     mapSO: {fileID: 11400000, guid: 628775c69faadd74fbb025d5533c5e63, type: 2}
   currentLevel:
-    level: 0
+    levelID: 0
+    levelScore: 0
     enemyCount: 0
     numberOfEnemyAtOnce: 0
     playerLifeCount: 0
