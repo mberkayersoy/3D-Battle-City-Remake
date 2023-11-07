@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class PlayerController : MonoBehaviour, IDamagable
+public class PlayerController : MonoBehaviour, IDamagable, IShooting, ITarget
 {
     private Rigidbody rb;
     private GameInput gameInput;
@@ -66,9 +66,10 @@ public class PlayerController : MonoBehaviour, IDamagable
         }
     }
 
-    private void Shot()
+    public void Shot()
     {
         muzzleFlashVFX.Play();
+        EventBus.PublishShotAction(this, transform.position);
         Instantiate(projectile, firePointTransform.position, transform.rotation);
     }
 
@@ -101,6 +102,7 @@ public class PlayerController : MonoBehaviour, IDamagable
     public void TakeDamage(int damage)
     {
         if (shild.activeSelf) return;
+        EventBus.PublishExplosionAction(this, transform.position);
         explosionVFX.Play();
         explosionVFX.transform.SetParent(null, true);
         EventBus.PublishPlayerDeath(this);

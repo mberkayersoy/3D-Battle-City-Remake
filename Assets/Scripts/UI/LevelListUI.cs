@@ -15,8 +15,10 @@ public class LevelListUI : MonoBehaviour
             item.level = counter++;
             item.levelText.text = "Level " + item.level;
 
-            if (item.level <= gameManager.gameData.availableLevelCount)
+            if (item.level <= gameManager.gameData.activeMaxLevelID)
             {
+                //Debug.Log("ITEM LEVEL: " + item.level);
+               // Debug.Log("gameManager.gameData.levelDataDic[item.level].score: " + gameManager.gameData.levelDataDic[item.level].levelScore);
                 item.SetData(true, gameManager.gameData.levelDataDic[item.level].levelScore);
                 item.button.interactable = true;
             }

@@ -22,7 +22,7 @@ public class GridMap : MonoBehaviour
     public Transform mainTargetTransform;
     public Transform playerSpawnTransform;
     public List<Transform> enemySpawnTransform = new List<Transform>();
-
+    public List<Vector3> emptyCellPositions = new List<Vector3>();
     private bool isEagle;
     private bool isPlayerSpawn;
     private bool isEnemySpawn;
@@ -82,8 +82,7 @@ public class GridMap : MonoBehaviour
             {
                 if (currentMap.wallMap[j + i * currentMap.width] == WallTypes.Empty)
                 {
-                    //GameObject cell = Instantiate(emptyCube, position, Quaternion.identity, gameObject.transform);
-                    //cell.transform.localScale = new Vector3(cellScale.x, cellScale.y, cellScale.z);
+                    AddEmptyCellPosition(i, j);
                 }
                 else if (currentMap.wallMap[j + i * currentMap.width] == WallTypes.Bricks)
                 {
@@ -118,6 +117,15 @@ public class GridMap : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void AddEmptyCellPosition(int i, int j)
+    {
+        if (i <= 2 || i >= currentMap.width - 1 || j <= 2 || j >= currentMap.width) return;
+
+        Vector3Int gridCoords = new Vector3Int(i * 2, 0, j * 2);
+        Vector3 worldPosition = grid.GetCellCenterWorld(gridCoords);
+        emptyCellPositions.Add(worldPosition);
     }
 
     public void PutObjectToCell(Vector3Int position, GameObject cube, bool is4Piece = false)

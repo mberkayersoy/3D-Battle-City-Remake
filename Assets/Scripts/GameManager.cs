@@ -18,8 +18,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public LevelManager CurrentLevelManager { get => currentLevelManager;}
-
     private void Awake()
     {
         if (Instance != null)
@@ -32,22 +30,31 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
-
+    [SerializeField] private List<LevelSettings> levelList;
     [SerializeField] private LevelManager levelManagerPrefab;
     [SerializeField] private LevelManager currentLevelManager;
     public GameData gameData;
     private UIManager uiManager;
+    public LevelManager CurrentLevelManager { get => currentLevelManager; }
 
     private void Start()
     {
         gameData = GameData.LoadGameData();
-        Debug.Log(gameData.levelDataDic);
         
         uiManager = UIManager.Instance;
         uiManager.OnClickMenuAction += UiManager_OnClickMenuAction;
         uiManager.OnClickNextLevelAction += UiManager_OnClickNextLevelAction;
         uiManager.OnClickRestartLevelAction += UiManager_OnClickRestartLevelAction;
         EventBus.OnLevelSelectedAction += EventBus_OnLevelSelectedAction;
+        EventBus.OnLevelEndAction += EventBus_OnLevelEndAction;
+    }
+
+    private void EventBus_OnLevelEndAction(object sender, EventBus.OnLevelEndEventArgs e)
+    {
+        if (e.isSuccess)
+        {
+            gameData.SetActiveMaxLevel();
+        }
     }
 
     private void EventBus_OnLevelSelectedAction(object sender, EventBus.OnLevelSelectedEventArgs e)
@@ -58,12 +65,13 @@ public class GameManager : MonoBehaviour
 
     private void UiManager_OnClickRestartLevelAction()
     {
-        gameData.SetCurrentLevel(gameData.GetCurrentLevel() - 1);
+        gameData.SetCurrentLevel(gameData.GetCurrentLevel());
         PrepareTheLevel(gameData.GetCurrentLevel());
     }
 
     private void UiManager_OnClickNextLevelAction()
     {
+        gameData.SetCurrentLevel(gameData.GetCurrentLevel() + 1);
         PrepareTheLevel(gameData.GetCurrentLevel());
     }
 
@@ -82,21 +90,36 @@ public class GameManager : MonoBehaviour
     {
         if (currentLevelManager != null)
         {
-           Debug.Log("if");
-           CleanLevel();
-           currentLevelManager = Instantiate(levelManagerPrefab);
-           currentLevelManager.CurrentLevel = currentLevelManager.LevelList[level];
-           Debug.Log(currentLevelManager.name);
+            CleanLevel();
         }
-        else
-        {
-            currentLevelManager = Instantiate(levelManagerPrefab);
-            currentLevelManager.CurrentLevel = currentLevelManager.LevelList[level];
-        }
+
+        currentLevelManager = Instantiate(levelManagerPrefab);
+        LevelSettings levelCopy = levelList[level].CopyData();
+        currentLevelManager.CopyLevelData(levelCopy);
     }
 
     private void OnDestroy()
     {
         GameData.SaveGameData(gameData);
+    }
+
+
+}
+
+[System.Serializable]
+public class LevelSettings
+{
+    public int levelID;
+    public List<EnemyType> enemyList;
+    public int playerLifeCount;
+    public MapSO mapSO;
+    public LevelSettings CopyData()
+    {
+        LevelSettings copy = new LevelSettings();
+        copy.levelID = levelID;
+        copy.playerLifeCount = playerLifeCount;
+        copy.enemyList = new List<EnemyType>(enemyList);
+        copy.mapSO = mapSO;
+        return copy;
     }
 }

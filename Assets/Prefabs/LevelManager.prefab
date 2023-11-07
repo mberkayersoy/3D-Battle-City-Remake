@@ -45,45 +45,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelScore: 0
+  playerPrefab: {fileID: 7566485335588145836, guid: b2c8d30a7495d8541acdd78f44f702b1,
+    type: 3}
+  enemyPrefab: {fileID: 1306792855817576530, guid: 733e41260a64ee54cb790c8ba253a0b9,
+    type: 3}
   gridMapPrefab: {fileID: 4299769860363540937, guid: a19bc56c7fa7809439d011998a334523,
     type: 3}
-  currentGridMap: {fileID: 0}
-  levelList:
-  - levelID: 0
-    levelScore: 0
-    enemyCount: 1
-    numberOfEnemyAtOnce: 0
-    playerLifeCount: 1
-    mapSO: {fileID: 11400000, guid: 151dd5cccb8104a4dad29ad073bb1a84, type: 2}
-  - levelID: 1
-    levelScore: 2
-    enemyCount: 0
-    numberOfEnemyAtOnce: 0
-    playerLifeCount: 5
-    mapSO: {fileID: 11400000, guid: f601def1fa314ea43b108ca63cff7d11, type: 2}
-  - levelID: 2
-    levelScore: 0
-    enemyCount: 0
-    numberOfEnemyAtOnce: 0
-    playerLifeCount: 5
-    mapSO: {fileID: 11400000, guid: 9c211195cb6a9e349a9823471e97fc46, type: 2}
-  - levelID: 3
-    levelScore: 0
-    enemyCount: 0
-    numberOfEnemyAtOnce: 0
-    playerLifeCount: 5
-    mapSO: {fileID: 11400000, guid: 628775c69faadd74fbb025d5533c5e63, type: 2}
+  abilityTestObject: {fileID: 8943283688947482421, guid: 4525a32617d88a44f9577ce397ba261e,
+    type: 3}
   currentLevel:
     levelID: 0
-    levelScore: 0
-    enemyCount: 0
+    enemyList: 
     numberOfEnemyAtOnce: 0
     playerLifeCount: 0
     mapSO: {fileID: 0}
-  enemyPrefab: {fileID: 1306792855817576530, guid: 733e41260a64ee54cb790c8ba253a0b9,
-    type: 3}
-  playerPrefab: {fileID: 7566485335588145836, guid: b2c8d30a7495d8541acdd78f44f702b1,
-    type: 3}
+  currentGridMap: {fileID: 0}
   enemySpawnPoints: []
   playerSpawnPoints: {fileID: 0}
   enemyMainTarget: {fileID: 0}
+  enemySpawnTimeOut: 5
+  remainingEnemySpawnTimeOut: 0

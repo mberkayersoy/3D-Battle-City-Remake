@@ -2,25 +2,42 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour, IDamagable
+public class EnemyController : MonoBehaviour, IDamagable, IShooting
 {
-    private NavMeshAgent Agent;
-    [SerializeField] private Transform currentTarget;
-    [SerializeField] private Transform mainTarget;
+    public EnemyController (EnemyType enemyType)
+    {
+        this.enemyType = enemyType;
+    }
 
-    [SerializeField] private Transform firePointTransform;
-    [SerializeField] private GameObject projectile;
-
+    [Header("Characteristics")]
     [SerializeField] private float enemyDetectionRange;
     [SerializeField] private float checkDistance = 1f;
-    [SerializeField] private LayerMask destructibleLayers;
-
+    [SerializeField] private int armorCapacity;
     [SerializeField] private float shotTimeOut;
+    [SerializeField] private LayerMask destructibleLayers;
+    [SerializeField] private EnemyType enemyType;
+    [SerializeField] private int givingScore;
+
+    [Header("Transforms")]
+    [SerializeField] private Transform currentTarget;
+    [SerializeField] private Transform mainTarget;
+    [SerializeField] private Transform firePointTransform;
+
+    [Header("Effects")]
     [SerializeField] private ParticleSystem muzzleFlashVFX;
     [SerializeField] private ParticleSystem explosionVFX;
-    private float remainingShotTime;
 
+    [Header("GameObjects")]
     [SerializeField] private GameObject shild;
+    [SerializeField] private GameObject popUpCanvas;
+    [SerializeField] private GameObject projectile;
+
+    [Header("Renderers")]
+    [SerializeField] private Material[] materialList;
+    [SerializeField] private MeshRenderer[] modelParts;
+
+    private NavMeshAgent Agent;
+    private float remainingShotTime;
 
     private void Awake()
     {
@@ -31,7 +48,52 @@ public class EnemyController : MonoBehaviour, IDamagable
     {
         ActivateShild();
         mainTarget = GameManager.Instance.CurrentLevelManager.EnemyMainTarget;
+        EventBus.OnLevelEndAction += EventBus_OnLevelEndAction;
     }
+
+    public void SetEnemyCharacteristics(EnemyType enemyType)
+    {
+        switch (enemyType)
+        {
+            default:
+            case EnemyType.Gray:
+                enemyDetectionRange = 3f;
+                shotTimeOut = 1f;
+                givingScore = 250;
+                break;
+            case EnemyType.Green:
+                enemyDetectionRange = 3.5f;
+                shotTimeOut = 1f;
+                givingScore = 500;
+                break;
+            case EnemyType.Blue:
+                enemyDetectionRange = 3.5f;
+                shotTimeOut = 0.9f;
+                givingScore = 750;
+                break;
+            case EnemyType.Red:
+                enemyDetectionRange = 4f;
+                shotTimeOut = 0.8f;
+                givingScore = 1000;
+                break;
+        }
+        ApplyProperMaterial(enemyType);
+        armorCapacity = (int)enemyType;
+    }
+
+    private void ApplyProperMaterial(EnemyType enemyType)
+    {
+        foreach (MeshRenderer item in modelParts)
+        {
+            item.material = materialList[(int)enemyType];
+        }
+    }
+
+    private void EventBus_OnLevelEndAction(object sender, EventBus.OnLevelEndEventArgs e)
+    {
+        Agent.enabled = false;
+    }
+
     private void ActivateShild()
     {
         shild.SetActive(true);
@@ -45,7 +107,7 @@ public class EnemyController : MonoBehaviour, IDamagable
 
     private void FixedUpdate()
     {
-        CheckEnemy();
+        SearchEnemy();
     }
     private void Update()
     {
@@ -80,7 +142,7 @@ public class EnemyController : MonoBehaviour, IDamagable
         }
     }
 
-    private void CheckEnemy()
+    private void SearchEnemy()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, enemyDetectionRange);
 
@@ -89,7 +151,7 @@ public class EnemyController : MonoBehaviour, IDamagable
             if (target.CompareTag("Player"))
             {
                 currentTarget = target.transform;
-                AimEnemy();
+                CheckEnemy();
                 return;
             }
             else
@@ -99,11 +161,11 @@ public class EnemyController : MonoBehaviour, IDamagable
         }
     }
 
-    private void AimEnemy()
+    private void CheckEnemy()
     {
         if (Physics.Raycast(firePointTransform.position, transform.forward * enemyDetectionRange, out RaycastHit hit))
         {
-            if (hit.transform.CompareTag("Player"))
+            if (hit.transform.TryGetComponent(out ITarget target))
             {
                 if (remainingShotTime <= 0)
                 {
@@ -119,19 +181,46 @@ public class EnemyController : MonoBehaviour, IDamagable
         Gizmos.DrawWireSphere(transform.position, enemyDetectionRange);
     }
 
-    private void Shot()
+    public void Shot()
     {
         muzzleFlashVFX.Play();
+        EventBus.PublishShotAction(this, transform.position);
         Instantiate(projectile, firePointTransform.position, transform.rotation);
     }
 
     public void TakeDamage(int damage)
     {
         if (shild.activeSelf) return;
-        explosionVFX.Play();
-        EventBus.PublishUpdateScore(this, 500);
-        EventBus.PublishEnemyDeath(this);
-        explosionVFX.transform.SetParent(null, true);
-        Destroy(gameObject);
+
+        armorCapacity--;
+        if (armorCapacity < 0)
+        {
+            explosionVFX.Play();
+            PointPopUp popup = Instantiate(popUpCanvas, transform.position + Vector3.up, Quaternion.Euler(90, 0, 0), null).GetComponent<PointPopUp>();
+            popup.SetContent(givingScore);
+            EventBus.PublishUpdateScore(this, givingScore);
+            EventBus.PublishExplosionAction(this, transform.position);
+            EventBus.PublishEnemyDeath(this);
+            explosionVFX.transform.SetParent(null, true);
+            Destroy(gameObject);
+        }
+        else
+        {
+            // To do: hit effect and sound
+        }
+
     }
+
+    private void OnDestroy()
+    {
+        EventBus.OnLevelEndAction -= EventBus_OnLevelEndAction;
+    }
+}
+
+public enum EnemyType
+{
+    Gray = 0,
+    Green = 1,
+    Blue = 2,
+    Red = 3,
 }

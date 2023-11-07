@@ -29,15 +29,26 @@ public class UIManager : MonoBehaviour
     [Header("MENU")]
     [SerializeField] private GameObject MenuPanel;
     [SerializeField] private Button startGameButton;
+    [SerializeField] private Button quitGameButton;
 
     [Header("LEVEL LIST")]
     [SerializeField] private GameObject LevelListPanel;
+    [SerializeField] private Button backToMenuButton;
 
     [Header("TRANSITION")]
     [SerializeField] private GameObject TransitionPanel;
 
     [Header("GAME")]
     [SerializeField] private GameObject GamePanel;
+    [SerializeField] private InformationView informationView;
+    [SerializeField] private Button pauseButton;
+
+    [Header("PAUSE")]
+    [SerializeField] private GameObject PausePanel;
+    [SerializeField] private Button settingsButton;
+    [SerializeField] private Button pauseRestartLevelButton;
+    [SerializeField] private Button pauseMenuButton;
+    [SerializeField] private Button continueButton;
 
     [Header("LEVEL END")]
     [SerializeField] private GameObject LevelEndPanel;
@@ -45,6 +56,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button restartLevelButton;
     [SerializeField] private Button menuButton;
 
+    private GameManager gameManager;
     private void Awake()
     {
         if (Instance != null)
@@ -57,13 +69,24 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        gameManager = GameManager.Instance;
+        // Button listeners
         startGameButton.onClick.AddListener(OnClickStartGameButton);
+        backToMenuButton.onClick.AddListener(OnClickBackToMenuButton);
         nextLevelButton.onClick.AddListener(OnClickNextLevelButton);
         restartLevelButton.onClick.AddListener(OnClickRestartLevelButton);
+        pauseRestartLevelButton.onClick.AddListener(OnClickRestartLevelButton);
+        pauseButton.onClick.AddListener(OnClickPauseButton);
+        continueButton.onClick.AddListener(OnClickContinueButton);
+        pauseMenuButton.onClick.AddListener(OnClickMenuButton);
         menuButton.onClick.AddListener(OnClickMenuButton);
-        EventBus.OnLevelSuccessfullyEndAction += EventBus_OnLevelSuccessfullyEndAction;
+        quitGameButton.onClick.AddListener(OnClickQuitGameButton);
+
+        // Event listeners
+        EventBus.OnLevelEndAction += EventBus_OnLevelEndAction;
         EventBus.OnLevelSelectedAction += EventBus_OnLevelSelectedAction;
         EventBus.OnTransitionFinishAction += EventBus_OnTransitionFinishAction;
+
         SetActivePanel(MenuPanel.name);
     }
 
@@ -82,28 +105,55 @@ public class UIManager : MonoBehaviour
         string info = "Level " + e.selectedLevel.ToString() + " is loading...";
         TransitionPanel.GetComponent<TransitionUI>().SetNextPanel(GamePanel.name);
         TransitionPanel.GetComponent<TransitionUI>().SetInfo(info);
+        informationView.SetInformation(gameManager.CurrentLevelManager);
     }
 
+    private void OnClickPauseButton()
+    {
+        SetActivePanel(PausePanel.name);
+        Time.timeScale = 0;
+    }
+
+    private void OnClickContinueButton()
+    {
+        Time.timeScale = 1;
+        SetActivePanel(GamePanel.name);
+    }
     private void OnClickNextLevelButton()
     {
+        Time.timeScale = 1;
         OnClickNextLevelAction?.Invoke();
         SetActivePanel(TransitionPanel.name);
         string info =  "Next level is loading...";
         TransitionPanel.GetComponent<TransitionUI>().SetNextPanel(GamePanel.name);
         TransitionPanel.GetComponent<TransitionUI>().SetInfo(info);
+        informationView.SetInformation(gameManager.CurrentLevelManager);
+    }
+    
+    private void OnClickBackToMenuButton()
+    {
+        SetActivePanel(MenuPanel.name);
+    }
+
+    private void OnClickQuitGameButton()
+    {
+        Application.Quit();
     }
 
     private void OnClickRestartLevelButton()
     {
+        Time.timeScale = 1;
         OnClickRestartLevelAction?.Invoke();
         SetActivePanel(TransitionPanel.name);
-        string info = "Level " + GameManager.Instance.gameData.currentLevel.ToString() + " is loading again...";
+        string info = "Level " + gameManager.gameData.currentLevelID.ToString() + " is loading again...";
         TransitionPanel.GetComponent<TransitionUI>().SetNextPanel(GamePanel.name);
         TransitionPanel.GetComponent<TransitionUI>().SetInfo(info);
+        informationView.SetInformation(gameManager.CurrentLevelManager);
     }
 
     private void OnClickMenuButton()
     {
+        Time.timeScale = 1;
         OnClickMenuAction?.Invoke();
         SetActivePanel(TransitionPanel.name);
         string info =  "Returning To Menu...";
@@ -111,12 +161,11 @@ public class UIManager : MonoBehaviour
         TransitionPanel.GetComponent<TransitionUI>().SetInfo(info);
     }
 
-    private void EventBus_OnLevelSuccessfullyEndAction(object sender, EventBus.OnLevelSuccessfullyEndEventArgs e)
+    private void EventBus_OnLevelEndAction(object sender, EventBus.OnLevelEndEventArgs e)
     {
         LevelEndPanel.GetComponent<LevelEndUI>().SetLevelEndUI(e.isSuccess);
         SetActivePanel(LevelEndPanel.name);
     }
-
 
     private void OnClickStartGameButton()
     {
@@ -125,12 +174,11 @@ public class UIManager : MonoBehaviour
 
     public void SetActivePanel(string activePanel)
     {
-
         MenuPanel.SetActive(activePanel.Equals(MenuPanel.name));
         LevelListPanel.SetActive(activePanel.Equals(LevelListPanel.name));
         TransitionPanel.SetActive(activePanel.Equals(TransitionPanel.name));
         GamePanel.SetActive(activePanel.Equals(GamePanel.name));
+        PausePanel.SetActive(activePanel.Equals(PausePanel.name));
         LevelEndPanel.SetActive(activePanel.Equals(LevelEndPanel.name));
     }
-
 }

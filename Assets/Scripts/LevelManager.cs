@@ -7,24 +7,29 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private int levelScore;
 
-    [SerializeField] private GameObject gridMapPrefab;
-    [SerializeField] private GridMap currentGridMap;
-    [SerializeField] private List<LevelSettings> levelList;
-    [SerializeField] private LevelSettings currentLevel;
-
-    [SerializeField] private GameObject enemyPrefab;
+    [Header("GAME OBJECTS")]
     [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private GameObject gridMapPrefab;
+    [SerializeField] private GameObject abilityTestObject;
 
+    [Header("REFERENCES")]
+    [SerializeField] private LevelSettings currentLevel = new LevelSettings();
+    [SerializeField] private GridMap currentGridMap;
+
+    [Header("TRANSFORMS")]
     [SerializeField] private List<Transform> enemySpawnPoints = new List<Transform>();
     [SerializeField] private Transform playerSpawnPoints;
     [SerializeField] private Transform enemyMainTarget;
-
+    [SerializeField] private float enemySpawnTimeOut;
+    [SerializeField] private float remainingEnemySpawnTimeOut;
+    [SerializeField] private int remainingEnemyCount;
+    public event Action OnScoreChangeAction;
 
     private GameManager gameManager;
     public List<Transform> EnemySpawnPoints { get => enemySpawnPoints; set => enemySpawnPoints = value; }
     public Transform PlayerSpawnPoints { get => playerSpawnPoints; set => playerSpawnPoints = value; }
     public Transform EnemyMainTarget { get => enemyMainTarget; set => enemyMainTarget = value; }
-    public List<LevelSettings> LevelList { get => levelList; set => levelList = value; }
     public LevelSettings CurrentLevel { get => currentLevel; set => currentLevel = value; }
     public GridMap CurrentGridMap { get => currentGridMap; set => currentGridMap = value; }
     public int LevelScore { get => levelScore; private set => levelScore = value; }
@@ -36,56 +41,80 @@ public class LevelManager : MonoBehaviour
         EventBus.OnScoreUpdateAction += EventBus_OnScoreUpdateAction;
         gameManager = GameManager.Instance;
     }
-
-    private void EventBus_OnScoreUpdateAction(object sender, EventBus.OnScoreUpdateEventArgs e)
-    {
-        levelScore += e.addScore;
-        Debug.Log("updatedlevelscore: " + levelScore);
-    }
-
     private void Start()
     {
         GameObject gridMapInstance = Instantiate(gridMapPrefab, new Vector3(0, -1, 0), Quaternion.identity, transform);
         currentGridMap = gridMapInstance.GetComponent<GridMap>();
         currentGridMap.currentMap = currentLevel.mapSO;
         UIManager.Instance.OnStartSpawnAction += UIManager_OnStartSpawnAction;
+        //CopyLevelData();
+        remainingEnemySpawnTimeOut = enemySpawnTimeOut;
     }
 
+    private void Update()
+    {
+        //InstantiateAbility();
+
+        if (currentLevel.enemyList.Count > 0)
+        {
+            remainingEnemySpawnTimeOut -= Time.deltaTime;
+            if (remainingEnemySpawnTimeOut < 0)
+            {
+                InstantiateEnemy();
+            }
+        }
+    }
+    public void CopyLevelData(LevelSettings levelSettings)
+    {
+        currentLevel.levelID = levelSettings.levelID;
+        currentLevel.playerLifeCount = levelSettings.playerLifeCount;
+        currentLevel.enemyList = new List<EnemyType>(levelSettings.enemyList);
+        currentLevel.mapSO = levelSettings.mapSO;
+        remainingEnemyCount = levelSettings.enemyList.Count;
+    }
+    private void EventBus_OnScoreUpdateAction(object sender, EventBus.OnScoreUpdateEventArgs e)
+    {
+        levelScore += e.addScore;
+        OnScoreChangeAction?.Invoke(); // for InformationView class.
+    }
 
     public void UIManager_OnStartSpawnAction()
     {
-        Instantiate(enemyPrefab, enemySpawnPoints[UnityEngine.Random.Range(0, enemySpawnPoints.Count)].position, Quaternion.identity, transform);
+        InstantiateEnemy();
         Instantiate(playerPrefab, playerSpawnPoints.position, Quaternion.identity, transform);
     }
 
     private void EventBus_EnemyDeath(EnemyController obj)
     {
-        if (currentLevel.enemyCount > 0)
+        remainingEnemyCount--;
+        if (remainingEnemyCount <= 0)
         {
-            Instantiate(enemyPrefab, enemySpawnPoints[UnityEngine.Random.Range(0, enemySpawnPoints.Count)].position, Quaternion.identity, transform);
-            currentLevel.enemyCount--;
-        }
-        else
-        {
+            //InstantiateEnemy();
             SetLevelEndDatas(true);
         }
+        //else
+        //{
+
+        //}
+    }
+
+    private void InstantiateEnemy()
+    {
+        int randomEnemyIndex = UnityEngine.Random.Range(0, currentLevel.enemyList.Count);
+        EnemyController newEnemyObject = Instantiate(enemyPrefab, enemySpawnPoints[UnityEngine.Random.Range(0, enemySpawnPoints.Count)].position,
+            Quaternion.identity, transform).GetComponent<EnemyController>();
+        newEnemyObject.SetEnemyCharacteristics(currentLevel.enemyList[randomEnemyIndex]);
+        currentLevel.enemyList.RemoveAt(randomEnemyIndex);
+        remainingEnemySpawnTimeOut = enemySpawnTimeOut;
     }
 
     private void SetLevelEndDatas(bool isSucces)
     {
-
-        // Every player life adds 1000 points.
-        levelScore += currentLevel.playerLifeCount * 1000;
         LevelData newLevelData = new LevelData(currentLevel.levelID, levelScore);
-
-        Debug.Log("new level-> " + newLevelData.levelID + "  " + newLevelData.levelScore);
-        Debug.Log("new level-> " + newLevelData.levelID + "  " + levelScore);
 
         // Level successfully finished.
         if (isSucces)
         {
-
-
             // if this level played before or unlock.
             if (gameManager.gameData.levelDataDic.ContainsKey(currentLevel.levelID))
             {
@@ -98,14 +127,20 @@ public class LevelManager : MonoBehaviour
                 {
                     // if new score is not bigger than stored score. Dont do anything.
                 }
-                
+
+                if (gameManager.gameData.currentLevelID == gameManager.gameData.activeMaxLevelID)
+                {
+                    // Unlock Next level
+                    gameManager.gameData.AddLevelData(new LevelData(newLevelData.levelID + 1, 0));
+                }
+
             }
             else
             {
                 // Add played level data
                 gameManager.gameData.AddLevelData(newLevelData);
                 // Unlock Next level
-               // gameManager.gameData.AddLevelData(new LevelData(newLevelData.levelID + 1, 0));
+                //gameManager.gameData.AddLevelData(new LevelData(newLevelData.levelID + 1, 0));
             }
         }
         // Level failed.
@@ -127,7 +162,6 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        gameManager.gameData.SetCurrentLevel(gameManager.gameData.GetCurrentLevel() + 1);
         EventBus.PublishLevelEnd(this, isSucces);
     }
     private void EventBus_PlayerDeath(PlayerController obj)
@@ -142,6 +176,16 @@ public class LevelManager : MonoBehaviour
             SetLevelEndDatas(false);
         }
     }
+
+    public void InstantiateAbility()
+    {
+        int randomIndex = UnityEngine.Random.Range(0, currentGridMap.emptyCellPositions.Count);
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Instantiate(abilityTestObject, currentGridMap.emptyCellPositions[randomIndex] + Vector3.up * 3, Quaternion.identity, transform);
+        }
+    }
+
     private void OnDisable()
     {
         EventBus.OnPlayerDeathAction -= EventBus_PlayerDeath;
@@ -150,12 +194,8 @@ public class LevelManager : MonoBehaviour
     }
 }
 
-[Serializable]
-public class LevelSettings
+public enum AbilityType
 {
-    public int levelID;
-    public int enemyCount;
-    public int numberOfEnemyAtOnce;
-    public int playerLifeCount;
-    public MapSO mapSO;
+    Grenade
 }
+

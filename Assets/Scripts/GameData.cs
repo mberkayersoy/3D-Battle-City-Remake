@@ -7,8 +7,8 @@ using Newtonsoft.Json;
 [System.Serializable]
 public class GameData
 {
-    public int availableLevelCount;
-    public int currentLevel;
+    public int activeMaxLevelID;
+    public int currentLevelID;
     public Dictionary<int,LevelData> levelDataDic;
 
     public void AddLevelData(LevelData leveldata)
@@ -20,32 +20,38 @@ public class GameData
     {
         levelDataDic[newLevelData.levelID] = newLevelData;
     }
-    public GameData(int maxAvailableLevelCount, int currentLevel, Dictionary<int,LevelData> levelDataDic)
+    public GameData(int activeMaxLevelID, int currentLevelID, Dictionary<int,LevelData> levelDataDic)
     {
-        this.availableLevelCount = maxAvailableLevelCount;
-        this.currentLevel = currentLevel;
+        this.activeMaxLevelID = activeMaxLevelID;
+        this.currentLevelID = currentLevelID;
         this.levelDataDic = levelDataDic;
 
     }
-    public int GetMaxAvailableLevelCount()
+    public int GetActiveMaxLevel()
     {
-        Debug.Log("maxAvailableLevelCount: " + availableLevelCount);
-        return availableLevelCount;
+        Debug.Log("maxAvailableLevelCount: " + activeMaxLevelID);
+        return activeMaxLevelID;
+    }
+    public void SetActiveMaxLevel()
+    {
+        if (currentLevelID == activeMaxLevelID)
+        {
+            activeMaxLevelID++;
+        }
     }
 
     public void SetCurrentLevel(int level)
     {
-        currentLevel = level;
-        if (currentLevel > availableLevelCount)
-        {
-            AddLevelData(new LevelData(currentLevel, 0));
-            availableLevelCount = currentLevel;
-        }
+        currentLevelID = level;
+        //if (currentLevel < 0)
+        //{
+        //    currentLevel = 0;
+        //}
     }
 
     public int GetCurrentLevel()
     {
-        return currentLevel;
+        return currentLevelID;
     }
 
     public static void SaveGameData(GameData gameData)
