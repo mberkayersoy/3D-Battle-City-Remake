@@ -8,7 +8,6 @@ public class LevelEndUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI levelSituationText;
     [SerializeField] private TextMeshProUGUI levelScoreText;
-
     [SerializeField] private Transform nextLevelButton;
 
     public void SetLevelEndUI(bool isSuccess)

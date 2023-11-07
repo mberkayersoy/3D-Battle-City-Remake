@@ -9,7 +9,9 @@ public class EventBus
     public static event EventHandler<OnTransitionEventArgs> OnTransitionFinishAction;
     public static event EventHandler<OnScoreUpdateEventArgs> OnScoreUpdateAction;
     public static event EventHandler<OnShotEventArgs> OnShotAction;
-    public static event EventHandler<OnExplosionEventArgs> OnExplosionAction;
+    public static event EventHandler<OnExplosionEventArgs> OnBigExplosionAction;
+    public static event EventHandler<OnExplosionEventArgs> OnTinyExplosionAction;
+    public static event EventHandler<OnExplosionEventArgs> OnBrickExplosionAction;
 
     public class OnLevelSelectedEventArgs : EventArgs { public int selectedLevel; }
     public class OnLevelEndEventArgs : EventArgs { public bool isSuccess; }
@@ -59,9 +61,24 @@ public class EventBus
             shooterPosition = shooterPosition
         });
     }
-    public static void PublishExplosionAction(IShooting iShooting, Vector3 explosionPosition)
+    public static void PublishBigExplosionAction(IEffectCreator iEffectCreator, Vector3 explosionPosition)
     {
-        OnExplosionAction?.Invoke(iShooting, new OnExplosionEventArgs
+        OnBigExplosionAction?.Invoke(iEffectCreator, new OnExplosionEventArgs
+        {
+            explosionPosition = explosionPosition
+        });
+    }
+
+    public static void PublishTinyExplosionAction(IEffectCreator iEffectCreator, Vector3 explosionPosition)
+    {
+        OnTinyExplosionAction?.Invoke(iEffectCreator, new OnExplosionEventArgs
+        {
+            explosionPosition = explosionPosition
+        });
+    }
+    public static void PublishBrickExplosionAction(IEffectCreator iEffectCreator, Vector3 explosionPosition)
+    {
+        OnBrickExplosionAction?.Invoke(iEffectCreator, new OnExplosionEventArgs
         {
             explosionPosition = explosionPosition
         });

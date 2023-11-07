@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6203363877249641581}
   - component: {fileID: 5282769746254955479}
   - component: {fileID: 6975892964806763903}
+  - component: {fileID: 3463935906423470574}
   m_Layer: 0
   m_Name: StaticWall
   m_TagString: Untagged
@@ -125,3 +126,16 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &3463935906423470574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2556561585197959715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e34c3ba6efb5ac4195b93bb6aa16eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impactExplosion: {fileID: 0}

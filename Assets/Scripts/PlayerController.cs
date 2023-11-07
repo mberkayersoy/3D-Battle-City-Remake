@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class PlayerController : MonoBehaviour, IDamagable, IShooting, ITarget
+public class PlayerController : MonoBehaviour, IShooting, ITarget, IEffectCreator, IDamagable
 {
     private Rigidbody rb;
     private GameInput gameInput;
@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour, IDamagable, IShooting, ITarget
     [SerializeField] private GameObject projectile;
     [SerializeField] private Transform firePointTransform;
     [SerializeField] private ParticleSystem muzzleFlashVFX;
-    [SerializeField] private ParticleSystem explosionVFX;
     private bool isRotating = false;
     [SerializeField] private GameObject shild;
     [SerializeField] private Transform[] tankWheels;
@@ -101,13 +100,19 @@ public class PlayerController : MonoBehaviour, IDamagable, IShooting, ITarget
 
     public void TakeDamage(int damage)
     {
-        if (shild.activeSelf) return;
-        EventBus.PublishExplosionAction(this, transform.position);
-        explosionVFX.Play();
-        explosionVFX.transform.SetParent(null, true);
-        EventBus.PublishPlayerDeath(this);
-        
-        Destroy(gameObject);
+        Debug.Log("playercontroller TakeDamage");
+        if (shild.activeSelf)
+        {
+            EventBus.PublishTinyExplosionAction(this, transform.position);
+        }
+        else
+        {
+            EventBus.PublishBigExplosionAction(this, transform.position);
+            EventBus.PublishPlayerDeath(this);
+
+            Destroy(gameObject);
+        }
+
     }
 
     private void OnDestroy()

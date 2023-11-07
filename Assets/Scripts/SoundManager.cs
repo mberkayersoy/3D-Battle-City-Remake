@@ -20,7 +20,14 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         EventBus.OnShotAction += EventBus_OnShotAction;
-        EventBus.OnExplosionAction += EventBus_OnExplosionAction;
+        EventBus.OnBigExplosionAction += EventBus_OnExplosionAction;
+        //EventBus.OnTinyExplosionAction += EventBus_OnTinyExplosionAction;
+        // To do: onbrickexplosionaction
+    }
+
+    private void EventBus_OnTinyExplosionAction(object sender, EventBus.OnExplosionEventArgs e)
+    {
+        throw new System.NotImplementedException();
     }
 
     private void EventBus_OnExplosionAction(object sender, EventBus.OnExplosionEventArgs e)

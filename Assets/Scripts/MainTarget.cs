@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainTarget : MonoBehaviour, ITarget, IShooting
+public class MainTarget : MonoBehaviour, ITarget, IEffectCreator
 {
-    [SerializeField] private ParticleSystem explosionVFX;
     public void Shot()
     {
        
@@ -14,9 +13,7 @@ public class MainTarget : MonoBehaviour, ITarget, IShooting
     {
         if (collision.gameObject.TryGetComponent(out Projectile projectile))
         {
-            explosionVFX.Play();
-            explosionVFX.transform.SetParent(null, true);
-            EventBus.PublishExplosionAction(this, transform.position);
+            EventBus.PublishBigExplosionAction(this, transform.position);
             EventBus.PublishLevelEnd(this, false);
             Destroy(gameObject);
         }

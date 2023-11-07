@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : MonoBehaviour, IEffectCreator
 {
     private Rigidbody rb;
 
@@ -23,6 +23,10 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out IDamagable iDamagable))
         {
             iDamagable.TakeDamage(damage);
+        }
+        else if (collision.gameObject.TryGetComponent(out Projectile projectile))
+        {
+            EventBus.PublishTinyExplosionAction(this, transform.position);
         }
         Destroy(gameObject);
     }

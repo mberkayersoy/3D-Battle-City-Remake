@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour, IDamagable, IShooting
+public class EnemyController : MonoBehaviour, IDamagable, IShooting, IEffectCreator
 {
     public EnemyController (EnemyType enemyType)
     {
@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour, IDamagable, IShooting
 
     [Header("Characteristics")]
     [SerializeField] private float enemyDetectionRange;
-    [SerializeField] private float checkDistance = 1f;
+    [SerializeField] private float checkDistance;
     [SerializeField] private int armorCapacity;
     [SerializeField] private float shotTimeOut;
     [SerializeField] private LayerMask destructibleLayers;
@@ -53,25 +53,30 @@ public class EnemyController : MonoBehaviour, IDamagable, IShooting
 
     public void SetEnemyCharacteristics(EnemyType enemyType)
     {
+        this.enemyType = enemyType;
         switch (enemyType)
         {
             default:
             case EnemyType.Gray:
+                checkDistance = 0.5f;
                 enemyDetectionRange = 3f;
                 shotTimeOut = 1f;
                 givingScore = 250;
                 break;
             case EnemyType.Green:
+                checkDistance = 0.5f;
                 enemyDetectionRange = 3.5f;
                 shotTimeOut = 1f;
                 givingScore = 500;
                 break;
             case EnemyType.Blue:
+                checkDistance = 1f;
                 enemyDetectionRange = 3.5f;
                 shotTimeOut = 0.9f;
                 givingScore = 750;
                 break;
             case EnemyType.Red:
+                checkDistance = 1.5f;
                 enemyDetectionRange = 4f;
                 shotTimeOut = 0.8f;
                 givingScore = 1000;
@@ -145,13 +150,12 @@ public class EnemyController : MonoBehaviour, IDamagable, IShooting
     private void SearchEnemy()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, enemyDetectionRange);
-
+        CheckEnemy();
         foreach (Collider target in colliders)
         {
             if (target.CompareTag("Player"))
             {
                 currentTarget = target.transform;
-                CheckEnemy();
                 return;
             }
             else
@@ -163,7 +167,7 @@ public class EnemyController : MonoBehaviour, IDamagable, IShooting
 
     private void CheckEnemy()
     {
-        if (Physics.Raycast(firePointTransform.position, transform.forward * enemyDetectionRange, out RaycastHit hit))
+        if (Physics.Raycast(firePointTransform.position, transform.forward.normalized, out RaycastHit hit, enemyDetectionRange * 0.9f))
         {
             if (hit.transform.TryGetComponent(out ITarget target))
             {
@@ -190,23 +194,29 @@ public class EnemyController : MonoBehaviour, IDamagable, IShooting
 
     public void TakeDamage(int damage)
     {
-        if (shild.activeSelf) return;
+        if (shild.activeSelf)
+        {
+            EventBus.PublishTinyExplosionAction(this, transform.position);
+            return;
+        }
+
 
         armorCapacity--;
         if (armorCapacity < 0)
         {
-            explosionVFX.Play();
+            //explosionVFX.Play();
             PointPopUp popup = Instantiate(popUpCanvas, transform.position + Vector3.up, Quaternion.Euler(90, 0, 0), null).GetComponent<PointPopUp>();
             popup.SetContent(givingScore);
             EventBus.PublishUpdateScore(this, givingScore);
-            EventBus.PublishExplosionAction(this, transform.position);
+            EventBus.PublishBigExplosionAction(this, transform.position);
             EventBus.PublishEnemyDeath(this);
-            explosionVFX.transform.SetParent(null, true);
+           // explosionVFX.transform.SetParent(null, true);
             Destroy(gameObject);
         }
         else
         {
             // To do: hit effect and sound
+            EventBus.PublishTinyExplosionAction(this, transform.position);
         }
 
     }
