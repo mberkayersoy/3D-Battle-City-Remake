@@ -29,11 +29,15 @@ public class UIManager : MonoBehaviour
     [Header("MENU")]
     [SerializeField] private GameObject MenuPanel;
     [SerializeField] private Button startGameButton;
+    [SerializeField] private Button openConstructPanelButton;
     [SerializeField] private Button quitGameButton;
 
     [Header("LEVEL LIST")]
     [SerializeField] private GameObject LevelListPanel;
     [SerializeField] private Button backToMenuButton;
+
+    [Header("CONSTRUCT")]
+    [SerializeField] private GameObject ConstructPanel;
 
     [Header("TRANSITION")]
     [SerializeField] private GameObject TransitionPanel;
@@ -72,6 +76,7 @@ public class UIManager : MonoBehaviour
         gameManager = GameManager.Instance;
         // Button listeners
         startGameButton.onClick.AddListener(OnClickStartGameButton);
+        openConstructPanelButton.onClick.AddListener(OnClickOpenConstructPanelButton);
         backToMenuButton.onClick.AddListener(OnClickBackToMenuButton);
         nextLevelButton.onClick.AddListener(OnClickNextLevelButton);
         restartLevelButton.onClick.AddListener(OnClickRestartLevelButton);
@@ -87,7 +92,18 @@ public class UIManager : MonoBehaviour
         EventBus.OnLevelSelectedAction += EventBus_OnLevelSelectedAction;
         EventBus.OnTransitionFinishAction += EventBus_OnTransitionFinishAction;
 
+        ConstructPanel.GetComponent<ConstructPanelUI>().OnClickBackToMenuButtonAction += UIManager_OnClickBackToMenuButtonAction;
         SetActivePanel(MenuPanel.name);
+    }
+
+    private void OnClickOpenConstructPanelButton()
+    {
+        SetActivePanel(ConstructPanel.name);
+    }
+
+    private void UIManager_OnClickBackToMenuButtonAction()
+    {
+        OnClickBackToMenuButton();
     }
 
     private void EventBus_OnTransitionFinishAction(object sender, EventBus.OnTransitionEventArgs e)
@@ -176,6 +192,7 @@ public class UIManager : MonoBehaviour
     {
         MenuPanel.SetActive(activePanel.Equals(MenuPanel.name));
         LevelListPanel.SetActive(activePanel.Equals(LevelListPanel.name));
+        ConstructPanel.SetActive(activePanel.Equals(ConstructPanel.name));
         TransitionPanel.SetActive(activePanel.Equals(TransitionPanel.name));
         GamePanel.SetActive(activePanel.Equals(GamePanel.name));
         PausePanel.SetActive(activePanel.Equals(PausePanel.name));

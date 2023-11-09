@@ -23,10 +23,6 @@ public class GridMap : MonoBehaviour
     public Transform playerSpawnTransform;
     public List<Transform> enemySpawnTransform = new List<Transform>();
     public List<Vector3> emptyCellPositions = new List<Vector3>();
-    private bool isEagle;
-    private bool isPlayerSpawn;
-    private bool isEnemySpawn;
-
 
     private void Awake()
     {
@@ -102,18 +98,15 @@ public class GridMap : MonoBehaviour
                 }
                 else if (currentMap.wallMap[j + i * currentMap.width] == WallTypes.PlayerSpawn)
                 {
-                    isPlayerSpawn = true;
-                    PutObjectToCell(new Vector3Int(i, 0, j), spawnAreaPlayer, false);
+                    PutObjectToCell(new Vector3Int(i, 0, j), spawnAreaPlayer, false, WallTypes.PlayerSpawn);
                 }
                 else if (currentMap.wallMap[j + i * currentMap.width] == WallTypes.EnemySpawn)
                 {
-                    isEnemySpawn = true;
-                    PutObjectToCell(new Vector3Int(i, 0, j), spawnAreaEnemy, false);
+                    PutObjectToCell(new Vector3Int(i, 0, j), spawnAreaEnemy, false, WallTypes.EnemySpawn);
                 }
                 else if (currentMap.wallMap[j + i * currentMap.width] == WallTypes.Eagle)
                 {
-                    isEagle = true;
-                    PutObjectToCell(new Vector3Int(i, 0, j), eagle, false);
+                    PutObjectToCell(new Vector3Int(i, 0, j), eagle, false, WallTypes.Eagle);
                 }
             }
         }
@@ -128,7 +121,7 @@ public class GridMap : MonoBehaviour
         emptyCellPositions.Add(worldPosition);
     }
 
-    public void PutObjectToCell(Vector3Int position, GameObject cube, bool is4Piece = false)
+    public void PutObjectToCell(Vector3Int position, GameObject cube, bool is4Piece = false, WallTypes wallTypes = WallTypes.Empty)
     {
         Vector3 cellScale = grid.cellSize;
         Vector3Int realPositionOnGrid = position * new Vector3Int(2, 1, 2);
@@ -153,21 +146,18 @@ public class GridMap : MonoBehaviour
             GameObject cell = Instantiate(cube, worldPosition, Quaternion.identity, gameObject.transform);
             cell.name = "Cell: " + position.x + "-" + position.z;
 
-            if (isEnemySpawn)
+            if (wallTypes == WallTypes.EnemySpawn)
             {
-                isEnemySpawn = false;
                 enemySpawnTransform.Add(cell.transform.GetChild(0));
                 GameManager.Instance.CurrentLevelManager.EnemySpawnPoints.Add(cell.transform.GetChild(0));
             }
-            else if (isPlayerSpawn)
+            else if (wallTypes == WallTypes.PlayerSpawn)
             {
-                isPlayerSpawn = false;
                 playerSpawnTransform = cell.transform.GetChild(0);
                 GameManager.Instance.CurrentLevelManager.PlayerSpawnPoints = cell.transform.GetChild(0);
             }
-            else if (isEagle)
+            else if (wallTypes == WallTypes.Eagle)
             {
-                isEagle = false;
                 mainTargetTransform = cell.transform.GetChild(0);
                 GameManager.Instance.CurrentLevelManager.EnemyMainTarget = cell.transform.GetChild(0);
             }

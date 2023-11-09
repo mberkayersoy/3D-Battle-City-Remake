@@ -30,7 +30,8 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
-    [SerializeField] private List<LevelSettings> levelList;
+    [SerializeField] private List<LevelSettings> defaultLevelList;
+    [SerializeField] private List<LevelSettings> constructedLevelList;
     [SerializeField] private LevelManager levelManagerPrefab;
     [SerializeField] private LevelManager currentLevelManager;
     public GameData gameData;
@@ -94,7 +95,7 @@ public class GameManager : MonoBehaviour
         }
 
         currentLevelManager = Instantiate(levelManagerPrefab);
-        LevelSettings levelCopy = levelList[level].CopyData();
+        LevelSettings levelCopy = defaultLevelList[level].CopyData();
         currentLevelManager.CopyLevelData(levelCopy);
     }
 
@@ -102,15 +103,13 @@ public class GameManager : MonoBehaviour
     {
         GameData.SaveGameData(gameData);
     }
-
-
 }
 
 [System.Serializable]
 public class LevelSettings
 {
     public int levelID;
-    public List<EnemyType> enemyList;
+    public List<EnemyType> enemyList = new List<EnemyType>();
     public int playerLifeCount;
     public MapSO mapSO;
     public LevelSettings CopyData()

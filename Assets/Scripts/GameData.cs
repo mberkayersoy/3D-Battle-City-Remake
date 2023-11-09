@@ -9,22 +9,23 @@ public class GameData
 {
     public int activeMaxLevelID;
     public int currentLevelID;
-    public Dictionary<int,LevelData> levelDataDic;
+    public Dictionary<int,LevelData> defaultLevelDataDic;
+    public Dictionary<int,LevelData> constructedLevelDataDic;
 
     public void AddLevelData(LevelData leveldata)
     {
-        levelDataDic.Add(leveldata.levelID, leveldata);
+        defaultLevelDataDic.Add(leveldata.levelID, leveldata);
     }
 
     public void UpdateLevelData(LevelData newLevelData)
     {
-        levelDataDic[newLevelData.levelID] = newLevelData;
+        defaultLevelDataDic[newLevelData.levelID] = newLevelData;
     }
     public GameData(int activeMaxLevelID, int currentLevelID, Dictionary<int,LevelData> levelDataDic)
     {
         this.activeMaxLevelID = activeMaxLevelID;
         this.currentLevelID = currentLevelID;
-        this.levelDataDic = levelDataDic;
+        this.defaultLevelDataDic = levelDataDic;
 
     }
     public int GetActiveMaxLevel()

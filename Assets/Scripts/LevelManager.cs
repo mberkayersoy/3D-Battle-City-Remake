@@ -116,10 +116,10 @@ public class LevelManager : MonoBehaviour
         if (isSucces)
         {
             // if this level played before or unlock.
-            if (gameManager.gameData.levelDataDic.ContainsKey(currentLevel.levelID))
+            if (gameManager.gameData.defaultLevelDataDic.ContainsKey(currentLevel.levelID))
             {
                 // if stored levelscore < new score. Update stored data.
-                if (gameManager.gameData.levelDataDic[currentLevel.levelID].levelScore < newLevelData.levelScore)
+                if (gameManager.gameData.defaultLevelDataDic[currentLevel.levelID].levelScore < newLevelData.levelScore)
                 {
                     gameManager.gameData.UpdateLevelData(newLevelData);
                 }
@@ -146,9 +146,9 @@ public class LevelManager : MonoBehaviour
         // Level failed.
         else
         {
-            if (gameManager.gameData.levelDataDic.ContainsKey(currentLevel.levelID))
+            if (gameManager.gameData.defaultLevelDataDic.ContainsKey(currentLevel.levelID))
             {
-                if (gameManager.gameData.levelDataDic.TryGetValue(currentLevel.levelID, out LevelData storedLevelData))
+                if (gameManager.gameData.defaultLevelDataDic.TryGetValue(currentLevel.levelID, out LevelData storedLevelData))
                 {
                     if (storedLevelData.levelScore > newLevelData.levelScore)
                     {

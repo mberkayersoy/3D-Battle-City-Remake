@@ -19,7 +19,7 @@ public class LevelListUI : MonoBehaviour
             {
                 //Debug.Log("ITEM LEVEL: " + item.level);
                // Debug.Log("gameManager.gameData.levelDataDic[item.level].score: " + gameManager.gameData.levelDataDic[item.level].levelScore);
-                item.SetData(true, gameManager.gameData.levelDataDic[item.level].levelScore);
+                item.SetData(true, gameManager.gameData.defaultLevelDataDic[item.level].levelScore);
                 item.button.interactable = true;
             }
             else
