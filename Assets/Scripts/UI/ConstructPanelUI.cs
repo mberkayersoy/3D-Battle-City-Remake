@@ -32,7 +32,7 @@ public class ConstructPanelUI : MonoBehaviour
 
     private void OnClickConstructorMapPanel()
     {
-        constructMapPanel.GetComponent<MapConstructor>().SetLevelSetting(null);
+        constructMapPanel.GetComponent<MapHandler>().SetLevelSetting(null);
         SetActivePanel(constructMapPanel.name);
     }
 

@@ -1,15 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using Unity.AI.Navigation;
 using UnityEngine;
 
-[ExecuteInEditMode]
-public class GridMap : MonoBehaviour
+public class GridMapConstructor : MonoBehaviour
 {
     public MapSO currentMap;
-    Grid grid;
+    public Grid grid;
 
     public GameObject groundCube;
     public GameObject border;
@@ -19,10 +15,6 @@ public class GridMap : MonoBehaviour
     public GameObject eagle;
     public GameObject spawnAreaPlayer;
     public GameObject spawnAreaEnemy;
-    public Transform mainTargetTransform;
-    public Transform playerSpawnTransform;
-    public List<Transform> enemySpawnTransform = new List<Transform>();
-    public List<Vector3> emptyCellPositions = new List<Vector3>();
 
     private void Awake()
     {
@@ -30,44 +22,18 @@ public class GridMap : MonoBehaviour
     }
     void Start()
     {
-        ClearMap();
         ConstructGround(15, 15);
         ConstructMap();
-    }
-
-    public void ClearMap()
-    {
-        // Destory all previous childs
-        var tempList = transform.Cast<Transform>().ToList();
-        foreach (var child in tempList)
-        {
-            if (Application.isEditor)
-            {
-                GameObject.DestroyImmediate(child.gameObject);
-            }
-            else
-            {
-                GameObject.Destroy(child.gameObject);
-            }
-        }
     }
 
     public void ConstructGround(int width, int height)
     {
         // Create ground as one piece
-        Vector3 centerPosition = Vector3.Lerp(grid.GetCellCenterWorld(new Vector3Int(0, 0, 0)), grid.GetCellCenterWorld(new Vector3Int(width * 2 -1, 0, height * 2 -1)), 0.5f);
+        Vector3 centerPosition = Vector3.Lerp(grid.GetCellCenterWorld(new Vector3Int(0, 0, 0)), grid.GetCellCenterWorld(new Vector3Int(width * 2 - 1, 0, height * 2 - 1)), 0.5f);
         GameObject cell = Instantiate(groundCube, centerPosition, Quaternion.identity, gameObject.transform);
         cell.transform.localScale = new Vector3(width, 1, height);
-        cell.name = "Ground";
-        cell.AddComponent<NavMeshManager>();
-
-        //for (int i = 0; i < width; i++)
-        //{
-        //    for (int j = 0; j < height; j++)
-        //    {
-        //        PutObjectToCell(new Vector3Int(i, 0, j), cube);
-        //    }
-        //}
+        //cell.name = "Ground";
+        //cell.AddComponent<NavMeshManager>();
     }
 
     public void ConstructMap()
@@ -78,7 +44,7 @@ public class GridMap : MonoBehaviour
             {
                 if (currentMap.wallMap[j + i * currentMap.width] == WallTypes.Empty)
                 {
-                    AddEmptyCellPosition(i, j);
+
                 }
                 else if (currentMap.wallMap[j + i * currentMap.width] == WallTypes.Bricks)
                 {
@@ -112,15 +78,6 @@ public class GridMap : MonoBehaviour
         }
     }
 
-    public void AddEmptyCellPosition(int i, int j)
-    {
-        if (i <= 2 || i >= currentMap.width - 1 || j <= 2 || j >= currentMap.width) return;
-
-        Vector3Int gridCoords = new Vector3Int(i * 2, 0, j * 2);
-        Vector3 worldPosition = grid.GetCellCenterWorld(gridCoords);
-        emptyCellPositions.Add(worldPosition);
-    }
-
     public void PutObjectToCell(Vector3Int position, GameObject cube, bool is4Piece = false, WallTypes wallTypes = WallTypes.Empty)
     {
         Vector3 cellScale = grid.cellSize;
@@ -136,31 +93,74 @@ public class GridMap : MonoBehaviour
                     Vector3 worldPosition = grid.GetCellCenterWorld(gridCoords);
                     GameObject piece = Instantiate(cube, worldPosition, Quaternion.identity, gameObject.transform);
                     piece.transform.localScale = new Vector3(cellScale.x, cellScale.y, cellScale.z);
-                    piece.name = "Cell: " + position.x + "-" + position.z + " Grid: (" + gridCoords.x + "," + gridCoords.z + ")";
+                    //piece.name = "Cell: " + position.x + "-" + position.z + " Grid: (" + gridCoords.x + "," + gridCoords.z + ")";
                 }
             }
         }
         else
         {
             Vector3 worldPosition = Vector3.Lerp(grid.GetCellCenterWorld(realPositionOnGrid), grid.GetCellCenterWorld(realPositionOnGrid + new Vector3Int(1, 0, 1)), 0.5f);
-            GameObject cell = Instantiate(cube, worldPosition, Quaternion.identity, gameObject.transform);
-            cell.name = "Cell: " + position.x + "-" + position.z;
+            /*GameObject cell =*/ Instantiate(cube, worldPosition, Quaternion.identity, gameObject.transform);
+            //cell.name = "Cell: " + position.x + "-" + position.z;
+        }
+    }
 
-            if (wallTypes == WallTypes.EnemySpawn)
+    public void PutObjectToSelectedCellPosition(Vector3Int position, WallTypes wallType, bool is4Piece = false)
+    {
+        if (wallType == WallTypes.Empty)
+        {
+            RemoveObjectFromCell(position, is4Piece);
+        }
+
+        Vector3 cellScale = grid.cellSize;
+        Vector3Int realPositionOnGrid = position * new Vector3Int(2, 1, 2);
+
+        if (is4Piece)
+        {
+            for (int i = 0; i < 2; i++)
             {
-                enemySpawnTransform.Add(cell.transform.GetChild(0));
-                GameManager.Instance.CurrentLevelManager.EnemySpawnPoints.Add(cell.transform.GetChild(0));
-            }
-            else if (wallTypes == WallTypes.PlayerSpawn)
-            {
-                playerSpawnTransform = cell.transform.GetChild(0);
-                GameManager.Instance.CurrentLevelManager.PlayerSpawnPoints = cell.transform.GetChild(0);
-            }
-            else if (wallTypes == WallTypes.Eagle)
-            {
-                mainTargetTransform = cell.transform.GetChild(0);
-                GameManager.Instance.CurrentLevelManager.EnemyMainTarget = cell.transform.GetChild(0);
+                for (int j = 0; j < 2; j++)
+                {
+                    Vector3Int gridCoords = realPositionOnGrid + new Vector3Int(i, 0, j);
+                    Vector3 worldPosition = grid.GetCellCenterWorld(gridCoords);
+                    GameObject piece = Instantiate(GetWall(wallType), worldPosition, Quaternion.identity, gameObject.transform);
+                    piece.transform.localScale = new Vector3(cellScale.x, cellScale.y, cellScale.z);
+                    //piece.name = "Cell: " + position.x + "-" + position.z + " Grid: (" + gridCoords.x + "," + gridCoords.z + ")";
+                }
             }
         }
+        else
+        {
+            Vector3 worldPosition = Vector3.Lerp(grid.GetCellCenterWorld(realPositionOnGrid), grid.GetCellCenterWorld(realPositionOnGrid + new Vector3Int(1, 0, 1)), 0.5f);
+            /*GameObject cell =*/
+            Instantiate(GetWall(wallType), worldPosition, Quaternion.identity, gameObject.transform);
+            //cell.name = "Cell: " + position.x + "-" + position.z;
+        }
+    }
+
+    public GameObject GetWall(WallTypes wallType)
+    {
+        switch (wallType)
+        {
+            default:
+            case WallTypes.Bricks:
+                return brickWall;
+            case WallTypes.Static:
+                return staticWall;
+            case WallTypes.Grass:
+                return grassWall;
+            case WallTypes.PlayerSpawn:
+                return spawnAreaPlayer;
+            case WallTypes.EnemySpawn:
+                return spawnAreaEnemy;
+            case WallTypes.Eagle:
+                return eagle;
+        }
+    }
+
+    public void RemoveObjectFromCell(Vector3Int position, bool is4Piece = false)
+    {
+        Debug.Log("REMOVE YAZMADIN MORUK");
+        // Remove object from cell position
     }
 }
