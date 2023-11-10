@@ -47,7 +47,7 @@ public class EnemyController : MonoBehaviour, IDamagable, IShooting, IEffectCrea
     private void Start()
     {
         ActivateShild();
-        mainTarget = GameManager.Instance.CurrentLevelManager.EnemyMainTarget;
+        mainTarget = GameManager.Instance.CurrentLevelManager.CurrentGridMap.mainTargetTransform;
         EventBus.OnLevelEndAction += EventBus_OnLevelEndAction;
     }
 

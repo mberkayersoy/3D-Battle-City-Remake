@@ -56,7 +56,6 @@ MonoBehaviour:
   currentLevel:
     levelID: 0
     enemyList: 
-    numberOfEnemyAtOnce: 0
     playerLifeCount: 0
     mapSO: {fileID: 0}
   currentGridMap: {fileID: 0}
@@ -65,3 +64,4 @@ MonoBehaviour:
   enemyMainTarget: {fileID: 0}
   enemySpawnTimeOut: 5
   remainingEnemySpawnTimeOut: 0
+  remainingEnemyCount: 0

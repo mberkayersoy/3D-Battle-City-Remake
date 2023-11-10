@@ -10,7 +10,7 @@ public class GameData
     public int activeMaxLevelID;
     public int currentLevelID;
     public Dictionary<int,LevelData> defaultLevelDataDic;
-    public Dictionary<int,LevelData> constructedLevelDataDic;
+    public Dictionary<int,LevelSettings> constructedLevelDataDic;
 
     public void AddLevelData(LevelData leveldata)
     {
@@ -21,12 +21,12 @@ public class GameData
     {
         defaultLevelDataDic[newLevelData.levelID] = newLevelData;
     }
-    public GameData(int activeMaxLevelID, int currentLevelID, Dictionary<int,LevelData> levelDataDic)
+    public GameData(int activeMaxLevelID, int currentLevelID, Dictionary<int,LevelData> defaultLevelDataDic, Dictionary<int, LevelSettings> constructedLevelDataDic)
     {
         this.activeMaxLevelID = activeMaxLevelID;
         this.currentLevelID = currentLevelID;
-        this.defaultLevelDataDic = levelDataDic;
-
+        this.defaultLevelDataDic = defaultLevelDataDic;
+        this.constructedLevelDataDic = constructedLevelDataDic;
     }
     public int GetActiveMaxLevel()
     {
@@ -76,7 +76,7 @@ public class GameData
             Debug.Log("file not Exist");
             Dictionary<int, LevelData> firstLevelDataList = new Dictionary<int, LevelData>();
             firstLevelDataList.Add(0, new LevelData(0, 0));
-            return new GameData(0, 0, firstLevelDataList);
+            return new GameData(0, 0, firstLevelDataList, new Dictionary<int, LevelSettings>());
         }
     }
 }

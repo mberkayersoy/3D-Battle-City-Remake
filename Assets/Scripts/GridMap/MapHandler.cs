@@ -1,22 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MapHandler : MonoBehaviour
 {
+    public static MapHandler Instance;
+    [SerializeField] private WallTypes[] defaultWallMap;
     private MapConstructorUI mapConstructorUI;
-    [SerializeField] private MapSO defaultMapSO;
     [SerializeField] private LevelSettings mapSettings;
     [SerializeField] private WallTypes selectedWallType;
     [SerializeField] private GameObject gridMapConstructorPrefab;
     [SerializeField] private LayerMask constructAreaLayer;
     private GridMapConstructor gridMapConstructor;
 
-    private void OnEnable()
+    public LevelSettings MapSettings { get => mapSettings; set => mapSettings = value; }
+
+    private void Awake()
     {
-        gridMapConstructor = Instantiate(gridMapConstructorPrefab, new Vector3(-4.5f, 0, 0), 
-                                         Quaternion.identity).GetComponent<GridMapConstructor>();
-        gridMapConstructor.currentMap = defaultMapSO;
+        Instance = this;
     }
     private void Start()
     {
@@ -24,7 +26,7 @@ public class MapHandler : MonoBehaviour
         mapConstructorUI.OnEnemyCountChangedAction += MapConstructorUI_OnEnemyCountChangedAction;
         mapConstructorUI.OnLevelIDChangedAction += MapConstructorUI_OnLevelIDChangedAction;
         mapConstructorUI.OnPlayerLifeChangedAction += MapConstructorUI_OnPlayerLifeChangedAction;
-        mapConstructorUI.OnSaveMapAction += MapConstructorUI_OnSaveMapAction;
+        mapConstructorUI.OnSaveMapAction += MapConstructorUI_OnClickSaveMapAction;
         mapConstructorUI.OnSelectedWallTypeChangedAction += MapConstructorUI_OnSelectedWallTypeChangedAction;
     }
 
@@ -44,7 +46,7 @@ public class MapHandler : MonoBehaviour
                 cellPosition.x /= 2; 
                 cellPosition.z /= 2;
                 cellPosition.y = 1;
-                gridMapConstructor.PutObjectToSelectedCellPosition(cellPosition, selectedWallType);
+                gridMapConstructor.TryPutObjectToSelectedCellPosition(cellPosition, selectedWallType);
                 Debug.Log("cellPosition: " + cellPosition);
 
 
@@ -62,14 +64,21 @@ public class MapHandler : MonoBehaviour
 
     public void SetLevelSetting(LevelSettings storedMapSetting = null)
     {
+        gridMapConstructor = Instantiate(gridMapConstructorPrefab, new Vector3(-4.5f, 0, 0),
+                                 Quaternion.identity).GetComponent<GridMapConstructor>();
         if (storedMapSetting == null)
         {
             mapSettings = new LevelSettings();
+            WallTypes[] copiedMap = new WallTypes[defaultWallMap.Length];
+            Array.Copy(defaultWallMap, copiedMap, defaultWallMap.Length);
+            
+            mapSettings.wallMap = copiedMap;
+            gridMapConstructor.consturctedMap.wallMap = copiedMap;
         }
         else
         {
             mapSettings = storedMapSetting;
-            defaultMapSO = storedMapSetting.mapSO;
+            gridMapConstructor.consturctedMap.wallMap = mapSettings.wallMap;
         }
     }
 
@@ -100,9 +109,9 @@ public class MapHandler : MonoBehaviour
             mapSettings.enemyList.Add(enemyType);
         }
     }
-    private void MapConstructorUI_OnSaveMapAction()
+    private void MapConstructorUI_OnClickSaveMapAction()
     {
-        throw new System.NotImplementedException();
+        gridMapConstructor.CheckIsMapCorret();
     }
 
     private void OnDisable()

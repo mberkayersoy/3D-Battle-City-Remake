@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         }
     }
     [SerializeField] private List<LevelSettings> defaultLevelList;
-    [SerializeField] private List<LevelSettings> constructedLevelList;
+    [SerializeField] private Dictionary<int,LevelSettings> constructedLevelDic;
     [SerializeField] private LevelManager levelManagerPrefab;
     [SerializeField] private LevelManager currentLevelManager;
     public GameData gameData;
@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         gameData = GameData.LoadGameData();
+        constructedLevelDic = gameData.constructedLevelDataDic;
         
         uiManager = UIManager.Instance;
         uiManager.OnClickMenuAction += UiManager_OnClickMenuAction;
@@ -112,13 +113,23 @@ public class LevelSettings
     public List<EnemyType> enemyList = new List<EnemyType>();
     public int playerLifeCount;
     public MapSO mapSO;
+    public WallTypes[] wallMap = new WallTypes[15 * 15];
     public LevelSettings CopyData()
     {
         LevelSettings copy = new LevelSettings();
         copy.levelID = levelID;
         copy.playerLifeCount = playerLifeCount;
         copy.enemyList = new List<EnemyType>(enemyList);
-        copy.mapSO = mapSO;
+
+        if (mapSO != null)
+        {
+            copy.mapSO = mapSO;
+        }
+        else 
+        {
+            copy.wallMap = wallMap;
+        }
+
         return copy;
     }
 }

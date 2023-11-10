@@ -18,18 +18,18 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GridMap currentGridMap;
 
     [Header("TRANSFORMS")]
-    [SerializeField] private List<Transform> enemySpawnPoints = new List<Transform>();
-    [SerializeField] private Transform playerSpawnPoints;
-    [SerializeField] private Transform enemyMainTarget;
+    //[SerializeField] private List<Transform> enemySpawnPoints = new List<Transform>();
+    //[SerializeField] private Transform playerSpawnPoints;
+    //[SerializeField] private Transform enemyMainTarget;
     [SerializeField] private float enemySpawnTimeOut;
     [SerializeField] private float remainingEnemySpawnTimeOut;
     [SerializeField] private int remainingEnemyCount;
     public event Action OnScoreChangeAction;
 
     private GameManager gameManager;
-    public List<Transform> EnemySpawnPoints { get => enemySpawnPoints; set => enemySpawnPoints = value; }
-    public Transform PlayerSpawnPoints { get => playerSpawnPoints; set => playerSpawnPoints = value; }
-    public Transform EnemyMainTarget { get => enemyMainTarget; set => enemyMainTarget = value; }
+    //public List<Transform> EnemySpawnPoints { get => enemySpawnPoints; set => enemySpawnPoints = value; }
+    //public Transform PlayerSpawnPoints { get => playerSpawnPoints; set => playerSpawnPoints = value; }
+    //public Transform EnemyMainTarget { get => enemyMainTarget; set => enemyMainTarget = value; }
     public LevelSettings CurrentLevel { get => currentLevel; set => currentLevel = value; }
     public GridMap CurrentGridMap { get => currentGridMap; set => currentGridMap = value; }
     public int LevelScore { get => levelScore; private set => levelScore = value; }
@@ -45,7 +45,7 @@ public class LevelManager : MonoBehaviour
     {
         GameObject gridMapInstance = Instantiate(gridMapPrefab, new Vector3(0, -1, 0), Quaternion.identity, transform);
         currentGridMap = gridMapInstance.GetComponent<GridMap>();
-        currentGridMap.currentMap = currentLevel.mapSO;
+        currentGridMap.currentMapSO = currentLevel.mapSO;
         UIManager.Instance.OnStartSpawnAction += UIManager_OnStartSpawnAction;
         //CopyLevelData();
         remainingEnemySpawnTimeOut = enemySpawnTimeOut;
@@ -81,7 +81,7 @@ public class LevelManager : MonoBehaviour
     public void UIManager_OnStartSpawnAction()
     {
         InstantiateEnemy();
-        Instantiate(playerPrefab, playerSpawnPoints.position, Quaternion.identity, transform);
+        Instantiate(playerPrefab, currentGridMap.playerSpawnTransform.position, Quaternion.identity, transform);
     }
 
     private void EventBus_EnemyDeath(EnemyController obj)
@@ -101,7 +101,7 @@ public class LevelManager : MonoBehaviour
     private void InstantiateEnemy()
     {
         int randomEnemyIndex = UnityEngine.Random.Range(0, currentLevel.enemyList.Count);
-        EnemyController newEnemyObject = Instantiate(enemyPrefab, enemySpawnPoints[UnityEngine.Random.Range(0, enemySpawnPoints.Count)].position,
+        EnemyController newEnemyObject = Instantiate(enemyPrefab, currentGridMap.enemySpawnTransform[UnityEngine.Random.Range(0, currentGridMap.enemySpawnTransform.Count)].position,
             Quaternion.identity, transform).GetComponent<EnemyController>();
         newEnemyObject.SetEnemyCharacteristics(currentLevel.enemyList[randomEnemyIndex]);
         currentLevel.enemyList.RemoveAt(randomEnemyIndex);
@@ -168,7 +168,7 @@ public class LevelManager : MonoBehaviour
     {
         if (currentLevel.playerLifeCount > 0)
         {
-            Instantiate(playerPrefab, playerSpawnPoints.position, Quaternion.identity, transform);
+            Instantiate(playerPrefab, currentGridMap.playerSpawnTransform.position, Quaternion.identity, transform);
             currentLevel.playerLifeCount--;
         }
         else

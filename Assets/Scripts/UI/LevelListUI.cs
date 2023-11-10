@@ -1,33 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class LevelListUI : MonoBehaviour
 {
-    private GameManager gameManager;
+    [SerializeField] private GameObject DefaultLevelListPanel;
+    [SerializeField] private GameObject MyLevelListPanel;
+    [SerializeField] private Button ShowDefaultLevelsButton;
+    [SerializeField] private Button ShowMyLevelsButton;
+
     private void OnEnable()
     {
-        gameManager = GameManager.Instance;
-        int counter = 0;
-        foreach (LevelUIElement item in transform.GetComponentsInChildren<LevelUIElement>())
-        {
-            item.level = counter++;
-            item.levelText.text = "Level " + item.level;
+        SetActivePanel(DefaultLevelListPanel.name);
+    }
 
-            if (item.level <= gameManager.gameData.activeMaxLevelID)
-            {
-                //Debug.Log("ITEM LEVEL: " + item.level);
-               // Debug.Log("gameManager.gameData.levelDataDic[item.level].score: " + gameManager.gameData.levelDataDic[item.level].levelScore);
-                item.SetData(true, gameManager.gameData.defaultLevelDataDic[item.level].levelScore);
-                item.button.interactable = true;
-            }
-            else
-            {
-                item.button.interactable = false;
-            }
-
-        }
+    private void Start()
+    {
+        ShowDefaultLevelsButton.onClick.AddListener(() => SetActivePanel(DefaultLevelListPanel.name));
+        ShowMyLevelsButton.onClick.AddListener(() => SetActivePanel(MyLevelListPanel.name));
+    }
+    public void SetActivePanel(string activePanel)
+    {
+        DefaultLevelListPanel.SetActive(activePanel.Equals(DefaultLevelListPanel.name));
+        MyLevelListPanel.SetActive(activePanel.Equals(MyLevelListPanel.name));
     }
 
 }

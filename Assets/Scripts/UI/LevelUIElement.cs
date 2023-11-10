@@ -10,7 +10,6 @@ public class LevelUIElement : MonoBehaviour
     [SerializeField] public int level;
     [SerializeField] public TextMeshProUGUI levelText;
     [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private bool isComplete;
 
     public Button button;
 
@@ -20,9 +19,8 @@ public class LevelUIElement : MonoBehaviour
         button = GetComponent<Button>();
         button.onClick.AddListener(LevelSelected);
     }
-    public void SetData(bool isComplete, int score = 0)
+    public void SetData(int score = 0)
     {
-        this.isComplete = isComplete;
         scoreText.text = score.ToString();
     }
 
