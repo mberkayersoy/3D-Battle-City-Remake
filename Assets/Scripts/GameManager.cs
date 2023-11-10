@@ -120,7 +120,6 @@ public class LevelSettings
         copy.levelID = levelID;
         copy.playerLifeCount = playerLifeCount;
         copy.enemyList = new List<EnemyType>(enemyList);
-
         if (mapSO != null)
         {
             copy.mapSO = mapSO;

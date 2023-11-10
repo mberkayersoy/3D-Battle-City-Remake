@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,6 @@ public class GridMapConstructor : MonoBehaviour
     public GameObject eagle;
     public GameObject spawnAreaPlayer;
     public GameObject spawnAreaEnemy;
-
     private void Awake()
     {
         grid = GetComponent<Grid>();
@@ -143,7 +143,7 @@ public class GridMapConstructor : MonoBehaviour
 
     private int GetIndex(int x, int y, int width)
     {
-        return y * width + x;
+        return y + x * width;
     }
     private void SetIndex(int x, int y, int width, WallTypes wallType)
     {
@@ -179,48 +179,6 @@ public class GridMapConstructor : MonoBehaviour
         }
     }
 
-    public bool CheckIsMapCorret()
-    {
-        int eagleCounter = 0;
-        int playerSpawnCounter = 0;
-        int enemySpawnCounter = 0;
-
-        for (int i = 0; i < consturctedMap.wallMap.Length; i++)
-        {
-            if (consturctedMap.wallMap[i] == WallTypes.Eagle)
-            {
-                eagleCounter++;
-            }
-            else if (consturctedMap.wallMap[i] == WallTypes.PlayerSpawn)
-            {
-                playerSpawnCounter++;
-            }
-            else if (consturctedMap.wallMap[i] == WallTypes.EnemySpawn)
-            {
-                enemySpawnCounter++;
-            }
-        }
-
-        if (eagleCounter == 1 && playerSpawnCounter == 1 && enemySpawnCounter > 0 && enemySpawnCounter <= 3)
-        {
-            // To do: Visual Feedback
-            SaveMap();
-            return true;
-        }
-        else
-        {
-            // To do: Visual Feedback
-            return false;
-        }
-    }
-
-    public void SaveMap()
-    {
-        Map savedMap = new Map();
-        savedMap.wallMap = consturctedMap.wallMap;
-        LevelSettings levelCopy = MapHandler.Instance.MapSettings.CopyData();
-        GameManager.Instance.gameData.constructedLevelDataDic.Add(levelCopy.levelID, levelCopy);
-    }
     public void RemoveObjectFromCell(Vector3Int position, bool is4Piece = false)
     {
         Debug.Log("REMOVE YAZMADIN MORUK");

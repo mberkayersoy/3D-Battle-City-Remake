@@ -12,6 +12,7 @@ public class EventBus
     public static event EventHandler<OnExplosionEventArgs> OnBigExplosionAction;
     public static event EventHandler<OnExplosionEventArgs> OnTinyExplosionAction;
     public static event EventHandler<OnExplosionEventArgs> OnBrickExplosionAction;
+    public static event Action<int> OnSelectConstructMapAction;
 
     public class OnLevelSelectedEventArgs : EventArgs { public int selectedLevel; }
     public class OnLevelEndEventArgs : EventArgs { public bool isSuccess; }
@@ -84,4 +85,8 @@ public class EventBus
         });
     }
 
+    public static void PublishSelectConstructMap(int mapID)
+    {
+        OnSelectConstructMapAction?.Invoke(mapID);
+    }
 }

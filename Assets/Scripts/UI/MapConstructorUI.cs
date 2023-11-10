@@ -24,6 +24,7 @@ public class MapConstructorUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI greenEnemyText;
     [SerializeField] private TextMeshProUGUI blueEnemyText;
     [SerializeField] private TextMeshProUGUI redEnemyText;
+    [SerializeField] private TextMeshProUGUI feedBackText;
 
     [Header("SLIDERS")]
     [SerializeField] private Slider playerLifeSlider;
@@ -37,8 +38,12 @@ public class MapConstructorUI : MonoBehaviour
     public event Action<int> OnLevelIDChangedAction;
     public event Action<int, EnemyType> OnEnemyCountChangedAction;
     public event Action<WallTypes> OnSelectedWallTypeChangedAction;
-    public event Action OnSaveMapAction;
+    public event Action OnTrySaveMapAction;
 
+    private void OnEnable()
+    {
+        MapHandler.Instance.OnUpdateLevelSettingsUIAction += SetUILevelSettings;
+    }
     private void Start()
     {
         playerLifeSlider.onValueChanged.AddListener(OnPlayerLifeChanged);
@@ -55,7 +60,38 @@ public class MapConstructorUI : MonoBehaviour
         enemySpawnButton.onClick.AddListener(() => OnSelectedWallTypeChangedAction?.Invoke(WallTypes.EnemySpawn));
         playerSpawnButton.onClick.AddListener(() => OnSelectedWallTypeChangedAction?.Invoke(WallTypes.PlayerSpawn));
         eraserButton.onClick.AddListener(() => OnSelectedWallTypeChangedAction?.Invoke(WallTypes.Empty));
-        saveMapButton.onClick.AddListener(() => OnSaveMapAction?.Invoke());
+        saveMapButton.onClick.AddListener(() => OnTrySaveMapAction?.Invoke());
+    }
+
+    private void SetUILevelSettings(LevelSettings storedLevel)
+    {
+        mapIDInpuField.text = storedLevel.levelID.ToString();
+        playerLifeText.text = "Player Life: " + storedLevel.playerLifeCount.ToString();
+        playerLifeSlider.value = storedLevel.playerLifeCount;
+        int grayCounter = 0, greenCounter = 0, blueCounter = 0, redCounter = 0;
+        foreach (var item in storedLevel.enemyList)
+        {
+            switch (item)
+            {
+                default:
+                case EnemyType.Gray:
+                    grayCounter++;
+                    break;
+                case EnemyType.Green:
+                    greenCounter++;
+                    break;
+                case EnemyType.Blue:
+                    blueCounter++;
+                    break;
+                case EnemyType.Red:
+                    redCounter++;
+                    break;
+            }
+        }
+        grayEnemySlider.value = grayCounter; SetText(grayCounter, EnemyType.Gray);
+        greenEnemySlider.value = greenCounter; SetText(greenCounter, EnemyType.Green);
+        blueEnemySlider.value = blueCounter; SetText(blueCounter, EnemyType.Blue);
+        redEnemySlider.value = redCounter; SetText(redCounter, EnemyType.Red);
     }
 
     private void OnLevelIDChanged(string value)
@@ -98,5 +134,30 @@ public class MapConstructorUI : MonoBehaviour
                 redEnemyText.text = enemyType.ToString() + " Count: " + value.ToString();
                 break;
         }
+    }
+
+    IEnumerator CleanFeedBackText()
+    {
+        yield return new WaitForSeconds(1f);
+        feedBackText.text = "";
+    }
+    public void UpdateFeedBackText(bool isSuccesfullySaved)
+    {
+        if (isSuccesfullySaved)
+        {
+            feedBackText.text = "MAP SAVED";
+        }
+        else
+        {
+            feedBackText.text = "MAP COULDN'T SAVED! \n" +
+                                "Map Conditions: \n" +
+                                "You must place 1 eagle \n" +
+                                "You must place 1 player spawn \n" +
+                                "You must place at least 1 and at most 3 enemy spawn \n" +
+                                "You must add at least 1 enemy \n" +
+                                "You must use a map ID that you have not used before.";
+        }
+
+        StartCoroutine(nameof(CleanFeedBackText));
     }
 }

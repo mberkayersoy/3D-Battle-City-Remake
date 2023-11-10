@@ -14,7 +14,8 @@ public class MapHandler : MonoBehaviour
     [SerializeField] private LayerMask constructAreaLayer;
     private GridMapConstructor gridMapConstructor;
 
-    public LevelSettings MapSettings { get => mapSettings; set => mapSettings = value; }
+    public event Action<LevelSettings> OnUpdateLevelSettingsUIAction;
+    //public LevelSettings MapSettings { get => mapSettings; set => mapSettings = value; }
 
     private void Awake()
     {
@@ -26,9 +27,10 @@ public class MapHandler : MonoBehaviour
         mapConstructorUI.OnEnemyCountChangedAction += MapConstructorUI_OnEnemyCountChangedAction;
         mapConstructorUI.OnLevelIDChangedAction += MapConstructorUI_OnLevelIDChangedAction;
         mapConstructorUI.OnPlayerLifeChangedAction += MapConstructorUI_OnPlayerLifeChangedAction;
-        mapConstructorUI.OnSaveMapAction += MapConstructorUI_OnClickSaveMapAction;
+        mapConstructorUI.OnTrySaveMapAction += MapConstructorUI_OnTrySaveMapAction; 
         mapConstructorUI.OnSelectedWallTypeChangedAction += MapConstructorUI_OnSelectedWallTypeChangedAction;
     }
+
 
     private void Update()
     {
@@ -79,7 +81,9 @@ public class MapHandler : MonoBehaviour
         {
             mapSettings = storedMapSetting;
             gridMapConstructor.consturctedMap.wallMap = mapSettings.wallMap;
+
         }
+        OnUpdateLevelSettingsUIAction?.Invoke(mapSettings);
     }
 
     private void MapConstructorUI_OnSelectedWallTypeChangedAction(WallTypes wallType)
@@ -109,14 +113,56 @@ public class MapHandler : MonoBehaviour
             mapSettings.enemyList.Add(enemyType);
         }
     }
-    private void MapConstructorUI_OnClickSaveMapAction()
-    {
-        gridMapConstructor.CheckIsMapCorret();
-    }
-
     private void OnDisable()
     {
         Destroy(gridMapConstructor.gameObject);
+    }
+
+    public bool CheckIsMapCorret()
+    {
+        int eagleCounter = 0;
+        int playerSpawnCounter = 0;
+        int enemySpawnCounter = 0;
+
+        for (int i = 0; i < mapSettings.wallMap.Length; i++)
+        {
+            if (mapSettings.wallMap[i] == WallTypes.Eagle)
+            {
+                eagleCounter++;
+            }
+            else if (mapSettings.wallMap[i] == WallTypes.PlayerSpawn)
+            {
+                playerSpawnCounter++;
+            }
+            else if (mapSettings.wallMap[i] == WallTypes.EnemySpawn)
+            {
+                enemySpawnCounter++;
+            }
+        }
+
+        if (eagleCounter == 1 && playerSpawnCounter == 1 && enemySpawnCounter > 0 && enemySpawnCounter <= 3 
+            && mapSettings.enemyList.Count > 0 && !GameManager.Instance.gameData.constructedLevelDataDic.ContainsKey(mapSettings.levelID))
+        {
+            SaveMap();
+            mapConstructorUI.UpdateFeedBackText(true);
+            return true;
+        }
+        else
+        {
+            mapConstructorUI.UpdateFeedBackText(false);
+            return false;
+        }
+    }
+    private void MapConstructorUI_OnTrySaveMapAction()
+    {
+        CheckIsMapCorret();
+    }
+    public void SaveMap()
+    {
+        Map savedMap = new Map();
+        savedMap.wallMap = mapSettings.wallMap;
+        LevelSettings levelCopy = mapSettings.CopyData();
+        GameManager.Instance.gameData.constructedLevelDataDic.Add(levelCopy.levelID, levelCopy);
     }
 
 }

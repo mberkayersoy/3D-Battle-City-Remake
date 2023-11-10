@@ -13,7 +13,6 @@ public class LevelUIElement : MonoBehaviour
 
     public Button button;
 
-
     private void Start()
     {
         button = GetComponent<Button>();

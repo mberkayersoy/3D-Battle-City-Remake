@@ -23,6 +23,13 @@ public class ConstructPanelUI : MonoBehaviour
         backToMainMenuButton.onClick.AddListener(OnClickBackToMenuButton);
         constructorMapPanelButton.onClick.AddListener(OnClickConstructorMapPanel);
         backToConstructMenuPanelButton.onClick.AddListener(OnClickBackToConstructMenuPanelButton);
+        EventBus.OnSelectConstructMapAction += EventBus_OnSelectConstructMapAction;
+    }
+
+    private void EventBus_OnSelectConstructMapAction(int mapID)
+    {
+        constructMapPanel.GetComponent<MapHandler>().SetLevelSetting(GameManager.Instance.gameData.constructedLevelDataDic[mapID]);
+        SetActivePanel(constructMapPanel.name);
     }
 
     private void OnClickBackToConstructMenuPanelButton()
