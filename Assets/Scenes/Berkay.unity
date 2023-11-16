@@ -129,7 +129,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -209,12 +209,12 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 650
+      value: 590
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -650
+      value: -540
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -325,6 +325,130 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8359190}
   m_CullTransparentMesh: 1
+--- !u!1001 &15143186
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2037842241}
+    m_Modifications:
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 590
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -750
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498470029086788120, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelTemplate (20)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e0802bab84ce9445b3a56c35b1c8061, type: 3}
+--- !u!224 &15143187 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+    type: 3}
+  m_PrefabInstance: {fileID: 15143186}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &31943749
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,7 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.60784316}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -440,7 +564,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -520,12 +644,12 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 900
+      value: 810
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -663,6 +787,8 @@ RectTransform:
   m_Children:
   - {fileID: 1074786713}
   - {fileID: 913244798}
+  - {fileID: 304477292}
+  - {fileID: 780921108}
   m_Father: {fileID: 1968321536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -765,14 +891,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f7daa12e43cb03f47b3aa662c5b0a682, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -886,6 +1012,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 133942005}
+  - {fileID: 333945575}
   - {fileID: 2134033102}
   - {fileID: 1760585924}
   - {fileID: 1206032743}
@@ -1205,16 +1332,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153943579}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1843306970}
+  m_Father: {fileID: 617939163}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 433.3846}
+  m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &153943581
@@ -1400,7 +1527,7 @@ Transform:
   m_GameObject: {fileID: 155370266}
   serializedVersion: 2
   m_LocalRotation: {x: 0.65180653, y: -0, z: -0, w: 0.7583853}
-  m_LocalPosition: {x: 7.35, y: 14.85, z: 4.88}
+  m_LocalPosition: {x: 9, y: 14.85, z: 4.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1472,8 +1599,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1490,13 +1617,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1642,8 +1769,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1773,7 +1900,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1806,14 +1933,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8679245, g: 0.85482377, b: 0.85482377, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1897,8 +2024,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1965,13 +2092,171 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304213956}
   m_CullTransparentMesh: 1
+--- !u!1001 &304477291
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 55405059}
+    m_Modifications:
+    - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.4901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.4901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.4901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 335.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_Name
+      value: Fixed Joystick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252285020698103, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.4901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252285020698103, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.4901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252285020698103, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.4901961
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1234872821}
+  m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+--- !u!224 &304477292 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+    type: 3}
+  m_PrefabInstance: {fileID: 304477291}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &314719075
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -2051,12 +2336,12 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 650
+      value: 590
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -400
+      value: -330
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -2089,13 +2374,88 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 314719075}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &333945574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 333945575}
+  - component: {fileID: 333945577}
+  - component: {fileID: 333945576}
+  m_Layer: 5
+  m_Name: FillBackground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &333945575
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333945574}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 114963041}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -400}
+  m_SizeDelta: {x: 1510, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &333945576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333945574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300046, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &333945577
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333945574}
+  m_CullTransparentMesh: 1
 --- !u!1001 &348537976
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -2175,12 +2535,12 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1400
+      value: 1250
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -400
+      value: -330
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -2563,14 +2923,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 73d959051a0b9b343b0241e6739e5bf9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2684,14 +3044,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6117647, g: 0.60784316, b: 0.60784316, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2840,14 +3200,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 3b99ee04595b78d4abe128efcdfd2cf9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3102,7 +3462,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 152.96729, y: -104.38306}
+  m_AnchoredPosition: {x: 152.96729, y: -117}
   m_SizeDelta: {x: 160, y: 53.999817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &462229803
@@ -3162,14 +3522,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6117647, g: 0.60784316, b: 0.60784316, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3221,8 +3581,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 158.8604, y: -33.848648}
-  m_SizeDelta: {x: 298.8398, y: 47.6973}
+  m_AnchoredPosition: {x: 158.8604, y: -105.64819}
+  m_SizeDelta: {x: 298.8398, y: 61.931}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &463194739
 MonoBehaviour:
@@ -3279,7 +3639,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3363,7 +3723,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -3443,12 +3803,12 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1150
+      value: 1030
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -650
+      value: -540
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -3815,8 +4175,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3839,7 +4199,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4039,8 +4399,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4203,14 +4563,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6117647, g: 0.60784316, b: 0.60784316, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4330,7 +4690,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 195497ea73a0c584089307751917b793, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4444,14 +4804,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6117647, g: 0.60784316, b: 0.60784316, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4565,7 +4925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6117647, g: 0.60784316, b: 0.60784316, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4625,7 +4985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 158.8604, y: -319.37744}
+  m_AnchoredPosition: {x: 158.8604, y: -344.1801}
   m_SizeDelta: {x: 300, y: 392.9727}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &606587792
@@ -4665,15 +5025,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4690,7 +5050,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606587790}
   m_CullTransparentMesh: 1
---- !u!1 &632649585
+--- !u!1 &617939162
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4698,100 +5058,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 632649586}
-  - component: {fileID: 632649589}
-  - component: {fileID: 632649588}
-  - component: {fileID: 632649587}
+  - component: {fileID: 617939163}
+  - component: {fileID: 617939165}
+  - component: {fileID: 617939164}
   m_Layer: 5
-  m_Name: Scrollbar Vertical
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &632649586
+--- !u!224 &617939163
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 632649585}
+  m_GameObject: {fileID: 617939162}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2029686869}
-  m_Father: {fileID: 831532057}
+  - {fileID: 153943580}
+  m_Father: {fileID: 1843306970}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: -17}
-  m_Pivot: {x: 1, y: 1}
---- !u!114 &632649587
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 437.5}
+  m_SizeDelta: {x: 500, y: 75}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &617939164
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 632649585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1297305208}
-  m_HandleRect: {fileID: 1297305207}
-  m_Direction: 2
-  m_Value: 0
-  m_Size: 1
-  m_NumberOfSteps: 0
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &632649588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 632649585}
+  m_GameObject: {fileID: 617939162}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6117647, g: 0.60784316, b: 0.60784316, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4808,13 +5118,13 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &632649589
+--- !u!222 &617939165
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 632649585}
+  m_GameObject: {fileID: 617939162}
   m_CullTransparentMesh: 1
 --- !u!1 &641361224
 GameObject:
@@ -5036,6 +5346,130 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642248575}
   m_CullTransparentMesh: 1
+--- !u!1001 &648127498
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2037842241}
+    m_Modifications:
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1030
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -750
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498470029086788120, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelTemplate (22)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e0802bab84ce9445b3a56c35b1c8061, type: 3}
+--- !u!224 &648127499 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+    type: 3}
+  m_PrefabInstance: {fileID: 648127498}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &660378888
 GameObject:
   m_ObjectHideFlags: 0
@@ -5168,8 +5602,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5368,7 +5802,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 06fa4b964cd4aeb4db55b70ad378a2b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5488,8 +5922,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5608,14 +6042,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.60784316, g: 0.6097366, b: 0.6097366, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5677,6 +6111,112 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &752776465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 752776469}
+  - component: {fileID: 752776468}
+  - component: {fileID: 752776467}
+  - component: {fileID: 752776466}
+  m_Layer: 2
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &752776466
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752776465}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &752776467
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752776465}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: cf75bbe88de8a7e4db86bccf7258ec20, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &752776468
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752776465}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &752776469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752776465}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &758437583
 GameObject:
   m_ObjectHideFlags: 0
@@ -5767,81 +6307,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &762617763
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 762617764}
-  - component: {fileID: 762617766}
-  - component: {fileID: 762617765}
-  m_Layer: 5
-  m_Name: Handle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &762617764
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 762617763}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2047038598}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &762617765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 762617763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &762617766
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 762617763}
-  m_CullTransparentMesh: 1
 --- !u!1 &772342212
 GameObject:
   m_ObjectHideFlags: 0
@@ -5923,7 +6388,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -6008,7 +6473,7 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -900
+      value: -750
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -6058,7 +6523,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &777150844
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6126,18 +6591,157 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultWallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
-  mapSettings:
+  consturctedLevelSettings:
     levelID: 0
-    enemyList: 
+    score: 0
     playerLifeCount: 0
-    mapSO: {fileID: 0}
+    isDefaultMap: 0
+    enemyList: 
     wallMap: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   selectedWallType: 0
   gridMapConstructorPrefab: {fileID: 7835737510691470342, guid: e75eb4703fca8404988b5f877d1e8436,
     type: 3}
-  constructAreaLayer:
+  areaLayer:
     serializedVersion: 2
     m_Bits: 2048
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 4096
+--- !u!1 &780921107
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 780921108}
+  - component: {fileID: 780921111}
+  - component: {fileID: 780921110}
+  - component: {fileID: 780921109}
+  - component: {fileID: 780921112}
+  m_Layer: 5
+  m_Name: FireButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &780921108
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780921107}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 898071664}
+  m_Father: {fileID: 55405059}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -550, y: 256}
+  m_SizeDelta: {x: 256, y: 256}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &780921109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780921107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 780921110}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &780921110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780921107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &780921111
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780921107}
+  m_CullTransparentMesh: 1
+--- !u!114 &780921112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780921107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControlPath: <Gamepad>/buttonEast
 --- !u!1 &799645404
 GameObject:
   m_ObjectHideFlags: 0
@@ -6174,122 +6778,13 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &831532056
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 831532057}
-  - component: {fileID: 831532060}
-  - component: {fileID: 831532059}
-  - component: {fileID: 831532058}
-  m_Layer: 5
-  m_Name: Scroll View
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &831532057
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831532056}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1373105628}
-  - {fileID: 1456931746}
-  - {fileID: 632649586}
-  m_Father: {fileID: 1037804373}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1600, y: 800}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &831532058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831532056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Content: {fileID: 1482160374}
-  m_Horizontal: 0
-  m_Vertical: 1
-  m_MovementType: 1
-  m_Elasticity: 2
-  m_Inertia: 1
-  m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
-  m_Viewport: {fileID: 1373105628}
-  m_HorizontalScrollbar: {fileID: 1456931747}
-  m_VerticalScrollbar: {fileID: 632649587}
-  m_HorizontalScrollbarVisibility: 2
-  m_VerticalScrollbarVisibility: 2
-  m_HorizontalScrollbarSpacing: -3
-  m_VerticalScrollbarSpacing: -3
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &831532059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831532056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &831532060
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831532056}
-  m_CullTransparentMesh: 1
 --- !u!1001 &849736635
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -6369,12 +6864,12 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 400
+      value: 370
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -6413,7 +6908,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -6493,12 +6988,12 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 400
+      value: 370
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -400
+      value: -330
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -6607,7 +7102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6117647, g: 0.60784316, b: 0.60784316, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6658,7 +7153,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -6743,7 +7238,7 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -6951,6 +7446,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897910644}
   m_CullTransparentMesh: 1
+--- !u!1 &898071663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 898071664}
+  - component: {fileID: 898071666}
+  - component: {fileID: 898071665}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &898071664
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898071663}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 780921108}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 150, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &898071665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898071663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d7781b06923f5de4eb464e42476e3eec, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &898071666
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898071663}
+  m_CullTransparentMesh: 1
 --- !u!1 &901732676
 GameObject:
   m_ObjectHideFlags: 0
@@ -7074,7 +7644,6 @@ GameObject:
   - component: {fileID: 913244802}
   - component: {fileID: 913244800}
   - component: {fileID: 913244799}
-  - component: {fileID: 913244801}
   m_Layer: 5
   m_Name: InformationView
   m_TagString: Untagged
@@ -7102,8 +7671,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -158.86041, y: 0}
-  m_SizeDelta: {x: 317.7208, y: 1080}
+  m_AnchoredPosition: {x: -200, y: 0}
+  m_SizeDelta: {x: 400, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &913244799
 MonoBehaviour:
@@ -7118,7 +7687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.60784316}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.88235295}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7126,7 +7695,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7143,32 +7712,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913244797}
   m_CullTransparentMesh: 1
---- !u!114 &913244801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913244797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 10
-    m_Right: 10
-    m_Top: 10
-    m_Bottom: 10
-  m_ChildAlignment: 1
-  m_Spacing: 10
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!114 &913244802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7376,148 +7919,13 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945778258}
   m_CullTransparentMesh: 1
---- !u!1 &950451368
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 950451369}
-  - component: {fileID: 950451371}
-  - component: {fileID: 950451370}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &950451369
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 950451368}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1968321536}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000018597, y: 282.69232}
-  m_SizeDelta: {x: 1884.3844, y: 191.9229}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &950451370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 950451368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: "kaydedilen mapi g\xFCncellerken direkt o mapin referansina eris. yeni
-    map olusturmaya calisma. "
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &950451371
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 950451368}
-  m_CullTransparentMesh: 1
 --- !u!1001 &976380033
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -7597,12 +8005,12 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 900
+      value: 810
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -650
+      value: -540
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -8070,8 +8478,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8144,7 +8552,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -8224,12 +8632,12 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1150
+      value: 1030
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -8304,7 +8712,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -8389,7 +8797,7 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -650
+      value: -540
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -8526,7 +8934,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 831532057}
+  - {fileID: 2037842241}
   m_Father: {fileID: 987757996}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8656,8 +9064,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8674,13 +9082,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -8730,7 +9138,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -8810,12 +9218,12 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1400
+      value: 1250
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -8914,8 +9322,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9034,14 +9442,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6117647, g: 0.60784316, b: 0.60784316, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9199,14 +9607,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6117647, g: 0.60784316, b: 0.60784316, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9365,8 +9773,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9383,13 +9791,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -9496,7 +9904,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -9529,14 +9937,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8679245, g: 0.85482377, b: 0.85482377, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9784,14 +10192,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6117647, g: 0.60784316, b: 0.60784316, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9843,8 +10251,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 295.86447}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 914.2306, y: 530.231}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1206032744
 MonoBehaviour:
@@ -9900,8 +10308,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -10114,14 +10522,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6117647, g: 0.60784316, b: 0.60784316, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10214,13 +10622,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230149259}
   m_CullTransparentMesh: 1
+--- !u!1 &1234872817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+    type: 3}
+  m_PrefabInstance: {fileID: 304477291}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1234872821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234872817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MovementRange: 25
+  m_DynamicOriginRange: 100
+  m_ControlPath: <Gamepad>/leftStick
+  m_Behaviour: 0
+  m_UseIsolatedInputActions: 0
+  m_PointerDownAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  m_PointerMoveAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1001 &1241729263
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -10300,12 +10749,12 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1400
+      value: 1250
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -650
+      value: -540
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -10445,32 +10894,157 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultLevelList:
-  - levelID: 0
-    enemyList: 00000000000000000000000000000000
-    playerLifeCount: 2
-    mapSO: {fileID: 11400000, guid: 151dd5cccb8104a4dad29ad073bb1a84, type: 2}
-    wallMap: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   - levelID: 1
-    enemyList: 000000000000000000000000
-    playerLifeCount: 1
-    mapSO: {fileID: 11400000, guid: f601def1fa314ea43b108ca63cff7d11, type: 2}
-    wallMap: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  - levelID: 2
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
     enemyList: 00000000000000000000000000000000
-    playerLifeCount: 2
-    mapSO: {fileID: 11400000, guid: 9c211195cb6a9e349a9823471e97fc46, type: 2}
-    wallMap: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  - levelID: 3
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000000000000000000000000000000000000000000000000000100000000000000000000000000000003000000000000000600000004000000040000000100000001000000010000000100000001000000000000000100000001000000010000000100000003000000000000000000000004000000040000000000000000000000000000000000000000000000000000000100000003000000030000000100000003000000030000000000000004000000040000000000000001000000020000000100000000000000000000000100000002000000010000000200000001000000030000000000000004000000040000000500000000000000000000000000000000000000000000000100000000000000000000000100000000000000030000000000000004000000040000000100000001000000010000000100000001000000000000000200000000000000000000000100000000000000030000000000000004000000040000000700000001000000030000000300000003000000020000000100000002000000020000000100000000000000030000000600000004000000040000000100000001000000010000000100000001000000000000000200000000000000000000000100000000000000030000000000000004000000040000000000000000000000000000000000000000000000000000000100000000000000000000000100000000000000030000000000000004000000040000000000000001000000020000000100000000000000000000000100000002000000010000000200000001000000030000000000000004000000040000000000000000000000000000000000000000000000000000000100000003000000030000000100000003000000030000000000000004000000040000000100000001000000010000000100000001000000000000000100000001000000010000000100000003000000000000000000000004000000040000000000000000000000000000000000000000000000000000000100000000000000000000000000000003000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 2
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
     enemyList: 000000000000000000000000
-    playerLifeCount: 2
-    mapSO: {fileID: 11400000, guid: 628775c69faadd74fbb025d5533c5e63, type: 2}
-    wallMap: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000000000000000000000000000000000000000000000000000200000001000000000000000000000000000000000000000600000004000000040000000100000001000000010000000100000001000000000000000100000001000000010000000100000001000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000000000001000000010000000100000001000000000000000000000001000000010000000100000001000000000000000000000004000000040000000500000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000004000000040000000100000001000000000000000100000001000000010000000000000001000000010000000100000001000000000000000000000004000000040000000700000001000000000000000300000001000000030000000000000000000000020000000000000000000000000000000600000004000000040000000100000001000000000000000100000001000000010000000000000001000000010000000100000001000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000004000000040000000000000001000000010000000100000001000000000000000000000001000000010000000100000001000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000100000001000000010000000100000001000000000000000100000001000000010000000100000001000000000000000000000004000000040000000000000000000000000000000000000000000000000000000200000001000000000000000000000000000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 3
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 00000000000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000000000000000000000000000000000000000000000000000100000000000000000000000000000003000000000000000600000004000000040000000100000001000000010000000100000001000000000000000100000001000000010000000100000003000000000000000000000004000000040000000000000000000000000000000000000000000000000000000100000003000000030000000100000003000000030000000000000004000000040000000000000001000000020000000100000000000000000000000100000002000000010000000200000001000000030000000000000004000000040000000500000000000000000000000000000000000000000000000100000000000000000000000100000000000000030000000000000004000000040000000100000001000000010000000100000001000000000000000200000000000000000000000100000000000000030000000000000004000000040000000700000001000000030000000300000003000000020000000100000002000000020000000100000000000000030000000600000004000000040000000100000001000000010000000100000001000000000000000200000000000000000000000100000000000000030000000000000004000000040000000000000000000000000000000000000000000000000000000100000000000000000000000100000000000000030000000000000004000000040000000000000001000000020000000100000000000000000000000100000002000000010000000200000001000000030000000000000004000000040000000000000000000000000000000000000000000000000000000100000003000000030000000100000003000000030000000000000004000000040000000100000001000000010000000100000001000000000000000100000001000000010000000100000003000000000000000000000004000000040000000000000000000000000000000000000000000000000000000100000000000000000000000000000003000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 4
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000200000001000000000000000100000000000000000000000000000002000000030000000300000001000000000000000600000004000000040000000100000001000000000000000100000001000000000000000300000003000000020000000300000003000000030000000000000004000000040000000100000000000000000000000000000001000000010000000000000003000000030000000200000003000000030000000000000004000000040000000000000002000000000000000100000001000000000000000000000003000000030000000100000000000000030000000100000004000000040000000500000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000100000004000000040000000100000001000000000000000100000001000000010000000000000000000000000000000100000000000000000000000000000004000000040000000700000001000000000000000000000000000000010000000000000002000000010000000100000000000000000000000600000004000000040000000100000001000000000000000100000000000000010000000000000002000000000000000000000001000000010000000100000004000000040000000000000000000000000000000100000000000000010000000000000002000000010000000100000000000000000000000100000004000000040000000000000003000000030000000300000003000000030000000000000000000000010000000100000000000000000000000000000004000000040000000100000003000000030000000300000003000000030000000000000000000000000000000100000000000000020000000000000004000000040000000000000003000000030000000300000003000000030000000300000001000000010000000100000000000000020000000000000004000000040000000000000000000000000000000000000003000000030000000000000000000000000000000100000000000000020000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 5
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000200000003000000000000000000000001000000000000000000000000000000020000000300000003000000000000000600000004000000040000000300000001000000000000000100000000000000010000000100000000000000000000000100000003000000030000000300000004000000040000000000000000000000010000000100000001000000010000000100000001000000010000000100000000000000000000000000000004000000040000000000000000000000010000000100000001000000010000000000000000000000000000000100000000000000000000000000000004000000040000000500000000000000000000000100000001000000010000000000000002000000000000000100000001000000000000000200000004000000040000000100000001000000000000000100000001000000010000000000000000000000000000000100000001000000030000000300000004000000040000000700000001000000000000000100000001000000010000000000000002000000000000000100000001000000000000000600000004000000040000000100000001000000000000000000000001000000010000000100000001000000010000000100000001000000030000000300000004000000040000000000000000000000010000000100000001000000010000000100000001000000010000000100000001000000000000000200000004000000040000000000000000000000010000000100000000000000000000000000000000000000010000000100000001000000000000000000000004000000040000000300000000000000010000000100000000000000000000000000000000000000010000000100000000000000000000000000000004000000040000000300000003000000000000000000000000000000010000000100000001000000010000000000000000000000030000000300000004000000040000000200000003000000030000000000000000000000000000000200000003000000030000000300000002000000030000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 6
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000000000000000000000000000000000002000000020000000000000001000000030000000300000003000000030000000600000004000000040000000000000001000000010000000100000002000000010000000000000001000000030000000100000001000000010000000000000004000000040000000100000001000000010000000000000002000000010000000000000001000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000010000000000000000000000000000000300000003000000030000000300000004000000040000000500000000000000000000000000000001000000010000000100000000000000010000000100000001000000010000000300000004000000040000000100000001000000000000000100000003000000030000000300000003000000000000000300000000000000000000000000000004000000040000000700000001000000000000000300000003000000020000000300000001000000010000000200000001000000000000000600000004000000040000000100000001000000000000000100000003000000030000000300000003000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000001000000010000000100000000000000010000000100000001000000010000000300000004000000040000000000000001000000010000000000000000000000010000000000000000000000000000000300000003000000030000000300000004000000040000000100000003000000010000000000000002000000010000000000000001000000000000000000000000000000000000000000000004000000040000000300000003000000030000000000000002000000010000000000000001000000030000000100000001000000010000000000000004000000040000000300000003000000030000000000000002000000020000000000000001000000030000000300000003000000030000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 7
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000200000000000000000000000200000002000000000000000000000000000000000000000000000000000000000000000600000004000000040000000200000000000000020000000000000000000000020000000200000002000000000000000200000000000000000000000000000004000000040000000000000000000000020000000000000000000000000000000000000000000000000000000200000002000000020000000000000004000000040000000000000002000000020000000000000000000000000000000200000000000000000000000000000000000000020000000000000004000000040000000500000000000000000000000000000000000000020000000200000002000000000000000000000000000000020000000000000004000000040000000100000001000000000000000000000000000000000000000000000002000000020000000000000000000000020000000000000004000000040000000700000001000000030000000200000002000000020000000000000002000000020000000200000000000000000000000600000004000000040000000100000001000000000000000300000002000000020000000000000000000000000000000000000000000000000000000200000004000000040000000000000000000000000000000000000003000000020000000200000002000000000000000000000002000000000000000200000004000000040000000000000000000000020000000200000000000000030000000200000000000000000000000200000002000000000000000000000004000000040000000000000000000000000000000000000002000000000000000000000000000000020000000200000002000000020000000000000004000000040000000000000002000000000000000000000002000000020000000200000000000000020000000000000000000000000000000000000004000000040000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 8
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000100000003000000030000000300000000000000000000000100000000000000000000000300000003000000030000000600000004000000040000000100000001000000030000000300000000000000010000000100000003000000010000000000000003000000010000000000000004000000040000000000000000000000000000000000000000000000030000000300000001000000030000000000000003000000010000000100000004000000040000000000000001000000010000000100000000000000020000000100000003000000000000000000000000000000010000000200000004000000040000000500000000000000000000000100000000000000000000000300000000000000000000000000000002000000020000000200000004000000040000000100000001000000000000000100000000000000020000000000000000000000000000000000000001000000010000000100000004000000040000000700000001000000000000000000000000000000000000000100000001000000010000000000000000000000000000000600000004000000040000000100000001000000000000000100000000000000030000000300000001000000010000000000000001000000010000000100000004000000040000000000000000000000000000000100000000000000030000000100000001000000010000000000000002000000000000000000000004000000040000000000000001000000010000000100000001000000030000000100000001000000000000000000000001000000010000000100000004000000040000000000000000000000000000000000000001000000030000000000000001000000000000000000000001000000010000000200000004000000040000000100000001000000010000000300000001000000020000000000000002000000000000000100000001000000020000000000000004000000040000000000000000000000000000000300000003000000020000000000000002000000010000000300000003000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 9
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000000000000000000000000000000000001000000010000000000000001000000000000000000000000000000010000000600000004000000040000000100000001000000010000000000000000000000000000000300000002000000030000000100000000000000000000000000000004000000040000000100000001000000000000000000000000000000010000000200000002000000020000000100000000000000000000000100000004000000040000000100000000000000000000000300000002000000030000000300000002000000030000000100000000000000020000000100000004000000040000000500000000000000000000000200000002000000020000000100000001000000010000000100000000000000030000000300000004000000040000000100000001000000000000000300000002000000030000000100000003000000020000000300000000000000030000000200000004000000040000000700000001000000000000000100000001000000010000000100000002000000020000000200000000000000000000000600000004000000040000000100000001000000000000000300000002000000030000000100000003000000020000000300000000000000030000000300000004000000040000000000000000000000000000000200000002000000020000000100000001000000010000000100000003000000020000000300000004000000040000000100000000000000000000000300000002000000030000000300000002000000030000000100000002000000020000000200000004000000040000000100000001000000000000000000000000000000010000000200000002000000020000000100000003000000020000000300000004000000040000000100000001000000010000000000000000000000000000000300000002000000030000000100000000000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000010000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 10
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000000000000000000010000000100000001000000000000000000000001000000010000000100000003000000030000000600000004000000040000000000000001000000030000000300000003000000010000000100000001000000020000000100000001000000030000000000000004000000040000000000000001000000030000000300000000000000010000000100000001000000000000000000000001000000030000000000000004000000040000000100000001000000030000000300000000000000010000000100000001000000000000000000000001000000030000000200000004000000040000000500000000000000030000000300000001000000010000000200000002000000010000000100000001000000010000000100000004000000040000000100000001000000000000000300000002000000010000000300000002000000030000000200000003000000020000000300000004000000040000000700000001000000000000000300000002000000010000000300000003000000030000000300000000000000000000000600000004000000040000000100000001000000000000000300000002000000010000000300000002000000030000000200000003000000020000000300000004000000040000000000000000000000030000000300000001000000010000000200000002000000010000000100000001000000010000000100000004000000040000000000000001000000030000000300000000000000010000000100000001000000000000000000000001000000030000000200000004000000040000000000000001000000030000000300000000000000010000000100000001000000000000000000000001000000030000000000000004000000040000000100000001000000030000000300000003000000010000000100000001000000000000000000000001000000030000000000000004000000040000000000000000000000010000000100000001000000000000000000000001000000010000000100000003000000030000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 11
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000000000000000000000000000100000002000000020000000000000000000000010000000000000000000000000000000600000004000000040000000100000000000000010000000100000001000000000000000100000001000000010000000000000000000000010000000000000004000000040000000300000003000000030000000300000000000000000000000100000000000000000000000000000001000000010000000000000004000000040000000300000003000000030000000300000003000000020000000100000001000000010000000000000000000000010000000000000004000000040000000500000000000000000000000300000003000000000000000000000002000000010000000000000000000000010000000000000004000000040000000100000001000000000000000300000003000000000000000200000000000000010000000000000001000000010000000200000004000000040000000700000001000000000000000300000003000000000000000000000000000000020000000000000000000000000000000600000004000000040000000100000001000000000000000300000003000000030000000300000001000000010000000200000001000000010000000100000004000000040000000000000000000000020000000000000002000000030000000300000000000000010000000000000001000000000000000000000004000000040000000000000001000000010000000000000003000000030000000300000003000000030000000300000000000000000000000100000004000000040000000000000000000000010000000000000003000000030000000300000003000000030000000300000003000000000000000100000004000000040000000000000001000000010000000100000001000000010000000000000000000000010000000300000003000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000001000000020000000300000003000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 12
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000100000001000000010000000100000001000000010000000100000000000000000000000000000000000000000000000600000004000000040000000100000001000000020000000100000002000000020000000200000001000000010000000200000001000000010000000000000004000000040000000000000000000000010000000000000000000000000000000100000000000000000000000000000000000000010000000000000004000000040000000000000001000000010000000100000001000000000000000100000000000000010000000100000000000000010000000000000004000000040000000500000000000000000000000100000003000000030000000300000003000000030000000100000000000000010000000100000004000000040000000100000001000000000000000000000003000000010000000200000001000000030000000000000000000000000000000000000004000000040000000700000001000000000000000000000003000000020000000200000002000000030000000000000001000000000000000600000004000000040000000100000001000000000000000000000003000000010000000200000001000000030000000000000000000000000000000000000004000000040000000000000000000000000000000100000003000000030000000300000003000000030000000100000000000000010000000100000004000000040000000000000001000000000000000100000001000000000000000100000000000000010000000100000000000000010000000000000004000000040000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000004000000040000000000000001000000020000000100000001000000000000000200000002000000010000000200000001000000010000000000000004000000040000000000000000000000000000000000000001000000010000000100000001000000010000000000000000000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 13
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000000000000000000000000000000000002000000020000000000000000000000030000000300000003000000000000000600000004000000040000000000000000000000010000000100000001000000020000000100000003000000030000000200000003000000000000000000000004000000040000000000000001000000010000000000000000000000010000000100000003000000010000000100000003000000030000000000000004000000040000000000000000000000010000000000000001000000010000000100000001000000030000000300000003000000010000000000000004000000040000000500000000000000030000000000000000000000000000000100000002000000030000000100000003000000010000000100000004000000040000000100000001000000000000000100000001000000000000000100000003000000030000000100000003000000000000000100000004000000040000000700000001000000030000000000000001000000000000000000000003000000020000000100000003000000000000000600000004000000040000000100000001000000030000000300000000000000010000000100000003000000030000000300000003000000000000000000000004000000040000000000000001000000010000000000000003000000000000000100000003000000030000000300000001000000010000000100000004000000040000000300000003000000030000000100000003000000000000000100000001000000010000000300000001000000000000000000000004000000040000000300000001000000010000000000000001000000000000000000000000000000000000000300000000000000000000000000000004000000040000000300000003000000030000000000000000000000000000000300000001000000010000000100000000000000000000000000000004000000040000000000000000000000030000000300000003000000030000000300000000000000000000000200000000000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 14
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000200000002000000010000000100000000000000000000000200000002000000020000000200000000000000000000000600000004000000040000000200000001000000010000000000000000000000010000000300000003000000030000000300000000000000000000000000000004000000040000000100000001000000000000000000000001000000030000000100000001000000030000000100000000000000020000000000000004000000040000000100000000000000000000000300000003000000010000000100000003000000010000000000000003000000030000000000000004000000040000000500000000000000000000000000000001000000010000000300000001000000010000000200000000000000020000000000000004000000040000000100000001000000000000000000000000000000010000000100000001000000000000000000000000000000000000000000000004000000040000000700000001000000000000000300000003000000010000000100000003000000030000000300000001000000000000000600000004000000040000000100000001000000030000000000000000000000030000000200000001000000030000000200000000000000000000000000000004000000040000000300000003000000000000000000000003000000030000000300000003000000010000000300000000000000000000000000000004000000040000000000000000000000030000000300000003000000030000000300000001000000030000000300000001000000020000000000000004000000040000000000000003000000030000000300000003000000030000000200000000000000000000000100000002000000030000000000000004000000040000000300000003000000030000000300000003000000010000000000000000000000000000000200000003000000000000000000000004000000040000000300000003000000030000000200000001000000000000000000000000000000000000000000000000000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 15
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000000000003000000020000000200000002000000000000000000000000000000000000000000000001000000000000000600000004000000040000000000000002000000000000000000000002000000000000000000000000000000000000000100000003000000010000000000000004000000040000000000000002000000000000000100000002000000010000000100000000000000010000000300000001000000000000000000000004000000040000000000000002000000020000000100000003000000000000000100000000000000000000000100000000000000000000000000000004000000040000000500000000000000000000000100000000000000030000000200000002000000030000000000000000000000000000000000000004000000040000000100000001000000000000000100000001000000010000000100000000000000020000000000000000000000000000000000000004000000040000000700000001000000000000000000000000000000020000000000000001000000010000000100000001000000000000000600000004000000040000000100000001000000000000000000000000000000030000000200000002000000030000000000000001000000000000000000000004000000040000000000000000000000000000000100000001000000000000000000000001000000000000000300000001000000020000000200000004000000040000000000000000000000020000000200000001000000000000000000000001000000010000000100000001000000000000000200000004000000040000000000000001000000010000000200000000000000000000000000000000000000000000000200000000000000000000000200000004000000040000000200000002000000010000000000000000000000000000000000000000000000000000000200000002000000020000000300000004000000040000000200000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 16
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000000000000000000000000000100000003000000030000000300000001000000000000000300000000000000000000000600000004000000040000000000000001000000010000000100000003000000030000000300000000000000000000000200000001000000010000000100000004000000040000000000000000000000000000000100000003000000030000000100000001000000000000000300000003000000030000000300000004000000040000000000000001000000010000000000000003000000030000000100000000000000000000000200000001000000010000000100000004000000040000000500000000000000000000000100000003000000010000000100000001000000000000000300000003000000030000000300000004000000040000000100000001000000000000000300000003000000000000000000000000000000000000000200000001000000010000000100000004000000040000000700000001000000030000000300000001000000010000000200000001000000000000000300000000000000000000000600000004000000040000000100000001000000000000000300000003000000000000000000000000000000000000000200000001000000010000000100000004000000040000000000000000000000000000000100000003000000010000000100000001000000000000000300000003000000030000000300000004000000040000000000000001000000010000000000000003000000030000000100000000000000000000000200000001000000010000000100000004000000040000000000000000000000000000000100000003000000030000000100000001000000000000000300000003000000030000000300000004000000040000000000000001000000010000000100000003000000030000000300000000000000000000000200000001000000010000000100000004000000040000000000000000000000000000000100000003000000030000000100000001000000000000000300000000000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 17
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000300000000000000000000000000000003000000010000000200000001000000030000000000000000000000000000000600000004000000040000000200000003000000000000000000000001000000030000000100000003000000020000000300000000000000000000000000000004000000040000000300000000000000030000000300000000000000010000000300000002000000010000000100000003000000000000000000000004000000040000000000000003000000010000000100000003000000000000000100000003000000010000000300000000000000000000000000000004000000040000000500000000000000030000000300000000000000000000000300000002000000030000000000000002000000030000000000000004000000040000000100000001000000000000000000000000000000030000000200000003000000000000000100000003000000020000000300000004000000040000000700000001000000000000000000000000000000000000000300000000000000010000000000000002000000030000000600000004000000040000000100000001000000000000000000000003000000000000000000000001000000000000000300000000000000000000000000000004000000040000000000000000000000000000000300000001000000030000000100000000000000030000000100000003000000000000000100000004000000040000000300000000000000000000000100000003000000000000000300000000000000030000000100000003000000010000000200000004000000040000000100000003000000000000000000000001000000030000000200000003000000020000000300000000000000010000000200000004000000040000000300000002000000030000000000000000000000010000000300000002000000030000000000000000000000000000000100000004000000040000000000000003000000000000000000000000000000000000000100000003000000020000000300000000000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 18
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000300000003000000010000000000000003000000020000000300000001000000000000000000000000000000000000000600000004000000040000000300000000000000000000000100000000000000030000000000000000000000020000000000000002000000000000000300000004000000040000000200000000000000000000000000000001000000000000000000000000000000020000000000000000000000000000000300000004000000040000000000000000000000020000000000000000000000010000000000000002000000030000000100000001000000010000000300000004000000040000000500000000000000000000000200000002000000010000000200000003000000030000000000000000000000000000000300000004000000040000000100000001000000000000000000000000000000030000000300000003000000010000000000000002000000000000000300000004000000040000000700000001000000020000000100000003000000030000000300000002000000020000000200000002000000000000000600000004000000040000000100000001000000000000000000000000000000030000000300000003000000010000000000000000000000000000000300000004000000040000000000000000000000000000000200000002000000010000000200000003000000030000000000000000000000000000000300000004000000040000000000000000000000020000000000000000000000010000000000000002000000030000000100000001000000010000000300000004000000040000000200000000000000000000000000000001000000000000000000000000000000020000000000000000000000000000000300000004000000040000000300000000000000000000000100000000000000030000000000000000000000020000000000000000000000000000000300000004000000040000000300000003000000010000000000000003000000020000000300000001000000000000000000000000000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 19
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000000000000000000000000000300000000000000000000000000000003000000000000000000000000000000020000000600000004000000040000000000000000000000000000000200000000000000000000000000000002000000010000000200000002000000020000000000000004000000040000000000000000000000000000000200000001000000020000000200000002000000000000000000000000000000000000000000000004000000040000000200000002000000010000000200000000000000000000000300000000000000000000000000000000000000000000000000000004000000040000000500000000000000000000000300000000000000000000000200000002000000000000000200000002000000020000000200000004000000040000000100000001000000000000000300000002000000030000000300000001000000000000000200000000000000000000000000000004000000040000000700000001000000000000000100000000000000000000000000000002000000020000000200000000000000000000000600000004000000040000000100000001000000000000000200000000000000000000000000000001000000000000000000000000000000020000000000000004000000040000000000000000000000030000000200000002000000020000000100000001000000020000000300000002000000020000000000000004000000040000000200000003000000030000000000000002000000000000000000000000000000020000000000000000000000000000000000000004000000040000000000000000000000000000000100000001000000000000000000000000000000020000000200000002000000000000000000000004000000040000000100000001000000010000000200000002000000020000000200000000000000000000000000000002000000000000000000000004000000040000000000000000000000000000000000000000000000000000000200000000000000000000000000000003000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 20
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000100000000000000000000000000000002000000000000000300000003000000000000000000000000000000000000000600000004000000040000000000000000000000000000000000000000000000010000000300000003000000020000000000000000000000010000000000000004000000040000000000000001000000000000000000000000000000000000000300000001000000000000000000000000000000000000000000000004000000040000000000000000000000020000000000000000000000000000000000000001000000000000000000000001000000000000000000000004000000040000000500000001000000030000000300000003000000000000000100000000000000010000000300000003000000020000000000000004000000040000000100000001000000000000000000000003000000010000000000000000000000000000000300000003000000000000000000000004000000040000000700000001000000000000000000000000000000000000000000000002000000000000000300000003000000000000000600000004000000040000000100000001000000000000000000000000000000000000000000000000000000030000000300000003000000010000000000000004000000040000000000000000000000030000000300000003000000020000000000000000000000010000000000000001000000030000000000000004000000040000000100000000000000030000000300000003000000000000000200000000000000000000000000000003000000030000000000000004000000040000000200000000000000000000000100000000000000000000000000000001000000000000000100000001000000030000000100000004000000040000000300000000000000010000000200000001000000000000000000000001000000000000000100000002000000000000000000000004000000040000000300000003000000030000000300000003000000000000000200000000000000000000000000000000000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 21
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000100000001000000000000000000000000000000000000000200000000000000000000000000000000000000000000000600000004000000040000000000000000000000000000000100000002000000000000000000000000000000000000000100000001000000010000000000000004000000040000000100000001000000000000000000000001000000010000000200000002000000000000000000000000000000000000000000000004000000040000000000000001000000010000000000000001000000010000000000000000000000000000000000000001000000010000000200000004000000040000000500000000000000000000000000000000000000000000000000000001000000010000000000000000000000000000000000000004000000040000000100000001000000000000000100000001000000010000000100000003000000010000000100000000000000000000000100000004000000040000000700000001000000000000000100000002000000030000000300000003000000030000000300000002000000000000000600000004000000040000000100000001000000000000000200000003000000030000000200000001000000010000000200000000000000000000000100000004000000040000000000000000000000000000000000000001000000030000000300000001000000010000000100000000000000000000000000000004000000040000000100000001000000020000000000000001000000010000000300000003000000030000000300000002000000020000000100000004000000040000000100000002000000000000000000000000000000020000000200000001000000020000000000000000000000000000000000000004000000040000000100000000000000000000000100000000000000000000000100000001000000000000000000000002000000000000000200000004000000040000000000000000000000010000000100000001000000000000000000000000000000000000000200000002000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 22
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000000000000000000000000000300000001000000010000000200000002000000010000000100000003000000000000000600000004000000040000000000000000000000030000000200000001000000010000000100000002000000010000000300000000000000000000000000000004000000040000000000000000000000030000000200000002000000010000000100000002000000010000000300000000000000000000000000000004000000040000000000000000000000000000000300000002000000020000000100000001000000010000000100000003000000000000000000000004000000040000000500000000000000000000000300000002000000010000000100000001000000020000000100000001000000010000000000000004000000040000000100000001000000000000000300000001000000010000000100000001000000010000000100000003000000000000000000000004000000040000000700000001000000000000000300000002000000010000000100000001000000020000000100000001000000010000000600000004000000040000000100000001000000000000000300000002000000020000000100000001000000010000000100000003000000000000000000000004000000040000000000000000000000030000000200000002000000010000000100000002000000010000000300000000000000000000000000000004000000040000000000000000000000030000000200000001000000010000000100000002000000010000000300000000000000000000000000000004000000040000000000000000000000000000000300000001000000010000000200000002000000010000000100000003000000000000000000000004000000040000000000000000000000030000000200000002000000030000000200000003000000030000000300000000000000000000000000000004000000040000000000000000000000000000000300000002000000030000000300000000000000000000000000000000000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 23
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000000000000000000000000000200000001000000000000000000000002000000030000000300000003000000020000000600000004000000040000000200000002000000000000000200000000000000020000000000000002000000030000000200000003000000020000000000000004000000040000000000000002000000010000000000000000000000020000000100000000000000000000000200000001000000000000000000000004000000040000000000000002000000000000000200000001000000030000000300000002000000020000000200000000000000020000000200000004000000040000000500000003000000030000000200000000000000020000000100000002000000000000000200000000000000000000000000000004000000040000000100000001000000030000000000000000000000020000000000000002000000000000000000000001000000020000000000000004000000040000000700000001000000000000000200000002000000020000000100000002000000020000000200000000000000020000000600000004000000040000000100000001000000000000000100000000000000020000000300000000000000000000000000000000000000020000000000000004000000040000000000000000000000030000000200000003000000000000000000000000000000020000000000000002000000020000000200000004000000040000000000000002000000020000000200000003000000030000000200000002000000020000000100000000000000000000000000000004000000040000000000000000000000000000000200000002000000010000000000000000000000020000000300000002000000020000000000000004000000040000000000000002000000000000000000000000000000000000000000000000000000020000000300000003000000020000000000000004000000040000000000000002000000020000000000000002000000020000000200000000000000030000000300000002000000020000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
+  - levelID: 24
+    score: 0
+    playerLifeCount: 3
+    isDefaultMap: 1
+    enemyList: 000000000000000000000000
+    wallMap: 040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000000000003000000030000000300000003000000030000000100000003000000000000000000000000000000000000000600000004000000040000000000000003000000010000000100000001000000030000000200000003000000000000000100000001000000010000000000000004000000040000000000000001000000030000000300000001000000030000000100000003000000010000000300000003000000010000000100000004000000040000000000000001000000010000000100000000000000030000000200000003000000010000000100000001000000030000000100000004000000040000000500000000000000000000000000000000000000030000000100000003000000030000000300000003000000030000000100000004000000040000000100000001000000000000000000000001000000030000000200000003000000010000000000000000000000000000000000000004000000040000000700000001000000000000000100000003000000010000000100000001000000030000000100000000000000000000000600000004000000040000000100000001000000000000000000000001000000030000000200000003000000010000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000030000000100000003000000030000000300000003000000030000000100000004000000040000000000000001000000010000000100000000000000030000000200000003000000010000000100000001000000030000000100000004000000040000000000000001000000030000000300000001000000030000000100000003000000010000000300000003000000010000000100000004000000040000000000000003000000010000000100000001000000030000000200000003000000000000000100000001000000010000000000000004000000040000000000000003000000030000000300000003000000030000000100000003000000000000000000000000000000000000000600000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000
   levelManagerPrefab: {fileID: 6249750127953188554, guid: 6b25ae7b381382948a4a770d13d84062,
     type: 3}
   currentLevelManager: {fileID: 0}
+  playingDefaultLevel: 0
   gameData:
-    activeMaxLevelID: 0
-    currentLevelID: 0
+    activeMaxLevelID: 1
+    currentLevelID: 1
 --- !u!4 &1277049204
 Transform:
   m_ObjectHideFlags: 0
@@ -10486,81 +11060,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1297305206
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1297305207}
-  - component: {fileID: 1297305209}
-  - component: {fileID: 1297305208}
-  m_Layer: 5
-  m_Name: Handle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1297305207
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1297305206}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2029686869}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1297305208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1297305206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1297305209
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1297305206}
-  m_CullTransparentMesh: 1
 --- !u!1 &1301596528
 GameObject:
   m_ObjectHideFlags: 0
@@ -10598,7 +11097,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 158.8604, y: -692.9661}
+  m_AnchoredPosition: {x: 158.8604, y: -715.11664}
   m_SizeDelta: {x: 300, y: 223.8171}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1301596530
@@ -10614,15 +11113,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -10705,8 +11204,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -11091,7 +11590,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -11171,12 +11670,12 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 400
+      value: 370
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -650
+      value: -540
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -11315,8 +11814,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -11339,7 +11838,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -11472,103 +11971,13 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
---- !u!1 &1373105627
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1373105628}
-  - component: {fileID: 1373105631}
-  - component: {fileID: 1373105630}
-  - component: {fileID: 1373105629}
-  m_Layer: 5
-  m_Name: Viewport
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1373105628
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373105627}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1482160374}
-  m_Father: {fileID: 831532057}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: -17}
-  m_Pivot: {x: 0, y: 1}
---- !u!114 &1373105629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373105627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 0
---- !u!114 &1373105630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373105627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1373105631
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373105627}
-  m_CullTransparentMesh: 1
 --- !u!1001 &1378777701
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -11648,12 +12057,12 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 400
+      value: 370
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -900
+      value: -750
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -11904,7 +12313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.60784316}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11928,132 +12337,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446505293}
-  m_CullTransparentMesh: 1
---- !u!1 &1456931745
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1456931746}
-  - component: {fileID: 1456931749}
-  - component: {fileID: 1456931748}
-  - component: {fileID: 1456931747}
-  m_Layer: 5
-  m_Name: Scrollbar Horizontal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1456931746
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456931745}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2047038598}
-  m_Father: {fileID: 831532057}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 20}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &1456931747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456931745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 762617765}
-  m_HandleRect: {fileID: 762617764}
-  m_Direction: 0
-  m_Value: 0
-  m_Size: 1
-  m_NumberOfSteps: 0
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1456931748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456931745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1456931749
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456931745}
   m_CullTransparentMesh: 1
 --- !u!1 &1459851782
 GameObject:
@@ -12196,7 +12479,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -12276,12 +12559,12 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1150
+      value: 1030
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -400
+      value: -330
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -12314,86 +12597,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1464904823}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1482160373
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1482160374}
-  - component: {fileID: 1482160375}
-  m_Layer: 5
-  m_Name: Content
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1482160374
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482160373}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 895950491}
-  - {fileID: 849736636}
-  - {fileID: 1740813903}
-  - {fileID: 34526835}
-  - {fileID: 1022846540}
-  - {fileID: 1072516087}
-  - {fileID: 1725987109}
-  - {fileID: 872503496}
-  - {fileID: 314719076}
-  - {fileID: 1736956533}
-  - {fileID: 1464904824}
-  - {fileID: 348537977}
-  - {fileID: 1029246267}
-  - {fileID: 1354500979}
-  - {fileID: 2654121}
-  - {fileID: 976380034}
-  - {fileID: 468634828}
-  - {fileID: 1241729264}
-  - {fileID: 774013016}
-  - {fileID: 1378777702}
-  m_Father: {fileID: 1373105628}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0002115426}
-  m_SizeDelta: {x: 0, y: 300}
-  m_Pivot: {x: 0, y: 1}
---- !u!114 &1482160375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482160373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 50
-    m_Right: 50
-    m_Top: 50
-    m_Bottom: 50
-  m_ChildAlignment: 0
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 200, y: 200}
-  m_Spacing: {x: 50, y: 50}
-  m_Constraint: 0
-  m_ConstraintCount: 2
 --- !u!1 &1495122289
 GameObject:
   m_ObjectHideFlags: 0
@@ -12750,6 +12953,7 @@ RectTransform:
   m_Children:
   - {fileID: 1843306970}
   - {fileID: 777150844}
+  - {fileID: 1758503470}
   m_Father: {fileID: 1968321536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -12774,6 +12978,74 @@ MonoBehaviour:
   constructorMapPanelButton: {fileID: 1074173536}
   backToMainMenuButton: {fileID: 1945759908}
   backToConstructMenuPanelButton: {fileID: 877467438}
+--- !u!1001 &1537856669
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1533478319}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b3bc1f988758c4549a7e779692d22136,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b3bc1f988758c4549a7e779692d22136,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b3bc1f988758c4549a7e779692d22136,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b3bc1f988758c4549a7e779692d22136,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b3bc1f988758c4549a7e779692d22136,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b3bc1f988758c4549a7e779692d22136,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b3bc1f988758c4549a7e779692d22136,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b3bc1f988758c4549a7e779692d22136,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b3bc1f988758c4549a7e779692d22136,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b3bc1f988758c4549a7e779692d22136,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b3bc1f988758c4549a7e779692d22136,
+        type: 3}
+      propertyPath: m_Name
+      value: Eagle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3bc1f988758c4549a7e779692d22136, type: 3}
 --- !u!1 &1555968079
 GameObject:
   m_ObjectHideFlags: 0
@@ -12840,8 +13112,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -13169,14 +13441,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6117647, g: 0.60784316, b: 0.60784316, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13194,6 +13466,130 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599026451}
   m_CullTransparentMesh: 1
+--- !u!1001 &1600442791
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2037842241}
+    m_Modifications:
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -750
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498470029086788120, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelTemplate (23)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e0802bab84ce9445b3a56c35b1c8061, type: 3}
+--- !u!224 &1600442792 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+    type: 3}
+  m_PrefabInstance: {fileID: 1600442791}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1606251921
 GameObject:
   m_ObjectHideFlags: 0
@@ -13260,8 +13656,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -13284,7 +13680,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -13473,8 +13869,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -13497,7 +13893,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -13639,7 +14035,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 158.8604, y: -942.4373}
+  m_AnchoredPosition: {x: 158.8604, y: -943.4741}
   m_SizeDelta: {x: 298.8398, y: 144.7378}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1631364263
@@ -13697,7 +14093,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -13904,6 +14300,130 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643768690}
   m_CullTransparentMesh: 1
+--- !u!1001 &1652758206
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2037842241}
+    m_Modifications:
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 810
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -750
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498470029086788120, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelTemplate (21)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e0802bab84ce9445b3a56c35b1c8061, type: 3}
+--- !u!224 &1652758207 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+    type: 3}
+  m_PrefabInstance: {fileID: 1652758206}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1695277942
 GameObject:
   m_ObjectHideFlags: 0
@@ -13999,14 +14519,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.94436383, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: bb1ffa98585859c4ebcd0fc77bdd9aa8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14090,8 +14610,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -14108,13 +14628,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -14358,8 +14878,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -14432,7 +14952,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -14517,7 +15037,7 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -400
+      value: -330
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -14631,7 +15151,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -14711,12 +15231,12 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 900
+      value: 810
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -400
+      value: -330
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -14755,7 +15275,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1482160374}
+    m_TransformParent: {fileID: 2037842241}
     m_Modifications:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -14835,12 +15355,12 @@ PrefabInstance:
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 650
+      value: 590
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 3697486870059904223, guid: 5e0802bab84ce9445b3a56c35b1c8061,
         type: 3}
@@ -14936,7 +15456,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -14969,7 +15489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6117647, g: 0.60784316, b: 0.60784316, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14994,6 +15514,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757802483}
   m_CullTransparentMesh: 1
+--- !u!4 &1758503470 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b3bc1f988758c4549a7e779692d22136,
+    type: 3}
+  m_PrefabInstance: {fileID: 1537856669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1760585923
 GameObject:
   m_ObjectHideFlags: 0
@@ -15358,14 +15884,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6117647, g: 0.60784316, b: 0.60784316, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15601,8 +16127,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -15619,13 +16145,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -15765,14 +16291,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.60784316, g: 0.6097366, b: 0.6097366, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15820,7 +16346,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1945759911}
-  - {fileID: 153943580}
+  - {fileID: 617939163}
   - {fileID: 1446505294}
   - {fileID: 1074173533}
   m_Father: {fileID: 1533478319}
@@ -16355,14 +16881,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6117647, g: 0.60784316, b: 0.60784316, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16602,7 +17128,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 950451369}
   - {fileID: 944225670}
   - {fileID: 987757996}
   - {fileID: 1533478319}
@@ -16666,7 +17191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a305c5322e0eb4745a53a8ea49aac6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  constructedLevelUIElementPrefab: {fileID: 1744986961213196696, guid: 5e0802bab84ce9445b3a56c35b1c8061,
+  constructedLevelUIElementPrefab: {fileID: 8669279073806686727, guid: b01c14a4c7922194aac0c3a4e7584c08,
     type: 3}
   contentTransform: {fileID: 142086635}
 --- !u!1 &2004630570
@@ -16852,42 +17377,7 @@ MonoBehaviour:
   levelSituationText: {fileID: 483745989}
   levelScoreText: {fileID: 1763032024}
   nextLevelButton: {fileID: 568107230}
---- !u!1 &2029686868
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2029686869}
-  m_Layer: 5
-  m_Name: Sliding Area
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2029686869
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029686868}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1297305207}
-  m_Father: {fileID: 632649586}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: -20}
-  m_Pivot: {x: 0.5, y: 0.5}
+  restartLevelButton: {fileID: 404592824}
 --- !u!1 &2033141662
 GameObject:
   m_ObjectHideFlags: 0
@@ -17117,14 +17607,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9433962, g: 0.4352109, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 2b98181fb6b1dc44c8f07c6676c1ec13, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17142,7 +17632,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034222984}
   m_CullTransparentMesh: 1
---- !u!1 &2047038597
+--- !u!1 &2037842240
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17150,34 +17640,122 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2047038598}
+  - component: {fileID: 2037842241}
+  - component: {fileID: 2037842244}
+  - component: {fileID: 2037842243}
+  - component: {fileID: 2037842242}
   m_Layer: 5
-  m_Name: Sliding Area
+  m_Name: LevelContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &2047038598
+--- !u!224 &2037842241
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2047038597}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 2037842240}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 762617764}
-  m_Father: {fileID: 1456931746}
+  - {fileID: 895950491}
+  - {fileID: 849736636}
+  - {fileID: 1740813903}
+  - {fileID: 34526835}
+  - {fileID: 1022846540}
+  - {fileID: 1072516087}
+  - {fileID: 1725987109}
+  - {fileID: 872503496}
+  - {fileID: 314719076}
+  - {fileID: 1736956533}
+  - {fileID: 1464904824}
+  - {fileID: 348537977}
+  - {fileID: 1029246267}
+  - {fileID: 1354500979}
+  - {fileID: 2654121}
+  - {fileID: 976380034}
+  - {fileID: 468634828}
+  - {fileID: 1241729264}
+  - {fileID: 774013016}
+  - {fileID: 1378777702}
+  - {fileID: 15143187}
+  - {fileID: 1652758207}
+  - {fileID: 648127499}
+  - {fileID: 1600442792}
+  m_Father: {fileID: 1037804373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: -20}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -61.5}
+  m_SizeDelta: {x: 1400, y: 870}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2037842242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037842240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 20
+    m_Right: 20
+    m_Top: 20
+    m_Bottom: 20
+  m_ChildAlignment: 1
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 200, y: 200}
+  m_Spacing: {x: 20, y: 10}
+  m_Constraint: 0
+  m_ConstraintCount: 2
+--- !u!114 &2037842243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037842240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.60784316}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2037842244
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037842240}
+  m_CullTransparentMesh: 1
 --- !u!1 &2070225784
 GameObject:
   m_ObjectHideFlags: 0
@@ -17274,14 +17852,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.60784316, g: 0.6097366, b: 0.6097366, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17428,7 +18006,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300038, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17548,3 +18126,4 @@ SceneRoots:
   - {fileID: 1968321536}
   - {fileID: 1892364106}
   - {fileID: 1935965502}
+  - {fileID: 752776469}

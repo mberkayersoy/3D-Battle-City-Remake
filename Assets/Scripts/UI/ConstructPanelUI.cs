@@ -23,13 +23,14 @@ public class ConstructPanelUI : MonoBehaviour
         backToMainMenuButton.onClick.AddListener(OnClickBackToMenuButton);
         constructorMapPanelButton.onClick.AddListener(OnClickConstructorMapPanel);
         backToConstructMenuPanelButton.onClick.AddListener(OnClickBackToConstructMenuPanelButton);
-        EventBus.OnSelectConstructMapAction += EventBus_OnSelectConstructMapAction;
+        EventBus.OnSelectConstructedMapAction += EventBus_OnSelectConstructedMapAction;
     }
 
-    private void EventBus_OnSelectConstructMapAction(int mapID)
+    private void EventBus_OnSelectConstructedMapAction(int mapID)
     {
-        constructMapPanel.GetComponent<MapHandler>().SetLevelSetting(GameManager.Instance.gameData.constructedLevelDataDic[mapID]);
         SetActivePanel(constructMapPanel.name);
+        LevelSettings levelCopy = GameManager.Instance.gameData.constructedLevelDataDic[mapID].CopyData();
+        constructMapPanel.GetComponent<MapHandler>().SetLevelSetting(levelCopy);
     }
 
     private void OnClickBackToConstructMenuPanelButton()
@@ -39,8 +40,8 @@ public class ConstructPanelUI : MonoBehaviour
 
     private void OnClickConstructorMapPanel()
     {
-        constructMapPanel.GetComponent<MapHandler>().SetLevelSetting(null);
         SetActivePanel(constructMapPanel.name);
+        constructMapPanel.GetComponent<MapHandler>().SetLevelSetting(null);
     }
 
     private void OnClickBackToMenuButton()

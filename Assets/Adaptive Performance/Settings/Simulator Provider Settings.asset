@@ -186,7 +186,7 @@ MonoBehaviour:
       m_MaxBound: 1
     m_AdaptiveBatching:
       m_Name: Adaptive Batching
-      m_Enabled: 0
+      m_Enabled: 1
       m_Scale: 1
       m_VisualImpact: 1
       m_Target: 1

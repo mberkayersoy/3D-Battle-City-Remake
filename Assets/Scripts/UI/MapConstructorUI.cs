@@ -43,6 +43,7 @@ public class MapConstructorUI : MonoBehaviour
     private void OnEnable()
     {
         MapHandler.Instance.OnUpdateLevelSettingsUIAction += SetUILevelSettings;
+        feedBackText.text = "";
     }
     private void Start()
     {
@@ -65,6 +66,7 @@ public class MapConstructorUI : MonoBehaviour
 
     private void SetUILevelSettings(LevelSettings storedLevel)
     {
+        Debug.Log("SetUILevelSettings");
         mapIDInpuField.text = storedLevel.levelID.ToString();
         playerLifeText.text = "Player Life: " + storedLevel.playerLifeCount.ToString();
         playerLifeSlider.value = storedLevel.playerLifeCount;
@@ -138,26 +140,49 @@ public class MapConstructorUI : MonoBehaviour
 
     IEnumerator CleanFeedBackText()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         feedBackText.text = "";
     }
-    public void UpdateFeedBackText(bool isSuccesfullySaved)
+    public void UpdateFeedBackText(bool isSuccesfullySaved, SaveConditions saveConditions = SaveConditions.EagleCount)
     {
         if (isSuccesfullySaved)
         {
-            feedBackText.text = "MAP SAVED";
+            feedBackText.text = "MAP SAVED.";
         }
         else
         {
-            feedBackText.text = "MAP COULDN'T SAVED! \n" +
-                                "Map Conditions: \n" +
-                                "You must place 1 eagle \n" +
-                                "You must place 1 player spawn \n" +
-                                "You must place at least 1 and at most 3 enemy spawn \n" +
-                                "You must add at least 1 enemy \n" +
-                                "You must use a map ID that you have not used before.";
+            switch (saveConditions)
+            {
+                case SaveConditions.EagleCount:
+                    feedBackText.text = "You must place 1 eagle";
+                    break;
+                case SaveConditions.EnemyCount:
+                    feedBackText.text = "You must add at least 1 enemy";
+                    break;
+                case SaveConditions.EnemySpawn:
+                    feedBackText.text = "You must place at least 1 and at most 3 enemy spawn";
+                    break;
+                case SaveConditions.PlayerSpawn:
+                    feedBackText.text = "You must place 1 player spawn";
+                    break;
+                default:
+                    break;
+            }
         }
 
         StartCoroutine(nameof(CleanFeedBackText));
     }
+
+    private void OnDisable()
+    {
+        MapHandler.Instance.OnUpdateLevelSettingsUIAction -= SetUILevelSettings;
+    }
+}
+
+public enum SaveConditions
+{
+    EagleCount,
+    EnemyCount,
+    EnemySpawn,
+    PlayerSpawn,
 }

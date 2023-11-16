@@ -14,6 +14,7 @@ public class LevelListUI : MonoBehaviour
     private void OnEnable()
     {
         SetActivePanel(DefaultLevelListPanel.name);
+        ShowDefaultLevelsButton.Select();
     }
 
     private void Start()

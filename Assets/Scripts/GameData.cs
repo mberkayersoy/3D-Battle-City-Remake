@@ -9,29 +9,24 @@ public class GameData
 {
     public int activeMaxLevelID;
     public int currentLevelID;
-    public Dictionary<int,LevelData> defaultLevelDataDic;
+    public Dictionary<int, SavedData> defaultLevelDataDic;
     public Dictionary<int,LevelSettings> constructedLevelDataDic;
 
-    public void AddLevelData(LevelData leveldata)
+    public void AddLevelData(SavedData leveldata)
     {
         defaultLevelDataDic.Add(leveldata.levelID, leveldata);
     }
 
-    public void UpdateLevelData(LevelData newLevelData)
+    public void UpdateLevelData(SavedData newLevelData)
     {
         defaultLevelDataDic[newLevelData.levelID] = newLevelData;
     }
-    public GameData(int activeMaxLevelID, int currentLevelID, Dictionary<int,LevelData> defaultLevelDataDic, Dictionary<int, LevelSettings> constructedLevelDataDic)
+    public GameData(int activeMaxLevelID, int currentLevelID, Dictionary<int, SavedData> defaultLevelDataDic, Dictionary<int, LevelSettings> constructedLevelDataDic)
     {
         this.activeMaxLevelID = activeMaxLevelID;
         this.currentLevelID = currentLevelID;
         this.defaultLevelDataDic = defaultLevelDataDic;
         this.constructedLevelDataDic = constructedLevelDataDic;
-    }
-    public int GetActiveMaxLevel()
-    {
-        Debug.Log("maxAvailableLevelCount: " + activeMaxLevelID);
-        return activeMaxLevelID;
     }
     public void SetActiveMaxLevel()
     {
@@ -74,20 +69,20 @@ public class GameData
         else
         {
             Debug.Log("file not Exist");
-            Dictionary<int, LevelData> firstLevelDataList = new Dictionary<int, LevelData>();
-            firstLevelDataList.Add(0, new LevelData(0, 0));
-            return new GameData(0, 0, firstLevelDataList, new Dictionary<int, LevelSettings>());
+            Dictionary<int, SavedData> firstLevelDataList = new Dictionary<int, SavedData>();
+            firstLevelDataList.Add(1, new SavedData(1, 0));
+            return new GameData(1, 1, firstLevelDataList, new Dictionary<int, LevelSettings>());
         }
     }
 }
 
 [System.Serializable]
-public class LevelData
+public class SavedData
 {
     public int levelID;
     public int levelScore;
 
-    public LevelData(int levelID, int levelScore)
+    public SavedData(int levelID, int levelScore)
     {
         this.levelID = levelID;
         this.levelScore = levelScore;

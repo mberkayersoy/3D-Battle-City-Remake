@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using Unity.AI.Navigation;
 using UnityEngine;
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class GridMap : MonoBehaviour
 {
     public WallTypes[] wallMap;
@@ -40,7 +40,7 @@ public class GridMap : MonoBehaviour
         }
         else
         {
-            wallMap = storedMap.wallMap;
+            //wallMap = storedMap.wallMap;
         }
         ClearMap();
         ConstructGround(width, height);

@@ -14,7 +14,7 @@ public class MainTarget : MonoBehaviour, ITarget, IEffectCreator
         if (collision.gameObject.TryGetComponent(out Projectile projectile))
         {
             EventBus.PublishBigExplosionAction(this, transform.position);
-            EventBus.PublishLevelEnd(this, false);
+            EventBus.PublishDefaultLevelEnd(this, false);
             Destroy(gameObject);
         }
     }

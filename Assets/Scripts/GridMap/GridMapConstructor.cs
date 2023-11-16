@@ -6,7 +6,8 @@ using UnityEngine;
 public class GridMapConstructor : MonoBehaviour
 {
     public Grid grid;
-    public Map consturctedMap;
+    //public Map consturctedMap;
+    public WallTypes[] wallMap = new WallTypes[width * height];
     private const int width = 15;
     private const int height = 15;
     public GameObject groundCube;
@@ -23,7 +24,7 @@ public class GridMapConstructor : MonoBehaviour
     }
     void Start()
     {
-        ConstructGround(15, 15);
+        ConstructGround(width, height);
         ConstructMap();
     }
 
@@ -41,37 +42,37 @@ public class GridMapConstructor : MonoBehaviour
         {
             for (int j = 0; j < height; j++)
             {
-                if (consturctedMap.wallMap[j + i * width] == WallTypes.Empty)
+                if (wallMap[j + i * width] == WallTypes.Empty)
                 {
 
                 }
-                else if (consturctedMap.wallMap[j + i * width] == WallTypes.Bricks)
+                else if (wallMap[j + i * width] == WallTypes.Bricks)
                 {
-                    PutObjectToCell(new Vector3Int(i, 1, j), brickWall, true);
+                    PutObjectToCell(new Vector3Int(i, 1, j), brickWall, false);
                 }
-                else if (consturctedMap.wallMap[j + i * width] == WallTypes.Border)
+                else if (wallMap[j + i * width] == WallTypes.Border)
                 {
-                    PutObjectToCell(new Vector3Int(i, 0, j), border, false);
+                    PutObjectToCell(new Vector3Int(i, 1, j), border, false);
                 }
-                else if (consturctedMap.wallMap[j + i * width] == WallTypes.Static)
+                else if (wallMap[j + i * width] == WallTypes.Static)
                 {
                     PutObjectToCell(new Vector3Int(i, 1, j), staticWall, false);
                 }
-                else if (consturctedMap.wallMap[j + i * width] == WallTypes.Grass)
+                else if (wallMap[j + i * width] == WallTypes.Grass)
                 {
                     PutObjectToCell(new Vector3Int(i, 1, j), grassWall, false);
                 }
-                else if (consturctedMap.wallMap[j + i * width] == WallTypes.PlayerSpawn)
+                else if (wallMap[j + i * width] == WallTypes.PlayerSpawn)
                 {
-                    PutObjectToCell(new Vector3Int(i, 0, j), spawnAreaPlayer, false, WallTypes.PlayerSpawn);
+                    PutObjectToCell(new Vector3Int(i, 1, j), spawnAreaPlayer, false, WallTypes.PlayerSpawn);
                 }
-                else if (consturctedMap.wallMap[j + i * width] == WallTypes.EnemySpawn)
+                else if (wallMap[j + i * width] == WallTypes.EnemySpawn)
                 {
-                    PutObjectToCell(new Vector3Int(i, 0, j), spawnAreaEnemy, false, WallTypes.EnemySpawn);
+                    PutObjectToCell(new Vector3Int(i, 1, j), spawnAreaEnemy, false, WallTypes.EnemySpawn);
                 }
-                else if (consturctedMap.wallMap[j + i * width] == WallTypes.Eagle)
+                else if (wallMap[j + i * width] == WallTypes.Eagle)
                 {
-                    PutObjectToCell(new Vector3Int(i, 0, j), eagle, false, WallTypes.Eagle);
+                    PutObjectToCell(new Vector3Int(i, 1, j), eagle, false, WallTypes.Eagle);
                 }
             }
         }
@@ -92,22 +93,20 @@ public class GridMapConstructor : MonoBehaviour
                     Vector3 worldPosition = grid.GetCellCenterWorld(gridCoords);
                     GameObject piece = Instantiate(cube, worldPosition, Quaternion.identity, gameObject.transform);
                     piece.transform.localScale = new Vector3(cellScale.x, cellScale.y, cellScale.z);
+                    piece.name = "Cell: " + position.x + "-" + position.z + " Grid: (" + gridCoords.x + "," + gridCoords.z + ")";
                 }
             }
         }
         else
         {
             Vector3 worldPosition = Vector3.Lerp(grid.GetCellCenterWorld(realPositionOnGrid), grid.GetCellCenterWorld(realPositionOnGrid + new Vector3Int(1, 0, 1)), 0.5f);
-            Instantiate(cube, worldPosition, Quaternion.identity, gameObject.transform);
-        }
+            GameObject cell = Instantiate(cube, worldPosition, Quaternion.identity, gameObject.transform);
+            cell.name = "Cell: " + position.x + "-" + position.z;
+        }   
     }
 
     public void TryPutObjectToSelectedCellPosition(Vector3Int position, WallTypes wallType, bool is4Piece = false)
     {
-        if (wallType == WallTypes.Empty)
-        {
-            RemoveObjectFromCell(position, is4Piece);
-        }
         if (IsIndexEmpty(position))
         {
             SetIndex(position.x, position.z, width, wallType);
@@ -128,17 +127,31 @@ public class GridMapConstructor : MonoBehaviour
                 {
                     Vector3Int gridCoords = realPositionOnGrid + new Vector3Int(i, 0, j);
                     Vector3 worldPosition = grid.GetCellCenterWorld(gridCoords);
-                    GameObject piece = Instantiate(GetWall(wallType), worldPosition, Quaternion.identity, gameObject.transform);
+                    GameObject piece = Instantiate(GetWallObject(wallType), worldPosition, Quaternion.identity, gameObject.transform);
                     piece.transform.localScale = new Vector3(cellScale.x, cellScale.y, cellScale.z);
-                   
+                    piece.name = "Cell: " + position.x + "-" + position.z + " Grid: (" + gridCoords.x + "," + gridCoords.z + ")";
+
                 }
             }
         }
         else
         {
             Vector3 worldPosition = Vector3.Lerp(grid.GetCellCenterWorld(realPositionOnGrid), grid.GetCellCenterWorld(realPositionOnGrid + new Vector3Int(1, 0, 1)), 0.5f);
-            Instantiate(GetWall(wallType), worldPosition, Quaternion.identity, gameObject.transform);
+            GameObject cell = Instantiate(GetWallObject(wallType), worldPosition, Quaternion.identity, gameObject.transform);
+            cell.name = "Cell: " + position.x + "-" + position.z;
+
         }
+    }
+
+    public void RemoveObjectFromCell(Vector3Int position, GameObject wall ,bool is4Piece = false)
+    {
+        if (wallMap[GetIndex(position.x, position.z, width)] != WallTypes.Border)
+        {
+            wallMap[GetIndex(position.x, position.z, width)] = WallTypes.Empty;
+            Destroy(wall);
+        }
+
+       
     }
 
     private int GetIndex(int x, int y, int width)
@@ -147,11 +160,11 @@ public class GridMapConstructor : MonoBehaviour
     }
     private void SetIndex(int x, int y, int width, WallTypes wallType)
     {
-        consturctedMap.wallMap[GetIndex(x, y, width)] = wallType;
+        wallMap[GetIndex(x, y, width)] = wallType;
     }
     private bool IsIndexEmpty(Vector3Int position)
     {
-       if (consturctedMap.wallMap[GetIndex(position.x, position.z, width)] == WallTypes.Empty)
+       if (wallMap[GetIndex(position.x, position.z, width)] == WallTypes.Empty)
        {
             return true;
        }
@@ -159,7 +172,7 @@ public class GridMapConstructor : MonoBehaviour
         return false;
     }
 
-    public GameObject GetWall(WallTypes wallType)
+    public GameObject GetWallObject(WallTypes wallType)
     {
         switch (wallType)
         {
@@ -177,11 +190,5 @@ public class GridMapConstructor : MonoBehaviour
             case WallTypes.Eagle:
                 return eagle;
         }
-    }
-
-    public void RemoveObjectFromCell(Vector3Int position, bool is4Piece = false)
-    {
-        Debug.Log("REMOVE YAZMADIN MORUK");
-        // Remove object from cell position
     }
 }

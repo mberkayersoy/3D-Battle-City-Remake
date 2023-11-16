@@ -7,33 +7,11 @@ public class NavMeshManager : MonoBehaviour
 {
     private static NavMeshSurface Surface;
 
-    //private static NavMeshManager _Instance;
-    //public static NavMeshManager Instance
-    //{
-    //    get
-    //    {
-    //        return _Instance;
-    //    }
-
-    //    private set
-    //    {
-    //        _Instance = value;
-    //    }
-    //}
-
     private void Awake()
     {
-        //if (Instance != null)
-        //{
-        //    Debug.LogError($"Multiple NavMeshManagers in the scene! Destroying {name}!");
-        //    Destroy(gameObject);
-        //    return;
-        //}
-
         Surface = GetComponent<NavMeshSurface>();
         Surface.useGeometry = NavMeshCollectGeometry.PhysicsColliders;
-        //Instance = this;
-
+        Surface.collectObjects = CollectObjects.All;
     }
     private void Start()
     {

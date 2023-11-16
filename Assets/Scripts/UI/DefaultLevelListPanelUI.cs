@@ -9,7 +9,7 @@ public class DefaultLevelListPanelUI : MonoBehaviour
     {
         gameManager = GameManager.Instance;
 
-        int counter = 0;
+        int counter = 1;
         foreach (LevelUIElement item in transform.GetComponentsInChildren<LevelUIElement>())
         {
             item.level = counter++;
@@ -17,8 +17,6 @@ public class DefaultLevelListPanelUI : MonoBehaviour
 
             if (item.level <= gameManager.gameData.activeMaxLevelID)
             {
-                //Debug.Log("ITEM LEVEL: " + item.level);
-                // Debug.Log("gameManager.gameData.levelDataDic[item.level].score: " + gameManager.gameData.levelDataDic[item.level].levelScore);
                 item.SetData(gameManager.gameData.defaultLevelDataDic[item.level].levelScore);
                 item.button.interactable = true;
             }

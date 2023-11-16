@@ -88,12 +88,29 @@ public class UIManager : MonoBehaviour
         quitGameButton.onClick.AddListener(OnClickQuitGameButton);
 
         // Event listeners
-        EventBus.OnLevelEndAction += EventBus_OnLevelEndAction;
+        EventBus.OnDefaultLevelEndAction += EventBus_OnLevelEndAction;
         EventBus.OnLevelSelectedAction += EventBus_OnLevelSelectedAction;
+        EventBus.OnConsturctedLevelSelectedAction += EventBus_OnConsturctedLevelSelectedAction;
+        EventBus.OnConstructedLevelEndAction += EventBus_OnConstructedLevelEndAction;
         EventBus.OnTransitionFinishAction += EventBus_OnTransitionFinishAction;
 
         ConstructPanel.GetComponent<ConstructPanelUI>().OnClickBackToMenuButtonAction += UIManager_OnClickBackToMenuButtonAction;
         SetActivePanel(MenuPanel.name);
+    }
+
+    private void EventBus_OnConstructedLevelEndAction(object sender, EventBus.OnLevelEndEventArgs e)
+    {
+        LevelEndPanel.GetComponent<LevelEndUI>().SetLevelEndUI(e.isSuccess, false);
+        SetActivePanel(LevelEndPanel.name);
+    }
+
+    private void EventBus_OnConsturctedLevelSelectedAction(object sender, EventBus.OnLevelSelectedEventArgs e)
+    {
+        SetActivePanel(TransitionPanel.name);
+        string info = "My Level " + e.selectedLevel.ToString() + " is loading...";
+        TransitionPanel.GetComponent<TransitionUI>().SetNextPanel(GamePanel.name);
+        TransitionPanel.GetComponent<TransitionUI>().SetInfo(info);
+        informationView.SetInformation(gameManager.CurrentLevelManager);
     }
 
     private void OnClickOpenConstructPanelButton()
@@ -127,6 +144,15 @@ public class UIManager : MonoBehaviour
     private void OnClickPauseButton()
     {
         SetActivePanel(PausePanel.name);
+
+        if (gameManager.PlayingDefaultLevel)
+        {
+            pauseRestartLevelButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            pauseRestartLevelButton.gameObject.SetActive(false);
+        }
         Time.timeScale = 0;
     }
 

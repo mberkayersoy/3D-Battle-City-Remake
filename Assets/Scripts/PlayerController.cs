@@ -29,7 +29,19 @@ public class PlayerController : MonoBehaviour, IShooting, ITarget, IEffectCreato
     {
         gameInput = GameInput.Instance;
         gameInput.OnPlayerShotAction += GameInput_OnPlayerShotAction;
+        gameInput.OnMobileShotAction += GameInput_OnMobileShotAction;
         ActivateShild();
+    }
+
+    private void GameInput_OnMobileShotAction(object sender, EventArgs e)
+    {
+        if (isRotating) return;
+
+        if (remainingShotTime <= 0)
+        {
+            Shot();
+            remainingShotTime = shotTimeOut;
+        }
     }
 
     private void ActivateShild()
@@ -74,7 +86,7 @@ public class PlayerController : MonoBehaviour, IShooting, ITarget, IEffectCreato
 
     private void Move()
     {
-        Vector2 movementVector = gameInput.GetMovementVectorNormalized();
+        Vector2 movementVector = gameInput.GetMobileMovementVectorNormalized();
         Vector3 direction;
 
         if (movementVector != Vector2.zero)
@@ -118,5 +130,6 @@ public class PlayerController : MonoBehaviour, IShooting, ITarget, IEffectCreato
     private void OnDestroy()
     {
         gameInput.OnPlayerShotAction -= GameInput_OnPlayerShotAction;
+        gameInput.OnMobileShotAction -= GameInput_OnMobileShotAction;
     }
 }

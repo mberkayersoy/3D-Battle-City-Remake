@@ -13,8 +13,12 @@ public class GridObstacles : MonoBehaviour, IDamagable, IEffectCreator
     {
         EventBus.PublishBrickExplosionAction(this, transform.position);
         gameObject.SetActive(false);
-        NavMeshManager.BakeNavMesh();
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        NavMeshManager.BakeNavMesh();
     }
 
 }
