@@ -15,16 +15,6 @@ public class ObjectPool : MonoBehaviour
     public GameObject eagle;
     public GameObject spawnAreaPlayer;
     public GameObject spawnAreaEnemy;
-    public GameObject projectile;
-
-    [Header("Construct Objects")]
-    public GameObject constructBorder;
-    public GameObject constructBrickWall;
-    public GameObject constructStaticWall;
-    public GameObject constructGrassWall;
-    public GameObject constructEagle;
-    public GameObject constructSpawnAreaPlayer;
-    public GameObject constructSpawnAreaEnemy;
 
     [Header("Pool Sizes")]
     public int borderSize;
@@ -34,6 +24,15 @@ public class ObjectPool : MonoBehaviour
     public int grassSize;
     public int playerSize;
     public int eagleSize;
+
+    [Header("Pool Lists")]
+    public List<GameObject> borderList;
+    public List<GameObject> brickList;
+    public List<GameObject> statickList;
+    public List<GameObject> grassList;
+    public List<GameObject> enemyList;
+    public List<GameObject> playerList;
+    public List<GameObject> eagleList;
 
     private void Awake()
     {

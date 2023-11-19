@@ -169,7 +169,6 @@ public class GridMap : MonoBehaviour
                     GameObject piece = ObjectPool.Instance.GetObject(wallTypes);
                     piece.SetActive(true);
                     piece.transform.position = worldPosition;
-                    //piece.transform.SetParent(gameObject.transform);
                     piece.transform.localScale = new Vector3(cellScale.x, cellScale.y, cellScale.z);
                     piece.name = "Cell: " + position.x + "-" + position.z + " Grid: (" + gridCoords.x + "," + gridCoords.z + ")";
                 }
@@ -181,7 +180,6 @@ public class GridMap : MonoBehaviour
             GameObject cell = ObjectPool.Instance.GetObject(wallTypes);
             cell.SetActive(true);
             cell.transform.position = worldPosition;
-            //cell.transform.SetParent(gameObject.transform);
             cell.name = "Cell: " + position.x + "-" + position.z;
 
             if (wallTypes == WallTypes.EnemySpawn)

@@ -1401,7 +1401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 295.67075}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &142086636
@@ -12985,22 +12985,6 @@ MonoBehaviour:
   spawnAreaPlayer: {fileID: 5219915512400061141, guid: f5d047dce1fd3bd4d9172d1cb3b72930,
     type: 3}
   spawnAreaEnemy: {fileID: 6392879357481536395, guid: 3764787525915eb4f99abf4767a8841c,
-    type: 3}
-  projectile: {fileID: 4211166969138575324, guid: 23e841c6bed9b31478f8b119f9cfa8c9,
-    type: 3}
-  constructBorder: {fileID: 8069563464258982204, guid: 142c9a105f4a88948a9841692e9befdf,
-    type: 3}
-  constructBrickWall: {fileID: 3459110032662472928, guid: e903fcdfe0e3bb04181c24e87d678f99,
-    type: 3}
-  constructStaticWall: {fileID: 2556561585197959715, guid: 0b17c560fa1d7394ea02f0c9b8c52c55,
-    type: 3}
-  constructGrassWall: {fileID: 8920230720955031127, guid: 83a2eb9f1e7bb854eb2d786d50303bb3,
-    type: 3}
-  constructEagle: {fileID: 2241922687768592463, guid: 1630c17eb818986498b59c30448f4335,
-    type: 3}
-  constructSpawnAreaPlayer: {fileID: 5219915512400061141, guid: 04e489ec1e5d6d9499497905a886b4ba,
-    type: 3}
-  constructSpawnAreaEnemy: {fileID: 6392879357481536395, guid: 1bbfd871c453d174ca84f3685371e5cd,
     type: 3}
   borderSize: 57
   enemySize: 20
