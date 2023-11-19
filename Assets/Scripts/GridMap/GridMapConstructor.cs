@@ -113,7 +113,6 @@ public class GridMapConstructor : MonoBehaviour
         }
         else
         {
-            Debug.Log("Index not empty");
             return;
         }
         Vector3 cellScale = grid.cellSize;

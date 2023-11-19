@@ -4,17 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum WallTypes {
-    Empty = 0,
-    Bricks,
-    Static,
-    Grass,
-    Border,
-    PlayerSpawn,
-    EnemySpawn,
-    Eagle
-}
-
 [CreateAssetMenu(fileName= "Map", menuName = "Create Battle City Map")]
 [Serializable]
 public class MapSO : ScriptableObject

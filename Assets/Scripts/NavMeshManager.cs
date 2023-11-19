@@ -5,7 +5,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshSurface))]
 public class NavMeshManager : MonoBehaviour
 {
-    private static NavMeshSurface Surface;
+    public static NavMeshSurface Surface;
 
     private void Awake()
     {

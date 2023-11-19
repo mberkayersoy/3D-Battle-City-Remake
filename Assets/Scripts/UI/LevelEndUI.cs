@@ -15,18 +15,20 @@ public class LevelEndUI : MonoBehaviour
     {
         GameManager gameManager = GameManager.Instance;
 
+        int levelID = gameManager.CurrentLevelManager.CurrentLevel.levelID;
+        int score = gameManager.CurrentLevelManager.LevelScore;
         if (isDefaultLevel)
         {
             if (isSuccess)
             {
-                levelSituationText.text = "LEVEL " + gameManager.CurrentLevelManager.CurrentLevel.levelID + " SUCCESSFUL";
-                levelScoreText.text = "Total Score: " + gameManager.CurrentLevelManager.LevelScore;
+                levelSituationText.text = "LEVEL " + levelID + " SUCCESSFUL";
+                levelScoreText.text = "Total Score: " + score;
                 nextLevelButton.gameObject.SetActive(true);
             }
             else
             {
-                levelSituationText.text = "LEVEL " + gameManager.CurrentLevelManager.CurrentLevel.levelID + " FAILED";
-                levelScoreText.text = "Score: " + gameManager.CurrentLevelManager.LevelScore;
+                levelSituationText.text = "LEVEL " + levelID + " FAILED";
+                levelScoreText.text = "Score: " + score;
             }
             restartLevelButton.gameObject.SetActive(true);
         }
@@ -36,13 +38,13 @@ public class LevelEndUI : MonoBehaviour
             nextLevelButton.gameObject.SetActive(false);
             if (isSuccess)
             {
-                levelSituationText.text = "MY LEVEL " + gameManager.CurrentLevelManager.CurrentLevel.levelID + " SUCCESSFUL";
-                levelScoreText.text = "Total Score: " + gameManager.CurrentLevelManager.LevelScore;
+                levelSituationText.text = "MY LEVEL " + levelID + " SUCCESSFUL";
+                levelScoreText.text = "Total Score: " + score;
             }
             else
             {
-                levelSituationText.text = "LEVEL " + gameManager.CurrentLevelManager.CurrentLevel.levelID + " FAILED";
-                levelScoreText.text = "Score: " + gameManager.CurrentLevelManager.LevelScore;
+                levelSituationText.text = "LEVEL " + levelID + " FAILED";
+                levelScoreText.text = "Score: " + score;
             }
         }
 

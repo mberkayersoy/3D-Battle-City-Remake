@@ -11,6 +11,8 @@ public class MapUIElement : MonoBehaviour
     [SerializeField] private TextMeshProUGUI mapIDText;
     [SerializeField] private Button button;
 
+    public event Action<int> OnMapSelectedAction;
+
     private void Start()
     {
         button.onClick.AddListener(MapSelected);
@@ -19,11 +21,12 @@ public class MapUIElement : MonoBehaviour
     public void SetMapData(int mapID)
     {
         this.mapID = mapID;
-        mapIDText.text = "My Level " + mapID;
+        mapIDText.text = "My Level \n" + mapID;
     }
 
     private void MapSelected()
     {
-        EventBus.PublishSelectConstructMap(mapID);
+        OnMapSelectedAction?.Invoke(mapID);
+        //EventBus.PublishSelectConstructMap(mapID);
     }
 }

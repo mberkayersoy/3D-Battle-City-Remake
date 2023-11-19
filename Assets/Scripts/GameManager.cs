@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour
 
     private void CleanLevel()
     {
+        ObjectPool.Instance.DeactivateAllObjects();
         Destroy(currentLevelManager.gameObject);
         currentLevelManager = null;
     }

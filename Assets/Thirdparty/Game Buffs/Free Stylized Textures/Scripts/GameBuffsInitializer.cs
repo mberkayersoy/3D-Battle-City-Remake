@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GameBuffs.FreeStylizedTextures
 {
-    [InitializeOnLoad]
+    //[InitializeOnLoad]
     public static class GameBuffsInitializer
     {
         private const string PACKAGE_VERSION = "1.2.0";
@@ -14,16 +14,16 @@ namespace GameBuffs.FreeStylizedTextures
         /// <summary>
         /// Initialize Game Buffs asset on first install
         /// </summary>
-        static GameBuffsInitializer()
-        {
-            var initializedFreeTextures = EditorPrefs.GetBool(GameBuffsInitializedPackagePrefKey, false);
-            if (!initializedFreeTextures)
-            {
-                EditorPrefs.SetBool(GameBuffsInitializedPackagePrefKey, true);
+        //static GameBuffsInitializer()
+        //{
+        //    var initializedFreeTextures = EditorPrefs.GetBool(GameBuffsInitializedPackagePrefKey, false);
+        //    if (!initializedFreeTextures)
+        //    {
+        //        EditorPrefs.SetBool(GameBuffsInitializedPackagePrefKey, true);
 
-                OpenMegapackUrl();
-            }
-        }
+        //        OpenMegapackUrl();
+        //    }
+        //}
 
         /// <summary>
         /// Open the Megapack URL the first time the asset is installed

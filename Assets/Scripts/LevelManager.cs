@@ -96,14 +96,16 @@ public class LevelManager : MonoBehaviour
 
     private void InstantiateEnemy()
     {
-        int randomEnemyIndex = UnityEngine.Random.Range(0, currentLevel.enemyList.Count);
+        if (currentGridMap != null)
+        {
+            int randomEnemyIndex = UnityEngine.Random.Range(0, currentLevel.enemyList.Count);
+            EnemyController newEnemyObject = Instantiate(enemyPrefab, currentGridMap.enemySpawnTransform[UnityEngine.Random.Range(0, currentGridMap.enemySpawnTransform.Count)].position,
+                                             Quaternion.Euler(0f, 180f, 0f), transform).GetComponent<EnemyController>();
 
-        EnemyController newEnemyObject = Instantiate(enemyPrefab, currentGridMap.enemySpawnTransform[UnityEngine.Random.Range(0, currentGridMap.enemySpawnTransform.Count)].position,
-            Quaternion.Euler(0f,180f,0f), transform).GetComponent<EnemyController>();
-
-        newEnemyObject.SetEnemyCharacteristics(currentLevel.enemyList[randomEnemyIndex]);
-        currentLevel.enemyList.RemoveAt(randomEnemyIndex);
-        remainingEnemySpawnTimeOut = enemySpawnTimeOut;
+            newEnemyObject.SetEnemyCharacteristics(currentLevel.enemyList[randomEnemyIndex]);
+            currentLevel.enemyList.RemoveAt(randomEnemyIndex);
+            remainingEnemySpawnTimeOut = enemySpawnTimeOut;
+        }
     }
 
     private void SetLevelEndDatas(bool isSucces)

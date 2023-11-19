@@ -16,9 +16,17 @@ public class GridObstacles : MonoBehaviour, IDamagable, IEffectCreator
         Destroy(gameObject);
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
-        NavMeshManager.BakeNavMesh();
+        if (NavMeshManager.Surface != null)
+        {
+            NavMeshManager.BakeNavMesh();
+        }
+        
     }
+    //private void OnDestroy()
+    //{
+    //    NavMeshManager.BakeNavMesh();
+    //}
 
 }

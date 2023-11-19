@@ -4,8 +4,17 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using Unity.AI.Navigation;
 using UnityEngine;
-
-//[ExecuteInEditMode]
+public enum WallTypes
+{
+    Empty = 0,
+    Bricks,
+    Static,
+    Grass,
+    Border,
+    PlayerSpawn,
+    EnemySpawn,
+    Eagle
+}
 public class GridMap : MonoBehaviour
 {
     public WallTypes[] wallMap;
@@ -72,14 +81,6 @@ public class GridMap : MonoBehaviour
         cell.transform.localScale = new Vector3(width, 1, height);
         cell.name = "Ground";
         cell.AddComponent<NavMeshManager>();
-
-        //for (int i = 0; i < width; i++)
-        //{
-        //    for (int j = 0; j < height; j++)
-        //    {
-        //        PutObjectToCell(new Vector3Int(i, 0, j), cube);
-        //    }
-        //}
     }
 
     public void ConstructMap()
@@ -95,22 +96,22 @@ public class GridMap : MonoBehaviour
                 }
                 else if (wallMap[j + i * width] == WallTypes.Bricks)
                 {
-                    PutObjectToCell(new Vector3Int(i, 1, j), brickWall, true);
+                    PutObjectToCell(new Vector3Int(i, 1, j), brickWall, true, WallTypes.Bricks);
                     SetIndex(j, i, width, WallTypes.Bricks);
                 }
                 else if (wallMap[j + i * width] == WallTypes.Border)
                 {
-                    PutObjectToCell(new Vector3Int(i, 0, j), border, false);
+                    PutObjectToCell(new Vector3Int(i, 0, j), border, false, WallTypes.Border);
                     SetIndex(j, i, width, WallTypes.Border);
                 }
                 else if (wallMap[j + i * width] == WallTypes.Static)
                 {
-                    PutObjectToCell(new Vector3Int(i, 1, j), staticWall, false);
+                    PutObjectToCell(new Vector3Int(i, 1, j), staticWall, false, WallTypes.Static);
                     SetIndex(j, i, width, WallTypes.Static);
                 }
                 else if (wallMap[j + i * width] == WallTypes.Grass)
                 {
-                    PutObjectToCell(new Vector3Int(i, 1, j), grassWall, false);
+                    PutObjectToCell(new Vector3Int(i, 1, j), grassWall, false, WallTypes.Grass);
                     SetIndex(j, i, width, WallTypes.Grass);
                 }
                 else if (wallMap[j + i * width] == WallTypes.PlayerSpawn)
@@ -165,7 +166,10 @@ public class GridMap : MonoBehaviour
                 {
                     Vector3Int gridCoords = realPositionOnGrid + new Vector3Int(i, 0, j);
                     Vector3 worldPosition = grid.GetCellCenterWorld(gridCoords);
-                    GameObject piece = Instantiate(cube, worldPosition, Quaternion.identity, gameObject.transform);
+                    GameObject piece = ObjectPool.Instance.GetObject(wallTypes);
+                    piece.SetActive(true);
+                    piece.transform.position = worldPosition;
+                    //piece.transform.SetParent(gameObject.transform);
                     piece.transform.localScale = new Vector3(cellScale.x, cellScale.y, cellScale.z);
                     piece.name = "Cell: " + position.x + "-" + position.z + " Grid: (" + gridCoords.x + "," + gridCoords.z + ")";
                 }
@@ -174,23 +178,23 @@ public class GridMap : MonoBehaviour
         else
         {
             Vector3 worldPosition = Vector3.Lerp(grid.GetCellCenterWorld(realPositionOnGrid), grid.GetCellCenterWorld(realPositionOnGrid + new Vector3Int(1, 0, 1)), 0.5f);
-            GameObject cell = Instantiate(cube, worldPosition, Quaternion.identity, gameObject.transform);
+            GameObject cell = ObjectPool.Instance.GetObject(wallTypes);
+            cell.SetActive(true);
+            cell.transform.position = worldPosition;
+            //cell.transform.SetParent(gameObject.transform);
             cell.name = "Cell: " + position.x + "-" + position.z;
 
             if (wallTypes == WallTypes.EnemySpawn)
             {
                 enemySpawnTransform.Add(cell.transform.GetChild(0));
-                //GameManager.Instance.CurrentLevelManager.EnemySpawnPoints.Add(cell.transform.GetChild(0));
             }
             else if (wallTypes == WallTypes.PlayerSpawn)
             {
                 playerSpawnTransform = cell.transform.GetChild(0);
-                //GameManager.Instance.CurrentLevelManager.PlayerSpawnPoints = cell.transform.GetChild(0);
             }
             else if (wallTypes == WallTypes.Eagle)
             {
                 mainTargetTransform = cell.transform.GetChild(0);
-                //GameManager.Instance.CurrentLevelManager.EnemyMainTarget = cell.transform.GetChild(0);
             }
         }
     }

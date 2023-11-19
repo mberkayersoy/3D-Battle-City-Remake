@@ -44,22 +44,19 @@ public class MapHandler : MonoBehaviour
     }
     public void GetSelectedGridCellPosition()
     {
-        
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             if (selectedWallType != WallTypes.Empty)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, areaLayer))
                 {
-                    Debug.Log("hit.name: " + hit.transform.gameObject);
                     Vector3 worldPosition = hit.point;
                     Vector3Int cellPosition = gridMapConstructor.grid.WorldToCell(worldPosition);
                     cellPosition.x /= 2;
                     cellPosition.z /= 2;
                     cellPosition.y = 1;
                     gridMapConstructor.TryPutObjectToSelectedCellPosition(cellPosition, selectedWallType);
-                    Debug.Log("cellPosition: " + cellPosition);
                 }
             }
             else
@@ -67,7 +64,6 @@ public class MapHandler : MonoBehaviour
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity ,wallLayer))
                 {
-                    Debug.Log("hit.name: " + hit.transform.gameObject.layer);
                     Vector3 worldPosition = hit.point;
                     Vector3Int cellPosition = gridMapConstructor.grid.WorldToCell(worldPosition);
                     GameObject wall = hit.transform.gameObject;

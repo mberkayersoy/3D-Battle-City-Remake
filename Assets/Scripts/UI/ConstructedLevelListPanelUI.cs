@@ -21,8 +21,7 @@ public class ConstructedLevelListPanelUI : MonoBehaviour
         {
             ConstructedLevelUIElement constructedLevelElement = Instantiate(constructedLevelUIElementPrefab, contentTransform);
             constructedLevelElement.level = item.Key;
-            constructedLevelElement.levelText.text = "My Level " + item.Key.ToString();
-           // constructedLevelElement.SetData(item.Value.levelID);
+            constructedLevelElement.levelText.text = "My Level \n" + item.Key.ToString();
         }
     }
 }

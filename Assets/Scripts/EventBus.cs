@@ -57,7 +57,6 @@ public class EventBus
     }
     public static void PublishUpdateScore(IDamagable iDamagable , int addScore)
     {
-        Debug.Log("PublishUpdateScore ve addscore is => " + addScore);
         OnScoreUpdateAction?.Invoke(iDamagable, new OnScoreUpdateEventArgs
         {
             addScore = addScore
