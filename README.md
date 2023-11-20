@@ -5,8 +5,11 @@
 ### AI Enemies
 Navmesh Agent was used for AI enemies. If the best way to the goal is to create a new path by breaking the wall AI does this. 
 
+### Map Construction
+The entire grid map is stored in an array of WallTypes enum type. This array stores what is in each cell at x and z coordinates. During the testing phase, an editor script was written for this array and the map was adjusted from the Inspector. Each map was stored as a Scritpable Object. However, Scriptable Objects were eliminated as the user was given the opportunity to create his own map. All map data and game data is stored and updated as JSON.
+
 ## ScreenShots
-<img src="https://github.com/mberkayersoy/3D-Battle-City-Remake/assets/76611569/588ec1ce-1d11-4828-a33f-14f5f0cd9c5b" alt="Image Sequence_002_0000" width="960" height="450">
+<img src="https://github.com/mberkayersoy/3D-Battle-City-Remake/assets/76611569/588ec1ce-1d11-4828-a33f-14f5f0cd9c5b" alt="Image Sequence_002_0000" width="800" height="450">
 <img src="https://github.com/mberkayersoy/3D-Battle-City-Remake/assets/76611569/6e743934-1848-4d73-bb86-4cb2ca0d4eec" alt="constructedmaplist" width="800" height="450">
 <img src="https://github.com/mberkayersoy/3D-Battle-City-Remake/assets/76611569/0d2cfd5a-acfd-4314-9b39-9a0fbf065ba3" alt="levellist" width="800" height="450">
 <img src="https://github.com/mberkayersoy/3D-Battle-City-Remake/assets/76611569/c4f0ed22-86b0-4e84-83c6-87045a00233f" alt="constructedlevellist" width="800" height="450">
