@@ -89,3 +89,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySprite: {fileID: 6536599933175565477}
+  enemySpriteList:
+  - {fileID: 21300000, guid: f6af057123bb6924fb87d29663002080, type: 3}
+  - {fileID: 21300000, guid: cd7b06ee434a41e4e9b692d4d97837a6, type: 3}
+  - {fileID: 21300000, guid: 259e612b755f1ab44ae973cfb7edd4c9, type: 3}
+  - {fileID: 21300000, guid: e2fdfa9b4b50c2d478f84198486c8bfe, type: 3}

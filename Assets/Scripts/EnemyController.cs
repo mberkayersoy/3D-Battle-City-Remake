@@ -47,8 +47,8 @@ public class EnemyController : MonoBehaviour, IDamagable, IShooting, IEffectCrea
     private void Start()
     {
         ActivateShild();
-        mainTarget = GameManager.Instance.CurrentLevelManager.EnemyMainTarget;
-        EventBus.OnLevelEndAction += EventBus_OnLevelEndAction;
+        mainTarget = GameManager.Instance.CurrentLevelManager.CurrentGridMap.mainTargetTransform;
+        EventBus.OnDefaultLevelEndAction += EventBus_OnLevelEndAction;
     }
 
     public void SetEnemyCharacteristics(EnemyType enemyType)
@@ -58,26 +58,26 @@ public class EnemyController : MonoBehaviour, IDamagable, IShooting, IEffectCrea
         {
             default:
             case EnemyType.Gray:
-                checkDistance = 0.5f;
-                enemyDetectionRange = 3f;
+                checkDistance = 0.4f;
+                enemyDetectionRange = 5f;
                 shotTimeOut = 1f;
                 givingScore = 250;
                 break;
             case EnemyType.Green:
-                checkDistance = 0.5f;
-                enemyDetectionRange = 3.5f;
+                checkDistance = 0.4f;
+                enemyDetectionRange = 5f;
                 shotTimeOut = 1f;
                 givingScore = 500;
                 break;
             case EnemyType.Blue:
-                checkDistance = 1f;
-                enemyDetectionRange = 3.5f;
+                checkDistance = 0.4f;
+                enemyDetectionRange = 5f;
                 shotTimeOut = 0.9f;
                 givingScore = 750;
                 break;
             case EnemyType.Red:
-                checkDistance = 1.5f;
-                enemyDetectionRange = 4f;
+                checkDistance = 0.4f;
+                enemyDetectionRange = 5f;
                 shotTimeOut = 0.8f;
                 givingScore = 1000;
                 break;
@@ -223,7 +223,7 @@ public class EnemyController : MonoBehaviour, IDamagable, IShooting, IEffectCrea
 
     private void OnDestroy()
     {
-        EventBus.OnLevelEndAction -= EventBus_OnLevelEndAction;
+        EventBus.OnDefaultLevelEndAction -= EventBus_OnLevelEndAction;
     }
 }
 

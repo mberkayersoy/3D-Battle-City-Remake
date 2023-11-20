@@ -5,13 +5,16 @@ public class EventBus
     public static event Action<PlayerController> OnPlayerDeathAction;
     public static event Action<EnemyController> OnEnemyDeathAction;
     public static event EventHandler<OnLevelSelectedEventArgs> OnLevelSelectedAction;
-    public static event EventHandler<OnLevelEndEventArgs> OnLevelEndAction;
+    public static event EventHandler<OnLevelSelectedEventArgs> OnConsturctedLevelSelectedAction;
+    public static event EventHandler<OnLevelEndEventArgs> OnDefaultLevelEndAction;
+    public static event EventHandler<OnLevelEndEventArgs> OnConstructedLevelEndAction;
     public static event EventHandler<OnTransitionEventArgs> OnTransitionFinishAction;
     public static event EventHandler<OnScoreUpdateEventArgs> OnScoreUpdateAction;
     public static event EventHandler<OnShotEventArgs> OnShotAction;
     public static event EventHandler<OnExplosionEventArgs> OnBigExplosionAction;
     public static event EventHandler<OnExplosionEventArgs> OnTinyExplosionAction;
     public static event EventHandler<OnExplosionEventArgs> OnBrickExplosionAction;
+    public static event Action<int> OnSelectConstructedMapAction;
 
     public class OnLevelSelectedEventArgs : EventArgs { public int selectedLevel; }
     public class OnLevelEndEventArgs : EventArgs { public bool isSuccess; }
@@ -22,9 +25,16 @@ public class EventBus
 
     public static void PublishPlayerDeath(PlayerController player) { OnPlayerDeathAction?.Invoke(player); }
     public static void PublishEnemyDeath(EnemyController enemy) { OnEnemyDeathAction?.Invoke(enemy); }
-    public static void PublishLevelEnd(object obj, bool isSuccess) 
+    public static void PublishDefaultLevelEnd(object obj, bool isSuccess) 
     {
-        OnLevelEndAction?.Invoke(obj, new OnLevelEndEventArgs
+        OnDefaultLevelEndAction?.Invoke(obj, new OnLevelEndEventArgs
+        {
+            isSuccess = isSuccess
+        });
+    }
+    public static void PublishConstructedLevelEnd(object obj, bool isSuccess)
+    {
+        OnConstructedLevelEndAction?.Invoke(obj, new OnLevelEndEventArgs
         {
             isSuccess = isSuccess
         });
@@ -37,9 +47,16 @@ public class EventBus
             selectedLevel = selectedLevel
         });
     }
+    public static void PublishConstructedLevelSelected(ConstructedLevelUIElement constructedLevelUIElement, int selectedLevel)
+    {
+
+        OnConsturctedLevelSelectedAction?.Invoke(constructedLevelUIElement, new OnLevelSelectedEventArgs
+        {
+            selectedLevel = selectedLevel
+        });
+    }
     public static void PublishUpdateScore(IDamagable iDamagable , int addScore)
     {
-        Debug.Log("PublishUpdateScore ve addscore is => " + addScore);
         OnScoreUpdateAction?.Invoke(iDamagable, new OnScoreUpdateEventArgs
         {
             addScore = addScore
@@ -84,4 +101,8 @@ public class EventBus
         });
     }
 
+    public static void PublishSelectConstructMap(int mapID)
+    {
+        OnSelectConstructedMapAction?.Invoke(mapID);
+    }
 }

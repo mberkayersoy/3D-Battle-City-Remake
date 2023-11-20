@@ -4,13 +4,25 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using Unity.AI.Navigation;
 using UnityEngine;
-
-[ExecuteInEditMode]
+public enum WallTypes
+{
+    Empty = 0,
+    Bricks,
+    Static,
+    Grass,
+    Border,
+    PlayerSpawn,
+    EnemySpawn,
+    Eagle
+}
 public class GridMap : MonoBehaviour
 {
-    public MapSO currentMap;
+    public WallTypes[] wallMap;
+    public MapSO currentMapSO;
+    public Map storedMap;
+    private const int width = 15;
+    private const int height = 15;
     Grid grid;
-
     public GameObject groundCube;
     public GameObject border;
     public GameObject brickWall;
@@ -23,19 +35,24 @@ public class GridMap : MonoBehaviour
     public Transform playerSpawnTransform;
     public List<Transform> enemySpawnTransform = new List<Transform>();
     public List<Vector3> emptyCellPositions = new List<Vector3>();
-    private bool isEagle;
-    private bool isPlayerSpawn;
-    private bool isEnemySpawn;
-
 
     private void Awake()
     {
         grid = GetComponent<Grid>();
+ 
     }
     void Start()
     {
+        if (currentMapSO != null)
+        {
+            wallMap = currentMapSO.wallMap;
+        }
+        else
+        {
+            //wallMap = storedMap.wallMap;
+        }
         ClearMap();
-        ConstructGround(15, 15);
+        ConstructGround(width, height);
         ConstructMap();
     }
 
@@ -64,71 +81,79 @@ public class GridMap : MonoBehaviour
         cell.transform.localScale = new Vector3(width, 1, height);
         cell.name = "Ground";
         cell.AddComponent<NavMeshManager>();
-
-        //for (int i = 0; i < width; i++)
-        //{
-        //    for (int j = 0; j < height; j++)
-        //    {
-        //        PutObjectToCell(new Vector3Int(i, 0, j), cube);
-        //    }
-        //}
     }
 
     public void ConstructMap()
     {
-        for (int i = 0; i < currentMap.width; i++)
+        for (int i = 0; i < width; i++)
         {
-            for (int j = 0; j < currentMap.height; j++)
+            for (int j = 0; j < height; j++)
             {
-                if (currentMap.wallMap[j + i * currentMap.width] == WallTypes.Empty)
+                if (wallMap[j + i * width] == WallTypes.Empty)
                 {
                     AddEmptyCellPosition(i, j);
+                    SetIndex(j, i, width, WallTypes.Empty);
                 }
-                else if (currentMap.wallMap[j + i * currentMap.width] == WallTypes.Bricks)
+                else if (wallMap[j + i * width] == WallTypes.Bricks)
                 {
-                    PutObjectToCell(new Vector3Int(i, 1, j), brickWall, true);
+                    PutObjectToCell(new Vector3Int(i, 1, j), brickWall, true, WallTypes.Bricks);
+                    SetIndex(j, i, width, WallTypes.Bricks);
                 }
-                else if (currentMap.wallMap[j + i * currentMap.width] == WallTypes.Border)
+                else if (wallMap[j + i * width] == WallTypes.Border)
                 {
-                    PutObjectToCell(new Vector3Int(i, 0, j), border, false);
+                    PutObjectToCell(new Vector3Int(i, 0, j), border, false, WallTypes.Border);
+                    SetIndex(j, i, width, WallTypes.Border);
                 }
-                else if (currentMap.wallMap[j + i * currentMap.width] == WallTypes.Static)
+                else if (wallMap[j + i * width] == WallTypes.Static)
                 {
-                    PutObjectToCell(new Vector3Int(i, 1, j), staticWall, false);
+                    PutObjectToCell(new Vector3Int(i, 1, j), staticWall, false, WallTypes.Static);
+                    SetIndex(j, i, width, WallTypes.Static);
                 }
-                else if (currentMap.wallMap[j + i * currentMap.width] == WallTypes.Grass)
+                else if (wallMap[j + i * width] == WallTypes.Grass)
                 {
-                    PutObjectToCell(new Vector3Int(i, 1, j), grassWall, false);
+                    PutObjectToCell(new Vector3Int(i, 1, j), grassWall, false, WallTypes.Grass);
+                    SetIndex(j, i, width, WallTypes.Grass);
                 }
-                else if (currentMap.wallMap[j + i * currentMap.width] == WallTypes.PlayerSpawn)
+                else if (wallMap[j + i * width] == WallTypes.PlayerSpawn)
                 {
-                    isPlayerSpawn = true;
-                    PutObjectToCell(new Vector3Int(i, 0, j), spawnAreaPlayer, false);
+                    PutObjectToCell(new Vector3Int(i, 0, j), spawnAreaPlayer, false, WallTypes.PlayerSpawn);
+                    SetIndex(j, i, width, WallTypes.PlayerSpawn);
                 }
-                else if (currentMap.wallMap[j + i * currentMap.width] == WallTypes.EnemySpawn)
+                else if (wallMap[j + i * width] == WallTypes.EnemySpawn)
                 {
-                    isEnemySpawn = true;
-                    PutObjectToCell(new Vector3Int(i, 0, j), spawnAreaEnemy, false);
+                    PutObjectToCell(new Vector3Int(i, 0, j), spawnAreaEnemy, false, WallTypes.EnemySpawn);
+                    SetIndex(j, i, width, WallTypes.EnemySpawn);
                 }
-                else if (currentMap.wallMap[j + i * currentMap.width] == WallTypes.Eagle)
+                else if (wallMap[j + i * width] == WallTypes.Eagle)
                 {
-                    isEagle = true;
-                    PutObjectToCell(new Vector3Int(i, 0, j), eagle, false);
+                    PutObjectToCell(new Vector3Int(i, 0, j), eagle, false, WallTypes.Eagle);
+                    SetIndex(j, i, width, WallTypes.Eagle);
                 }
             }
         }
+
+        //for (int i = 0; i < currentMap.wallMap.Length; i++)
+        //{
+        //    Debug.Log("currentMap.wallMap[" + i + "]" + currentMap.wallMap[i]);
+        //}
+    }
+
+    private void SetIndex(int x, int y, int width, WallTypes wallType)
+    {
+        wallMap[y * width + x] = wallType;
+        //return y * width + x;
     }
 
     public void AddEmptyCellPosition(int i, int j)
     {
-        if (i <= 2 || i >= currentMap.width - 1 || j <= 2 || j >= currentMap.width) return;
+        if (i <= 2 || i >= width - 1 || j <= 2 || j >= width) return;
 
         Vector3Int gridCoords = new Vector3Int(i * 2, 0, j * 2);
         Vector3 worldPosition = grid.GetCellCenterWorld(gridCoords);
         emptyCellPositions.Add(worldPosition);
     }
 
-    public void PutObjectToCell(Vector3Int position, GameObject cube, bool is4Piece = false)
+    public void PutObjectToCell(Vector3Int position, GameObject cube, bool is4Piece = false, WallTypes wallTypes = WallTypes.Empty)
     {
         Vector3 cellScale = grid.cellSize;
         Vector3Int realPositionOnGrid = position * new Vector3Int(2, 1, 2);
@@ -141,7 +166,9 @@ public class GridMap : MonoBehaviour
                 {
                     Vector3Int gridCoords = realPositionOnGrid + new Vector3Int(i, 0, j);
                     Vector3 worldPosition = grid.GetCellCenterWorld(gridCoords);
-                    GameObject piece = Instantiate(cube, worldPosition, Quaternion.identity, gameObject.transform);
+                    GameObject piece = ObjectPool.Instance.GetObject(wallTypes);
+                    piece.SetActive(true);
+                    piece.transform.position = worldPosition;
                     piece.transform.localScale = new Vector3(cellScale.x, cellScale.y, cellScale.z);
                     piece.name = "Cell: " + position.x + "-" + position.z + " Grid: (" + gridCoords.x + "," + gridCoords.z + ")";
                 }
@@ -150,29 +177,23 @@ public class GridMap : MonoBehaviour
         else
         {
             Vector3 worldPosition = Vector3.Lerp(grid.GetCellCenterWorld(realPositionOnGrid), grid.GetCellCenterWorld(realPositionOnGrid + new Vector3Int(1, 0, 1)), 0.5f);
-            GameObject cell = Instantiate(cube, worldPosition, Quaternion.identity, gameObject.transform);
+            GameObject cell = ObjectPool.Instance.GetObject(wallTypes);
+            cell.SetActive(true);
+            cell.transform.position = worldPosition;
             cell.name = "Cell: " + position.x + "-" + position.z;
 
-            if (isEnemySpawn)
+            if (wallTypes == WallTypes.EnemySpawn)
             {
-                isEnemySpawn = false;
                 enemySpawnTransform.Add(cell.transform.GetChild(0));
-                GameManager.Instance.CurrentLevelManager.EnemySpawnPoints.Add(cell.transform.GetChild(0));
             }
-            else if (isPlayerSpawn)
+            else if (wallTypes == WallTypes.PlayerSpawn)
             {
-                isPlayerSpawn = false;
                 playerSpawnTransform = cell.transform.GetChild(0);
-                GameManager.Instance.CurrentLevelManager.PlayerSpawnPoints = cell.transform.GetChild(0);
             }
-            else if (isEagle)
+            else if (wallTypes == WallTypes.Eagle)
             {
-                isEagle = false;
                 mainTargetTransform = cell.transform.GetChild(0);
-                GameManager.Instance.CurrentLevelManager.EnemyMainTarget = cell.transform.GetChild(0);
             }
         }
     }
-
-
 }

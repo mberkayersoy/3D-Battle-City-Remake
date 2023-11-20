@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour, IEffectCreator
     {
         rb = GetComponent<Rigidbody>();
     }
-    private void Start()
+    private void OnEnable()
     {
         rb.AddForce(transform.forward * speed, ForceMode.Acceleration);
     }

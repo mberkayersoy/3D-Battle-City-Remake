@@ -4,4 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Berkay.unity
+    guid: 65bf569866d85c14c941a0e6acbaeb26
+  m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
+      guid: 05822eaa8c0c4ae429ed5b3c98c97a06, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 2027aa69008207d4381f8ff51cddd92a,
+      type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
+      guid: 4ee9d89a559addb45a8df42cc422ced4, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: 00f66034a5a7a9b4092477d2e71cc817, type: 2}
